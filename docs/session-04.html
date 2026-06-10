@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>Your first governed LLM call is a <strong>one-line change</strong>: swap the OpenAI base URL for the Tetrate Agent Router Service endpoint, keep the same OpenAI-shaped request, and your provider key leaves your app entirely. By the end of this session the <em>same</em> client code returns completions from <strong>two different model vendors</strong> just by changing the <code>model</code> field — proof that the gateway, not your app, now owns providers and credentials.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Imagine you've been mailing your questions straight to the robots, but now you want the friendly door helper to handle them instead. You don't rewrite your questions or learn anything new — you just change the <em>address</em> on the envelope so it goes to the helper's door first. One little sticker swap, and everything else about how you ask stays exactly the same. That one-sticker address change is pointing your app at the <strong>rented gateway endpoint</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>This is the payoff for the inventory you did in 1.1 and the mapping in 1.2: the moment you actually point a client at the gateway and watch governed completions come back. It's deliberately small. The whole promise of an OpenAI-compatible gateway is that adoption costs you a base URL, not a rewrite — and the fastest way to believe that is to do it.</p>
 <p>It also lands the single most important property for a Java/Apigee team: <strong>no provider key in your app</strong>. Today your service reads <code>OPENAI_API_KEY</code> and holds a rotation-and-leak liability. After this change your app holds a <em>gateway</em> key (<code>$ROUTER_KEY</code>), and TARS holds the provider credentials. You've moved a secret out of every service and into one governed edge — the exact move you'd make in Apigee by putting backend auth in a KVM instead of in clients.</p>

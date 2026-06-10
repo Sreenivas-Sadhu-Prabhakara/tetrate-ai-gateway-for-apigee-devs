@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     The gateway is not a console you click — it's **config-as-code**: Gateway API resources and the AI CRDs live in git, the `aigw` CLI runs them locally for fast iteration, and the **same manifests** promote unchanged from dev to prod through a GitOps pipeline. By the end of this session you can run the gateway standalone against your manifests with `aigw run`, then apply those identical manifests to a cluster with no edits — the operational model for everything you built in Parts 1–6.
 
+!!! eli5 "In plain words"
+    Instead of telling the door helper the rules out loud and hoping it remembers, you write them all down in one rulebook. Then you don't make up new rules for the practice room and different ones for the real room — you copy the exact same rulebook to both, changing nothing. So the helper behaves the same whether it's pretend or for real. Writing the rules down once and copying that same book everywhere is **config-as-code, promoted unchanged**.
+
 ## Why this exists
 
 Across this course you've authored `AIGatewayRoute`s, `BackendTrafficPolicy`s, guardrails, `MCPRoute`s, and telemetry — all as YAML. That's not incidental: it's the whole operating model. There is no "save in the UI" step that lives only in one environment. The artifacts *are* Kubernetes resources, so they get versioned, reviewed, validated in CI, and rolled out the same way the rest of your platform is.

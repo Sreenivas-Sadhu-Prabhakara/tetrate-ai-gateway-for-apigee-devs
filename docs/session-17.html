@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>The gateway sees every prompt and every completion in full — which makes it the one place you can stop sensitive data from leaving. In this session you configure <strong>PII redaction</strong> so card numbers, emails, and secrets are detected and masked <strong>on the request before egress</strong> to a third-party provider <strong>and on the response before it reaches the client or your logs</strong>. The rule that catches most people: redacting only the response still leaks the PII to the provider on the way <em>in</em>, so you redact on <strong>both</strong> paths — and you remember that masking a value in logs is not the same as removing it from the payload.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Imagine you're telling the robot a question but you accidentally blurt out a secret — like where you live. The friendly helper at the door grabs a black marker and covers up that secret before the robot ever sees it, and before anyone writes it in the notebook. That way your secret never leaves the building. Blacking out secrets like that is called <strong>PII redaction</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>Once your apps call models through the gateway, every prompt your users type — support tickets, code snippets, customer records — flows to a third-party provider you don't control and into whatever logging the call produces. A user pastes a full credit-card number into a "help me dispute this charge" prompt; without intervention, that number goes to OpenAI, into the provider's logs, and into yours.</p>
 <p>PII redaction makes the gateway detect sensitive values (card numbers, emails, SSNs, API keys, phone numbers) and replace them with a placeholder before the payload moves on. Because the gateway is the <strong>single chokepoint</strong> every call passes through, you redact once, centrally, and cover every app and model — instead of trusting each service to scrub its own prompts and logs correctly (they won't).</p>

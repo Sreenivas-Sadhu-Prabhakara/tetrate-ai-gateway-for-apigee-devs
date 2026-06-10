@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>An <strong>AI gateway</strong> is an API-management product for LLM and agent traffic: one governed edge that sits between your apps and the model providers. By the end of this session you can explain what it adds over calling a provider SDK directly from each service, and why that direct approach quietly falls apart once you have many apps, many models, and a finance team asking questions.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Imagine a giant building full of super-smart robots that answer any question. If every kid runs in and asks a robot directly, it's chaos — nobody checks who's allowed in, nobody counts what each question costs, and sometimes a kid blurts out a secret. So you put <strong>one friendly helper at the door</strong>: you tell the helper your question, they pick the right robot, check you're allowed, keep a tally, and hand back the answer. That helper at the door is the <strong>AI gateway</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>Right now, somewhere in your estate, a Spring service does this: reads <code>OPENAI_API_KEY</code> from config, builds a <code>ChatClient</code>, calls <code>chat.completions</code>, maybe wraps it in a Resilience4j retry, logs the prompt, and ships. It works. So does the next service. And the next. That's exactly the problem.</p>
 <p>Every one of those services now independently owns: a <strong>provider key</strong> (rotated how?), a <strong>retry/fallback</strong> policy (consistent with the others?), <strong>logging</strong> that may be leaking prompts containing PII, and <strong>zero shared answer</strong> to "how many tokens did the payments team burn on GPT-class models last week, and were they even allowed to use that model?" Multiply by every service and every model, and you have the same sprawl an API gateway was invented to solve — except the payload is now <strong>tokens, prompts, and tool calls</strong>, and the cost is metered by the <em>thousand tokens</em>, not the request.</p>

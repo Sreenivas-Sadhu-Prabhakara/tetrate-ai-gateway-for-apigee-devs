@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>The gateway is not a console you click — it's <strong>config-as-code</strong>: Gateway API resources and the AI CRDs live in git, the <code>aigw</code> CLI runs them locally for fast iteration, and the <strong>same manifests</strong> promote unchanged from dev to prod through a GitOps pipeline. By the end of this session you can run the gateway standalone against your manifests with <code>aigw run</code>, then apply those identical manifests to a cluster with no edits — the operational model for everything you built in Parts 1–6.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Instead of telling the door helper the rules out loud and hoping it remembers, you write them all down in one rulebook. Then you don't make up new rules for the practice room and different ones for the real room — you copy the exact same rulebook to both, changing nothing. So the helper behaves the same whether it's pretend or for real. Writing the rules down once and copying that same book everywhere is <strong>config-as-code, promoted unchanged</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>Across this course you've authored <code>AIGatewayRoute</code>s, <code>BackendTrafficPolicy</code>s, guardrails, <code>MCPRoute</code>s, and telemetry — all as YAML. That's not incidental: it's the whole operating model. There is no "save in the UI" step that lives only in one environment. The artifacts <em>are</em> Kubernetes resources, so they get versioned, reviewed, validated in CI, and rolled out the same way the rest of your platform is.</p>
 <p>Two things make this practical. First, the <strong>Gateway API</strong> is the standard, portable contract — the same <code>Gateway</code>/<code>HTTPRoute</code> shapes work across conformant implementations, and the AI CRDs extend them. Second, the <strong><code>aigw</code> CLI</strong> lets you run the gateway <em>locally or standalone</em> against the very manifests you'll ship, so you get a tight inner loop without a cluster — then promote the proven config outward.</p>

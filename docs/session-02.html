@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>Most of Apigee transfers to an AI gateway one-to-one: a proxy becomes a route, a TargetServer becomes a backend, a Quota becomes a rate limit, an API Product becomes a model tier. By the end of this session you can map your Apigee mental model onto the AI gateway object-by-object — and name the <strong>three things that genuinely don't map</strong>, because the payload is now tokens, prompts, and tool calls.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>You already have a friendly helper at your front door who takes in all your normal toy deliveries, checks the labels, and keeps things tidy. Now the talking robots are moving in too, and they need a door helper of their very own. It's the same kind of helper doing mostly the same job — but because robots talk in words and reach into cupboards, this one learns a few brand-new tricks the old helper never needed. Lining up your trusty door helper against the robots' new one is comparing the <strong>API gateway</strong> you know with the <strong>AI gateway</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>You already operate a gateway. When someone says "AI gateway," your instinct is right: it's the same silhouette you trust from Apigee — one governed edge, policies in the middle, a backend behind it. The fastest way to learn the AI gateway is therefore <em>not</em> to learn it from scratch, but to lay it over Apigee and ask "what's the same, what's renamed, and what's actually new?"</p>
 <p>The answer is reassuring: the overwhelming majority is renamed, not new. Caller identity, quotas, product tiers, target routing, backend credentials, analytics — all have direct equivalents, and the reasons they exist are identical. If you can justify why a team shouldn't call a backend directly without a proxy, you can justify the AI gateway.</p>

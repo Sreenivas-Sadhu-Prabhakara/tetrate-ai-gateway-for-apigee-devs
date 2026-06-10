@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Before a token limit, a budget, or a guardrail can mean anything, the gateway has to know **who is calling**. In this session you attach an Envoy Gateway `SecurityPolicy` to the AI route so every request must present a valid **API key, JWT, or OIDC** identity — and you watch a verified claim (a `sub` or `team`) flow into the per-user token budget you built in Part 3. Auth is the first policy in the chain because it's what makes every later policy enforceable instead of advisory.
 
+!!! eli5 "In plain words"
+    Before the helper at the door does anything at all, they look at your name badge to make sure you're really you. No badge, or a pretend one? You don't get in — no questions for the robots, nothing. Only once the helper knows for sure who you are do they let you through. Checking your real name badge at the door is **authentication**.
+
 ## Why this exists
 
 Everything in Part 3 — token rate limits (3.1), budgets (3.2), tiers (3.3) — keys on *who* the caller is. But so far that "who" has been a bare `x-user-id` header the client sets itself. That's fine for wiring up the mechanics; it's worthless as governance, because anyone can type `x-user-id: alice` and spend Alice's budget, or `x-user-id: someone-else` to dodge their own.

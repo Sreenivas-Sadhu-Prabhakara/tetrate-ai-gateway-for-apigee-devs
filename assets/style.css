@@ -265,6 +265,18 @@ body {
           mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z' stroke='black' stroke-width='2' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
+/* "In plain words" — ELI5 basics, sky-blue, friendly */
+.admonition.eli5 {
+  border-left-color: var(--sky);
+  background: linear-gradient(180deg, rgba(143,179,255,.09), rgba(143,179,255,.02));
+  border-color: rgba(143,179,255,.3);
+}
+.admonition.eli5 .admonition-title { color: var(--sky); }
+.admonition.eli5 .admonition-title::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.4 1 2.5h6c0-1.1.3-1.8 1-2.5A6 6 0 0 0 12 3z' stroke='black' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.4 1 2.5h6c0-1.1.3-1.8 1-2.5A6 6 0 0 0 12 3z' stroke='black' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 /* "From Apigee" anchor — amethyst */
 .admonition.apigee {
   border-left-color: var(--violet);

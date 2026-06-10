@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Everything so far secured the **north-bound** leg — the caller reaching the gateway. This session secures the **south-bound** leg — the gateway reaching the provider or tool server. Three controls: upstream **auth** (the gateway injects provider credentials, recap from 2.2), **TLS/mTLS** to the upstream so the connection is encrypted and the upstream is who it claims to be, and an **egress allow-list** so the gateway can *only* reach the provider hosts you sanctioned. By the end you can restrict egress to approved hosts and prove a request to a rogue host is blocked.
 
+!!! eli5 "In plain words"
+    The friendly helper at the door can walk off to fetch answers from robots — but it's only allowed to visit a short list of trusted robots it knows by name, and it uses a secret handshake so it's sure it's talking to the real one. It can't go wandering off to whisper your questions to a stranger robot down the street. Keeping the helper to a trusted, handshake-only list of robots is called **egress control / upstream security**.
+
 ## Why this exists
 
 You spent Part 4 hardening the front door: authenticating callers (4.1), filtering prompts (4.2), redacting PII (4.3), moderating output (4.4). All of that governs traffic *into* the gateway. None of it governs traffic *out* of it.

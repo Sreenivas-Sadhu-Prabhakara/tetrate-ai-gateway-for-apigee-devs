@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     The single most important AI-gateway idea: you rate-limit on **tokens**, not requests. By the end of this session you can configure a distributed limit on input + output tokens, scoped per model and per user, using the gateway's token metering — so one user firing a few enormous completions can't blow the budget while ten thousand tiny calls sail through.
 
+!!! eli5 "In plain words"
+    Pretend the robots charge you not per *question* but per *word* — a tiny "hi" is cheap, but asking for a whole storybook costs a fortune. If the helper only counted *how many times* you asked, one kid could request a hundred storybooks and burn everyone's lunch money. So the helper counts **words, not turns**, and says "that's enough for today" when your word jar runs empty. Counting words instead of turns is **token-based rate limiting**.
+
 ## Why this exists
 
 A request-based limit is a lie for AI traffic. "100 requests/minute" treats a 20-token "hi" and a 60,000-token document summarisation as equal, even though one costs **3,000×** the other. Cost and provider capacity are measured in tokens, so your limit has to be too.

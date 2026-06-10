@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     The gateway speaks **one client-facing contract — the OpenAI chat-completions API — to many providers**. Each provider is an **AIServiceBackend** whose `schema.name` (`OpenAI`, `AWSBedrock`, `Anthropic`, …) tells the gateway that vendor's dialect, so it can translate your OpenAI-shaped request into whatever the upstream expects. By the end you can put a second provider behind the same route and reach it by changing only the `model` field — same client, same SDK, different vendor.
 
+!!! eli5 "In plain words"
+    Every brand of robot likes to be asked in its own funny way — one wants you to clap first, another wants you to whisper. That's a lot of new ways to remember. So the friendly helper at the door learns one simple way to ask, and quietly retranslates it into whatever each robot prefers. You always ask the same way no matter which robot answers — that one shared way of asking is the **unified, OpenAI-compatible API**.
+
 ## Why this exists
 
 Every model vendor invented its own request and response shape. OpenAI has `messages` and `choices`; Anthropic has `system` separate from `messages` and returns `content` blocks; Bedrock wraps a model-specific body in its own envelope and signs requests with SigV4. If each of your services talks to each vendor natively, you've re-created the integration sprawl from session 1.1 — now multiplied by the number of providers, with a different SDK and auth scheme per vendor baked into your code.

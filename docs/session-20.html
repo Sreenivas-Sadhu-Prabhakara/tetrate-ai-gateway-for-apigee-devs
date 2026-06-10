@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>A chat completion is <strong>one</strong> gateway round-trip: prompt in, answer out. An <strong>agent</strong> is a <em>loop</em> of them — the model asks for a tool, the gateway runs the tool call, the result goes back to the model, and it asks again, until it finally answers. The unit of work stops being a single request and becomes a <strong>multi-step session</strong>. By the end you can trace one agent run, count how many gateway round-trips a single user prompt actually produces, and see why budgets, guardrails, and identity must now span the whole loop, not one call.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Asking the robot one little question is like sending it on a quick errand — it comes right back with the answer. But sometimes one question turns into a whole trip: the robot pops out to check the toy box, comes back, runs to the calendar, comes back, then finally answers. The friendly helper has to watch over the <em>entire</em> trip, not just wave goodbye at the first step. That back-and-forth, many-errand kind of work is called <strong>agentic traffic</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>Everything in Parts 1–4 governs a request. One prompt arrives, policies run, a model is called, a metered answer returns. That model holds for <em>chat</em>. It quietly breaks for <em>agents</em>.</p>
 <p>An agentic workload doesn't answer in one shot. The model decides, mid-flight, that it needs to <strong>call a tool</strong> — search a repo, query a database, hit an internal API — and emits a tool-call instead of a final answer. Your runtime executes that tool, feeds the result back, and the model continues. One user question can drive a dozen of these hops before the model has enough to answer. Tool calling, multi-step loops, and long-running sessions are the defining shape of agentic traffic, and none of them existed in the chat model.</p>

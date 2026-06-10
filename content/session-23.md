@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     A tool in the catalog isn't a tool the agent may *call*. **`securityPolicy.oauth`** makes the MCPRoute a protected resource per the **MCP Authorization spec** — the agent must present a valid token — and **`authorization.rules`** then decide, per invocation, which identities may call which tools using **JWT scopes/claims plus CEL**. By the end you can require a scope to invoke a write tool, prove a read-only token is refused it via a CEL rule, and confirm a read tool still works.
 
+!!! eli5 "In plain words"
+    Even though the helper happily fetches toys, not every kid is allowed to use every toy. Anyone may *look* at the shelf, but the toys that *change things* — the ones that paint on walls or knock the tower down — need a special sticker. The helper checks your sticker before handing those over, and says no if you don't have it. Checking the sticker before letting a kid use the "change things" toys is **tool authorization**.
+
 ## Why this exists
 
 Selection in 5.3 controlled what's *visible*; it does not control who may *act*. Two agents — a read-only assistant and a privileged ops agent — may share the same catalog yet must have very different powers over it. Visibility is not authorization.

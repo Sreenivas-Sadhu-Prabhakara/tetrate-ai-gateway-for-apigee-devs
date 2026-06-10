@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     When an AI request fails or misbehaves, the answer is almost never in your app — it's at the gateway, the one place that sees the request **as transformed** and the **provider's response**. By the end of this session you can reproduce a blocked request and use the gateway's debug and telemetry signals to identify exactly **which policy** (guardrail, limit, or auth) rejected it, **at which stage**, and **why** — instead of guessing from a generic error the client received.
 
+!!! eli5 "In plain words"
+    When something goes wrong, the robot didn't break — somewhere along the way the friendly helper at the door said "no" to your question. So you open the helper's little diary and read it line by line: it wrote down every step it took and which one stopped you, and why — maybe your word jar was empty, maybe the question wasn't allowed. Reading the helper's diary to find the exact step that said "no" is **debugging**.
+
 ## Why this exists
 
 Once governance lives at the edge, so does the failure. A `429`, a `403`, a redacted response, a wrong model — none of those happened in your service; they happened in a policy the gateway ran on a request your app no longer fully controls. The call **left your process**, so your debugger and your request logs stop at the point where you handed it off. The gateway picks up exactly there.

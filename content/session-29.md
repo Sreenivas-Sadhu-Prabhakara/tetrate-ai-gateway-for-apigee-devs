@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     This is where every layer of the course becomes **one operated platform**. You assemble caller auth (4.1), model tiers (3.3), token budgets (3.1) and cost attribution (3.2), guardrails and PII (4.2–4.4), multi-provider routing and fallback (2.x), egress-controlled providers (4.5), and MCP tools with tool authorization (5.2–5.4) for agents — all observed (6.1) and operated as config-as-code (6.3), behind the production-readiness discipline of 6.4. By the end you have stood up the whole edge and run a single **end-to-end agent workflow** through it that exercises routing, a token budget, a guardrail, and an MCP tool call — producing a pass/fail readiness checklist for the assembled whole.
 
+!!! eli5 "In plain words"
+    Now you put every helper-skill together into one really good doorway: it checks your badge, counts your words, blocks anyone trying a trick, fetches the right tools from the cupboards, and writes everything in its diary. One whole helpful door doing all of it at once for the robots, instead of lots of half-helpers each doing only one thing. That single doorway that does everything together is **the complete AI gateway platform**.
+
 ## Why this exists
 
 You've built every piece. What you haven't done is run them as **one system** — and that's where AI platforms actually fail. A guardrail that covers the chat path but not the tool path. A token budget that meters model calls but not the tool calls an agent fires in a loop. An egress rule that locks down two providers and forgets the third. Each policy passed its own session lab in isolation; the failures live in the **seams between them**. The capstone exists to exercise the seams — to prove the platform governs a real agent run from the caller's first request through every tool hop and back, not just each policy on its own bench.

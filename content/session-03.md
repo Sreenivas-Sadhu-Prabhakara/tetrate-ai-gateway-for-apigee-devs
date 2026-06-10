@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Tetrate's AI products are a **ladder built on one engine**. At the base is the open-source **Envoy AI Gateway** (which Tetrate co-maintains); on top of it sit a managed pay-as-you-go endpoint (**Agent Router Service / TARS**), a dedicated managed offering (**Agent Router Enterprise**), and a governance/ROI layer (**Agent Operations Director**). By the end of this session you can place each on the ladder and pick the on-ramp that fits your org — and the one constraint that would push you up a rung.
 
+!!! eli5 "In plain words"
+    Friendly door helpers come in different sizes, like helpers you can hire. You can rent one who is ready right now and shows up the same day, or you can build and look after your very own helper so you control every little thing. And for a really big building full of robots, there are fancier helpers who also keep track of the pocket money and check nobody is being naughty. Choosing among these helpers is choosing from the **AI gateway** family — Tetrate's rent-it, build-it, and grown-up options.
+
 ## Why this exists
 
 The first question every platform team asks is "managed or self-hosted?" — and they ask it because they've been burned by picking wrong. With Apigee you've lived this: SaaS gets you running today but owns your control plane; the self-managed runtime gives you control but you own the upgrades, the capacity, and the 2am page. The good news is that Tetrate's AI products are deliberately *the same engine at every rung*, so the choice is about operational ownership, not about a different product you'd have to re-learn.

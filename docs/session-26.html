@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>When an AI request fails or misbehaves, the answer is almost never in your app — it's at the gateway, the one place that sees the request <strong>as transformed</strong> and the <strong>provider's response</strong>. By the end of this session you can reproduce a blocked request and use the gateway's debug and telemetry signals to identify exactly <strong>which policy</strong> (guardrail, limit, or auth) rejected it, <strong>at which stage</strong>, and <strong>why</strong> — instead of guessing from a generic error the client received.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>When something goes wrong, the robot didn't break — somewhere along the way the friendly helper at the door said "no" to your question. So you open the helper's little diary and read it line by line: it wrote down every step it took and which one stopped you, and why — maybe your word jar was empty, maybe the question wasn't allowed. Reading the helper's diary to find the exact step that said "no" is <strong>debugging</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>Once governance lives at the edge, so does the failure. A <code>429</code>, a <code>403</code>, a redacted response, a wrong model — none of those happened in your service; they happened in a policy the gateway ran on a request your app no longer fully controls. The call <strong>left your process</strong>, so your debugger and your request logs stop at the point where you handed it off. The gateway picks up exactly there.</p>
 <p>This is the operational flip side of session 6.1. There you wired metrics and traces to <em>watch healthy</em> traffic; here you use the same signals — plus the gateway's request/response view — to <em>diagnose broken</em> traffic. The skill is knowing what the gateway saw: the body it rewrote, the headers it injected, the policy that fired, and the upstream's actual reply.</p>

@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Your first governed LLM call is a **one-line change**: swap the OpenAI base URL for the Tetrate Agent Router Service endpoint, keep the same OpenAI-shaped request, and your provider key leaves your app entirely. By the end of this session the *same* client code returns completions from **two different model vendors** just by changing the `model` field — proof that the gateway, not your app, now owns providers and credentials.
 
+!!! eli5 "In plain words"
+    Imagine you've been mailing your questions straight to the robots, but now you want the friendly door helper to handle them instead. You don't rewrite your questions or learn anything new — you just change the *address* on the envelope so it goes to the helper's door first. One little sticker swap, and everything else about how you ask stays exactly the same. That one-sticker address change is pointing your app at the **rented gateway endpoint**.
+
 ## Why this exists
 
 This is the payoff for the inventory you did in 1.1 and the mapping in 1.2: the moment you actually point a client at the gateway and watch governed completions come back. It's deliberately small. The whole promise of an OpenAI-compatible gateway is that adoption costs you a base URL, not a rewrite — and the fastest way to believe that is to do it.

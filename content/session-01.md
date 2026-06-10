@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     An **AI gateway** is an API-management product for LLM and agent traffic: one governed edge that sits between your apps and the model providers. By the end of this session you can explain what it adds over calling a provider SDK directly from each service, and why that direct approach quietly falls apart once you have many apps, many models, and a finance team asking questions.
 
+!!! eli5 "In plain words"
+    Imagine a giant building full of super-smart robots that answer any question. If every kid runs in and asks a robot directly, it's chaos — nobody checks who's allowed in, nobody counts what each question costs, and sometimes a kid blurts out a secret. So you put **one friendly helper at the door**: you tell the helper your question, they pick the right robot, check you're allowed, keep a tally, and hand back the answer. That helper at the door is the **AI gateway**.
+
 ## Why this exists
 
 Right now, somewhere in your estate, a Spring service does this: reads `OPENAI_API_KEY` from config, builds a `ChatClient`, calls `chat.completions`, maybe wraps it in a Resilience4j retry, logs the prompt, and ships. It works. So does the next service. And the next. That's exactly the problem.

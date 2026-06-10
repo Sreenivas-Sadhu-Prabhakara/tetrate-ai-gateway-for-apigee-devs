@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Token metering only becomes *governance* once you attribute spend to a **who** — a user, a team, an app — and put a **budget** on it. By the end of this session you can tag traffic with an identity, produce a per-team token-spend breakdown, and enforce a per-team budget on top of the token counter from 3.1. This is the heart of **Tetrate Agent Operations Director (TAOD)**: discover GenAI usage, attribute cost per user/team/app, and enforce limits — the chargeback report you could never assemble from logs.
 
+!!! eli5 "In plain words"
+    Every class shares one big jar of lunch money for asking the robots questions. The friendly helper at the door writes down how much each class spends, so at lunchtime the teacher can see exactly who's been spending and tell a class "that's your limit for today." Now the money isn't one big mystery number — it's split up by who used it, with a cap on each. Tracking who spent what and capping each one is **budgets & cost attribution**.
+
 ## Why this exists
 
 In 3.1 you proved the gateway can count tokens and stop a runaway user. But a raw token counter answers the wrong question for the people who actually care. Finance doesn't ask "how many tokens crossed the edge?" — they ask "**which team spent what, and were they within budget?**" Without attribution, your beautiful token meter is one undifferentiated number, and the first cost-review meeting goes nowhere.

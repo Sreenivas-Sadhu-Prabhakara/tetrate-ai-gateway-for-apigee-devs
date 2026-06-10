@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Chat completions are not the only model traffic in your estate — **embeddings** power every RAG and search pipeline, and **multimodal** calls are growing. The same gateway routes all of them: one OpenAI-compatible endpoint, one approved catalog, one set of policies. By the end you can send an **embeddings** request through the gateway, confirm it's routed and metered, and understand why embeddings need their own metering thinking.
 
+!!! eli5 "In plain words"
+    The robots don't only chat with you. Some take your words and turn them into a secret string of numbers — a number-fingerprint — so the helper can find which words are alike, and some can look at a picture and tell you what's in it. The very same friendly helper at the door handles all of them, not just the talking ones. Those other kinds of robot jobs — number-fingerprints and picture-reading and more — are **embeddings, multimodal, and other endpoints**.
+
 ## Why this exists
 
 If only your `ChatClient` goes through the gateway, you've governed the visible half of your AI traffic and left the rest ungoverned. The unglamorous truth is that **embeddings often dominate by volume**: every document you ingest for RAG, every user query that hits a vector search, every re-index of a knowledge base is an embeddings call. Those run in batch loops, thousands at a time, and if they bypass the gateway they bypass your catalog, your budgets, your audit — the exact governance you spent Part 2 building.

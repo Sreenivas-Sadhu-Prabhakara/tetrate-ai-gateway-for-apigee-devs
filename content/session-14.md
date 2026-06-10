@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     The cheapest, fastest token is the one you never send to a provider. By the end of this session you can enable **caching at the gateway** for a safe-to-cache call, measure the latency and cost drop on a repeated request, and — most importantly — reason about *which* responses are safe to cache. You'll meet three flavours: **response caching** (exact match), **prompt caching** (provider-side reuse of a prompt prefix), and **semantic caching** (match by embedding similarity), and the hard rule that ties them together: cache only what's deterministic and not per-user.
 
+!!! eli5 "In plain words"
+    Imagine a kid walks up and asks the exact same question someone just asked a minute ago. Instead of bothering a robot all over again, the helper at the door remembers the last answer on a sticky note and just hands it back. It's quicker, and it doesn't cost any lunch money because no robot had to do the work. Handing back a saved answer instead of asking again is **caching**.
+
 ## Why this exists
 
 In 3.1–3.3 every governed call still went to the provider and still cost tokens. But a great deal of AI traffic is **repeated**: the same embedding request for the same document, the same deterministic classification, the same FAQ-style question asked a thousand ways. Paying the provider — in money *and* in seconds of latency — for an answer you already computed is pure waste. Caching at the gateway turns the second-and-onward identical call into a local lookup: no provider round-trip, no tokens billed, milliseconds instead of seconds.

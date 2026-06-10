@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     A chat completion is **one** gateway round-trip: prompt in, answer out. An **agent** is a *loop* of them — the model asks for a tool, the gateway runs the tool call, the result goes back to the model, and it asks again, until it finally answers. The unit of work stops being a single request and becomes a **multi-step session**. By the end you can trace one agent run, count how many gateway round-trips a single user prompt actually produces, and see why budgets, guardrails, and identity must now span the whole loop, not one call.
 
+!!! eli5 "In plain words"
+    Asking the robot one little question is like sending it on a quick errand — it comes right back with the answer. But sometimes one question turns into a whole trip: the robot pops out to check the toy box, comes back, runs to the calendar, comes back, then finally answers. The friendly helper has to watch over the *entire* trip, not just wave goodbye at the first step. That back-and-forth, many-errand kind of work is called **agentic traffic**.
+
 ## Why this exists
 
 Everything in Parts 1–4 governs a request. One prompt arrives, policies run, a model is called, a metered answer returns. That model holds for *chat*. It quietly breaks for *agents*.

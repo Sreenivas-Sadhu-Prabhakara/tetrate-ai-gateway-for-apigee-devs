@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     A **BackendSecurityPolicy** is how the gateway — not your app — holds the provider credential. It references a Kubernetes `Secret` and attaches to an AIServiceBackend via `targetRefs`; on every upstream call the gateway injects that credential (a bearer key, AWS SigV4, etc.) so the request to the provider is authenticated without the client ever seeing it. By the end you can delete `OPENAI_API_KEY` from an app's config, prove the app sends no provider key, and rotate the key by editing only the Secret.
 
+!!! eli5 "In plain words"
+    Each robot has its own secret password to prove you're allowed to talk to it. Instead of you carrying all those passwords around in your pocket where you might drop one, the friendly helper at the door keeps every robot's password in its own little locked drawer. When you ask a question, the helper opens the right drawer and uses the password for you — so you never touch a password at all. That locked drawer of passwords the helper keeps is the **BackendSecurityPolicy**.
+
 ## Why this exists
 
 In session 1.1 you inventoried provider keys scattered across services. Each one is a liability: it can leak in a log, a heap dump, a misconfigured env var, or a stale `application.yml` in a Git history. Worse, *rotation* means touching and redeploying every service that holds the key — so in practice keys don't get rotated, which is exactly the audit finding you don't want.

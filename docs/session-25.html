@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>Everything you governed in Parts 3–5 — tokens, budgets, models, guardrails, tools — is only as good as your ability to <strong>see it happening</strong>. By the end of this session you can enable token-usage and latency metrics on the gateway and read an <strong>OpenInference</strong> trace of a multi-step agent run, with per-step token and latency breakdowns, so "what is our AI traffic actually doing, and what is it costing" becomes a dashboard query instead of a guess.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Every time the helper runs an errand, they jot it down in a little diary: how long the trip took, how many words were said, and which robots did the work. Later the grown-ups can flip through the diary and see exactly what happened all day — no guessing. Keeping that diary of every trip is <strong>observability</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>You spent five parts moving cross-cutting concerns to the edge. The payoff is that the edge is now the <strong>one place every LLM and tool call passes through</strong> — which makes it the one place you can measure them. A direct-from-each-service estate can't answer "tokens per team last month" (you proved that in session 1.1's stretch goal); a governed edge answers it because every call is metered there.</p>
 <p>But AI observability is not just "the same dashboards with new labels." The interesting dimensions are <strong>model, tokens, and tool calls</strong>, and the interesting unit of work is no longer a request — it's an <strong>agent run</strong> that fans a single user prompt into many model and tool spans. If you only chart per-request metrics, you will systematically under-count what your agents cost. This session wires the metrics and traces; 6.2 uses them to debug.</p>

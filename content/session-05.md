@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     A self-hosted AI gateway is **three declarative resources** layered on Envoy Gateway and the Kubernetes Gateway API: an **AIServiceBackend** (the provider and its API schema), a **BackendSecurityPolicy** (the upstream credential), and an **AIGatewayRoute** (the client-facing route). By the end of this session you can install the gateway with Helm, apply those three CRDs, and route a hello-world chat completion through your own cluster — the same OpenAI-shaped call you made against TARS in 1.4, now on infrastructure you operate.
 
+!!! eli5 "In plain words"
+    Instead of renting a door helper, you can build your very own out of three simple LEGO pieces. One piece is a name tag that says which robot to talk to, one is a tiny locked box holding the robot's secret password, and one is a doorway sign that tells each question which way to go. Snap those three together and your homemade helper is ready for work. Those three pieces are the **gateway's core resources**.
+
 ## Why this exists
 
 In 1.4 you pointed a base URL at a managed endpoint and it just worked. That's the right first step, but plenty of teams need the gateway *inside their own trust boundary* — same VPC as the apps, their own audit log, their own provider keys never leaving the cluster. Self-hosting Envoy AI Gateway gives you exactly that: the identical OpenAI-compatible contract, running on Envoy Gateway, configured entirely as Kubernetes resources.

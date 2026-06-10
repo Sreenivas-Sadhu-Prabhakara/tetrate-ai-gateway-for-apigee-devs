@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     The gateway sees every prompt and every completion in full — which makes it the one place you can stop sensitive data from leaving. In this session you configure **PII redaction** so card numbers, emails, and secrets are detected and masked **on the request before egress** to a third-party provider **and on the response before it reaches the client or your logs**. The rule that catches most people: redacting only the response still leaks the PII to the provider on the way *in*, so you redact on **both** paths — and you remember that masking a value in logs is not the same as removing it from the payload.
 
+!!! eli5 "In plain words"
+    Imagine you're telling the robot a question but you accidentally blurt out a secret — like where you live. The friendly helper at the door grabs a black marker and covers up that secret before the robot ever sees it, and before anyone writes it in the notebook. That way your secret never leaves the building. Blacking out secrets like that is called **PII redaction**.
+
 ## Why this exists
 
 Once your apps call models through the gateway, every prompt your users type — support tickets, code snippets, customer records — flows to a third-party provider you don't control and into whatever logging the call produces. A user pastes a full credit-card number into a "help me dispute this charge" prompt; without intervention, that number goes to OpenAI, into the provider's logs, and into yours.

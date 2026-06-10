@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>The agentic equivalent of fronting a backend: you put the gateway in front of <strong>Model Context Protocol (MCP) tool servers</strong> with an <strong>MCPRoute</strong>, so an agent reaches its tools through one governed, observable, secured endpoint instead of wiring raw HTTP clients into the agent. By the end you can front a tool server with an MCPRoute and call one of its tools through the gateway.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Sometimes a robot can't answer on its own — it needs to <em>use tools</em>: peek in the toy box, check the calendar, look something up. Instead of handing the robot the keys to every cupboard in the house, you let the <strong>door helper</strong> fetch tools for it: the helper knows which cupboard, checks it's allowed to open it, and passes over only what's needed. That helper-for-tools is the <strong>MCP gateway</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>In Part 2 you put the gateway in front of <em>models</em>. But a modern agent doesn't just complete text — it <strong>calls tools</strong>: search a repo, query docs, hit an internal API. Each tool is a server speaking <strong>MCP</strong>, and without a gateway your agent ends up holding a connection, credentials, and trust for every one of them directly. That's the exact sprawl you removed for model calls in session 1.1, reappearing for tools.</p>
 <p>An MCP gateway fixes it the same way: the agent connects to <strong>one</strong> endpoint and sees one tool catalog; the gateway routes each tool call to the right server, authorizes it, and records it. Tools become <strong>governed backends</strong>, not ad-hoc clients scattered through agent code.</p>

@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>Everything so far secured the <strong>north-bound</strong> leg — the caller reaching the gateway. This session secures the <strong>south-bound</strong> leg — the gateway reaching the provider or tool server. Three controls: upstream <strong>auth</strong> (the gateway injects provider credentials, recap from 2.2), <strong>TLS/mTLS</strong> to the upstream so the connection is encrypted and the upstream is who it claims to be, and an <strong>egress allow-list</strong> so the gateway can <em>only</em> reach the provider hosts you sanctioned. By the end you can restrict egress to approved hosts and prove a request to a rogue host is blocked.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>The friendly helper at the door can walk off to fetch answers from robots — but it's only allowed to visit a short list of trusted robots it knows by name, and it uses a secret handshake so it's sure it's talking to the real one. It can't go wandering off to whisper your questions to a stranger robot down the street. Keeping the helper to a trusted, handshake-only list of robots is called <strong>egress control / upstream security</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>You spent Part 4 hardening the front door: authenticating callers (4.1), filtering prompts (4.2), redacting PII (4.3), moderating output (4.4). All of that governs traffic <em>into</em> the gateway. None of it governs traffic <em>out</em> of it.</p>
 <p>The gateway-to-provider leg is where the real secrets live and where data actually leaves your perimeter. If that leg is unencrypted, prompts (and the PII you didn't catch) cross the wire in clear. If the gateway trusts any upstream, a DNS hijack or a typo'd hostname silently exfiltrates traffic to an impostor. And if the gateway can dial <em>any</em> host on the internet, an attacker who lands a foothold can use your sanctioned, credentialed gateway as an exfiltration proxy to a destination you never approved. Securing the upstream closes all three.</p>

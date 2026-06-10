@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Guardrails don't stop at the prompt. A model can be fed a perfectly clean request and still **generate** something unsafe — toxic, self-harm, illegal, or policy-violating text. Output moderation runs a content-safety check on the **response path**: it judges the model's completion against safety categories and either passes it, blocks it with a safe refusal, or rewrites it. By the end you can configure an output category to block and confirm an unsafe completion is withheld while ordinary output flows untouched.
 
+!!! eli5 "In plain words"
+    Sometimes you ask the robot a perfectly nice question, but the answer it scribbles back is mean or scary. So before the friendly helper hands you the robot's note, the helper reads it first — and if it's nasty or unsafe, the helper won't give it to you. Reading the robot's answer before passing it along is called **output moderation**.
+
 ## Why this exists
 
 In 4.2 you filtered the **prompt** for injection and jailbreaks; in 4.3 you redacted **PII** in both directions. But a clean prompt is not a guarantee of a clean answer. Models hallucinate, get coaxed across a line your input filter didn't catch, or simply produce harmful content for an innocuous question. A prompt can also be benign in isolation yet steer the model somewhere your input check had no way to anticipate — the harm only becomes visible once it's expressed as generated text. The only place to catch that is *after* the model speaks and *before* the caller reads it.

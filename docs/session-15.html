@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>Before a token limit, a budget, or a guardrail can mean anything, the gateway has to know <strong>who is calling</strong>. In this session you attach an Envoy Gateway <code>SecurityPolicy</code> to the AI route so every request must present a valid <strong>API key, JWT, or OIDC</strong> identity — and you watch a verified claim (a <code>sub</code> or <code>team</code>) flow into the per-user token budget you built in Part 3. Auth is the first policy in the chain because it's what makes every later policy enforceable instead of advisory.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Before the helper at the door does anything at all, they look at your name badge to make sure you're really you. No badge, or a pretend one? You don't get in — no questions for the robots, nothing. Only once the helper knows for sure who you are do they let you through. Checking your real name badge at the door is <strong>authentication</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>Everything in Part 3 — token rate limits (3.1), budgets (3.2), tiers (3.3) — keys on <em>who</em> the caller is. But so far that "who" has been a bare <code>x-user-id</code> header the client sets itself. That's fine for wiring up the mechanics; it's worthless as governance, because anyone can type <code>x-user-id: alice</code> and spend Alice's budget, or <code>x-user-id: someone-else</code> to dodge their own.</p>
 <p>Caller authentication closes that hole. The gateway demands a <strong>cryptographically verifiable</strong> identity at the edge — a signed JWT, a registered API key, an OIDC login — and rejects anything that can't prove it. Only after that check passes does the request reach the token meter, and the identity the limits key on is now the <em>verified</em> one, not a self-asserted header. This is the difference between a budget that's enforced and a budget that's a suggestion.</p>

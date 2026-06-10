@@ -72,6 +72,10 @@
 <p class="admonition-title">Bottom line</p>
 <p>The single most important AI-gateway idea: you rate-limit on <strong>tokens</strong>, not requests. By the end of this session you can configure a distributed limit on input + output tokens, scoped per model and per user, using the gateway's token metering — so one user firing a few enormous completions can't blow the budget while ten thousand tiny calls sail through.</p>
 </div>
+<div class="admonition eli5">
+<p class="admonition-title">In plain words</p>
+<p>Pretend the robots charge you not per <em>question</em> but per <em>word</em> — a tiny "hi" is cheap, but asking for a whole storybook costs a fortune. If the helper only counted <em>how many times</em> you asked, one kid could request a hundred storybooks and burn everyone's lunch money. So the helper counts <strong>words, not turns</strong>, and says "that's enough for today" when your word jar runs empty. Counting words instead of turns is <strong>token-based rate limiting</strong>.</p>
+</div>
 <h2 id="why-this-exists">Why this exists</h2>
 <p>A request-based limit is a lie for AI traffic. "100 requests/minute" treats a 20-token "hi" and a 60,000-token document summarisation as equal, even though one costs <strong>3,000×</strong> the other. Cost and provider capacity are measured in tokens, so your limit has to be too.</p>
 <p>This is also where the <em>variable, after-the-fact</em> nature of LLM cost finally bites. You don't know a call's token count when it arrives — only after the model responds. So the gateway meters usage from the <strong>response</strong>, attributes it to the right caller and model, and decrements a distributed counter. That's a thing no per-pod limiter can do correctly, and it's the foundation every later governance feature (budgets, tiers, chargeback) builds on.</p>

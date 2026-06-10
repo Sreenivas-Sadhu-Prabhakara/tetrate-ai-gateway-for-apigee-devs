@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     An **AIGatewayRoute** doesn't just pick a *provider* — it picks a *model*, matching the `x-ai-eg-model` header the gateway derives from the request body. That makes the route the place where you publish a **curated catalog of approved models**, and where you define **virtual model names** — a client-facing alias like `chat-default` that `modelNameOverride` maps to a concrete provider model. By the end you can route by model name, alias a virtual model, and swap the model behind it with **zero client change**.
 
+!!! eli5 "In plain words"
+    The friendly helper has a little menu of robots you're allowed to talk to, and each one has an easy nickname. You just say the nickname — "bring me Sparky" — and the helper fetches the right robot; ask for a robot that's not on the menu and the helper says "sorry, not here." Best of all, the helper can quietly point a nickname at a newer, better robot tomorrow and you'd never know the difference. That menu of nicknames the helper keeps and can re-point is **model routing and the approved catalog**.
+
 ## Why this exists
 
 In 2.1 you put many providers behind one OpenAI-compatible contract; in 2.2 the gateway, not your app, holds the keys. But your clients are still sending raw provider model IDs — `gpt-4o-mini`, `anthropic.claude-3-5-sonnet-20241022-v2:0` — and *any* string they invent reaches *some* upstream unless a rule says otherwise. That's two problems wearing one coat. First, there's no **approved list**: a team can name a model you never vetted for cost, residency, or safety, and the gateway happily forwards it. Second, the concrete model ID is **hard-coded in every caller**, so the day you want to move off a deprecated model, or A/B a cheaper one, you're chasing redeploys across a dozen services.

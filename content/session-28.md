@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Before an AI gateway carries real traffic it needs the same go-live discipline you'd give any other front door — plus three AI-specific items: **token-budget** enforcement, **guardrail** coverage, and a **safe model-rollout** plan. By the end of this session you can write SLOs for the gateway (latency + availability), read the cost/usage dashboards in **Tetrate Agent Operations Director**, and swap a backing provider model behind a stable **virtual model name** using a **canary** fraction — watching quality and cost, not just whether the lights are green.
 
+!!! eli5 "In plain words"
+    Before you let real kids walk up to the door, you make a little checklist: is the helper quick enough that nobody waits forever, is it safe enough that no tricks get through, and — if you swap in a new robot and it starts acting weird — can you put the old one back fast? Only when every box is ticked do you open the door for real. Going down that checklist before opening up is **production readiness**.
+
 ## Why this exists
 
 Everything in Part 6 so far made the gateway *observable* (6.1), *debuggable* (6.2), and *operated as config-as-code* (6.3). Production readiness is the step that turns "it runs" into "we'll page someone when it doesn't, and we know what 'doesn't' means." That part isn't new — it's the readiness review you've run a dozen times. What *is* new is that an AI edge has failure modes a payments service never had.

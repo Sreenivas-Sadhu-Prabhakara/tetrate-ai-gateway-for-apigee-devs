@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     A budget says how *much* a team may spend; a **sanctioned-model tier** says *which models it may call at all*. By the end of this session you can define access tiers — a cheap-only tier and a full-catalog tier — and enforce them **deny-by-default** at the gateway, so a cheap-tier key asking for the premium model gets a `403` instead of an expensive surprise. This is an API Product, but the entitlement is a set of models.
 
+!!! eli5 "In plain words"
+    Some of the robots are the fancy, expensive ones — the kind that cost a lot of lunch money. Not every kid is allowed to use those. So the helper at the door checks: are you on the list for the fancy robots? If you're not, you can still use the everyday robots, but the helper says "no" to the expensive ones — even if you ask nicely. Sorting who's allowed to use which robots is **model access tiers**.
+
 ## Why this exists
 
 Budgets (3.2) cap spend but don't constrain *capability*. A team with a generous budget can still point every call at your most expensive frontier model "just to be safe," and your token meter will dutifully bill them for it. Some models also carry compliance or data-residency constraints that make them simply **not allowed** for certain workloads, regardless of budget. You need to govern the *set of models a caller is entitled to*, not only the quantity of tokens.

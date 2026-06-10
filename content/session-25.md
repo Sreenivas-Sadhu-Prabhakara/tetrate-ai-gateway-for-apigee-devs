@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Everything you governed in Parts 3–5 — tokens, budgets, models, guardrails, tools — is only as good as your ability to **see it happening**. By the end of this session you can enable token-usage and latency metrics on the gateway and read an **OpenInference** trace of a multi-step agent run, with per-step token and latency breakdowns, so "what is our AI traffic actually doing, and what is it costing" becomes a dashboard query instead of a guess.
 
+!!! eli5 "In plain words"
+    Every time the helper runs an errand, they jot it down in a little diary: how long the trip took, how many words were said, and which robots did the work. Later the grown-ups can flip through the diary and see exactly what happened all day — no guessing. Keeping that diary of every trip is **observability**.
+
 ## Why this exists
 
 You spent five parts moving cross-cutting concerns to the edge. The payoff is that the edge is now the **one place every LLM and tool call passes through** — which makes it the one place you can measure them. A direct-from-each-service estate can't answer "tokens per team last month" (you proved that in session 1.1's stretch goal); a governed edge answers it because every call is metered there.

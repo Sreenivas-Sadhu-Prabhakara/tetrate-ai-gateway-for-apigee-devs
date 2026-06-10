@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     An autonomous agent is a **consumer**, and a consumer needs a leash: a stable **identity** that follows it through every model and tool call, plus the governance that identity unlocks — **entitlement** (5.4), **token budgets** (3.1–3.2), **guardrails** (4.x), and a **step-cap**. By the end you can attach a per-agent token budget and prove a runaway agent loop is cut off with **429** when it exhausts that budget — the safety rail that makes autonomy operable.
 
+!!! eli5 "In plain words"
+    Some robot-helpers are busy little workers that keep doing tasks on their own, over and over. So you give each one its own name tag and its own small jar of pocket money. If a robot gets stuck running in circles — asking the same thing again and again — it runs out of pocket money and has to stop, before it spends everything in the house. Giving each busy robot its own name tag and spending limit is **agent identity and budgets**.
+
 ## Why this exists
 
 Everything in Parts 3–5 governs a *call*. An autonomous agent is not one call — it's a **loop**: think, call a model, call a tool, observe, repeat, possibly for dozens of steps with no human between iterations. The danger isn't a single bad request; it's the loop that calls a model 400 times, or recurses on a tool forever, racking up cost and side effects no per-call check would catch.

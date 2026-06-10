@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Most of Apigee transfers to an AI gateway one-to-one: a proxy becomes a route, a TargetServer becomes a backend, a Quota becomes a rate limit, an API Product becomes a model tier. By the end of this session you can map your Apigee mental model onto the AI gateway object-by-object — and name the **three things that genuinely don't map**, because the payload is now tokens, prompts, and tool calls.
 
+!!! eli5 "In plain words"
+    You already have a friendly helper at your front door who takes in all your normal toy deliveries, checks the labels, and keeps things tidy. Now the talking robots are moving in too, and they need a door helper of their very own. It's the same kind of helper doing mostly the same job — but because robots talk in words and reach into cupboards, this one learns a few brand-new tricks the old helper never needed. Lining up your trusty door helper against the robots' new one is comparing the **API gateway** you know with the **AI gateway**.
+
 ## Why this exists
 
 You already operate a gateway. When someone says "AI gateway," your instinct is right: it's the same silhouette you trust from Apigee — one governed edge, policies in the middle, a backend behind it. The fastest way to learn the AI gateway is therefore *not* to learn it from scratch, but to lay it over Apigee and ask "what's the same, what's renamed, and what's actually new?"

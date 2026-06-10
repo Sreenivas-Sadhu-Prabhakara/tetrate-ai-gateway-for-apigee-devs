@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     One agent connection, many tool servers behind it. An **MCPRoute** with multiple `backendRefs` **aggregates** several MCP servers into one tool surface; the gateway **multiplexes** them by prefixing every tool name `server__tool` so collisions can't route the wrong call, and `toolSelector` exposes only the subset you intend. By the end you can put two MCP servers behind one route, see both servers' tools (prefixed) in a single `tools/list`, and narrow the catalog to a safe set.
 
+!!! eli5 "In plain words"
+    The door helper looks after lots of toy boxes — one for building blocks, one for crayons, one for puzzles. Instead of letting the robot rummage through every box, the helper lays everything out on one tidy shelf, and writes a clear label on each toy so two toys with the same shape never get mixed up. The robot just points at the labeled shelf, and the helper grabs the right thing. Putting many toy boxes onto one labeled shelf is **tool aggregation and multiplexing**.
+
 ## Why this exists
 
 In 5.2 you fronted *one* tool server with an MCPRoute. Real agents need several at once — a GitHub server, a docs server, an internal-API server — and the naïve fix is to open three MCP connections from the agent, which is exactly the per-tool-client sprawl 5.2 set out to remove, just at a larger scale.

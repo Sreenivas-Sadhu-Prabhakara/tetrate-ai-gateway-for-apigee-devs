@@ -3,6 +3,9 @@
 !!! bottomline "Bottom line"
     Providers degrade, rate-limit you, and go down — usually one vendor at a time. A **`BackendTrafficPolicy`** lets the gateway retry transient failures, bound them with timeouts, and **fail over to a *different* model vendor** when the primary keeps failing. By the end you can configure retry + timeout on a route, attach a fallback backend, force the primary to fail, and prove the gateway transparently serves the request from the fallback — with the client unaware anything went wrong.
 
+!!! eli5 "In plain words"
+    Sometimes the robot you wanted is taking a nap or feeling grumpy and won't answer. Instead of telling you "sorry, no answer today," the friendly helper quietly walks over to a different robot and asks your question there — so you still get your answer and never even notice the first robot was asleep. That quiet switch to a backup robot when the first one won't help is **fallback, or failover**.
+
 ## Why this exists
 
 In 2.3 you put one virtual name in front of one model. That's a single point of failure wearing a stable alias. The moment `chat-default` resolves to exactly one OpenAI backend, an OpenAI incident — a `503`, a `429` storm, a region blip — is a full outage for every app that depends on that alias, even though a perfectly good Claude or Bedrock model is sitting idle one `backendRef` away.
