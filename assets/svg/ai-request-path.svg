@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 330" role="img" aria-labelledby="arp-title arp-desc" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <title id="arp-title">The AI gateway request path</title>
+  <desc id="arp-desc">Your app calls one OpenAI-compatible endpoint; the gateway authenticates, meters tokens, applies guardrails, routes to a provider, and meters the response back.</desc>
+  <defs>
+    <marker id="arp-req" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#4FE3C1"/></marker>
+    <marker id="arp-up" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8FB3FF"/></marker>
+    <marker id="arp-res" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#A98BFF"/></marker>
+  </defs>
+
+  <!-- gateway container -->
+  <rect x="190" y="50" width="372" height="234" rx="16" fill="rgba(79,227,193,0.04)" stroke="#4FE3C1" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="376" y="74" text-anchor="middle" fill="#4FE3C1" font-size="13" font-weight="700" letter-spacing=".06em">AI GATEWAY</text>
+
+  <!-- policy chips (the "you are here" mini-map) -->
+  <g font-size="11.5" text-anchor="middle">
+    <rect x="210" y="92" width="150" height="40" rx="9" fill="#1C2130" stroke="#353D52"/>
+    <text x="285" y="110" fill="#E8ECF4" font-weight="600">Authenticate</text>
+    <text x="285" y="124" fill="#8893A8" font-size="10">caller identity</text>
+
+    <rect x="210" y="140" width="150" height="40" rx="9" fill="#1C2130" stroke="#8FB3FF"/>
+    <text x="285" y="158" fill="#E8ECF4" font-weight="600">Meter tokens</text>
+    <text x="285" y="172" fill="#8893A8" font-size="10">rate-limit · budget</text>
+
+    <rect x="210" y="188" width="150" height="40" rx="9" fill="#1C2130" stroke="#FF8C5A"/>
+    <text x="285" y="206" fill="#E8ECF4" font-weight="600">Guardrails</text>
+    <text x="285" y="220" fill="#8893A8" font-size="10">PII · safety</text>
+
+    <rect x="210" y="236" width="150" height="36" rx="9" fill="#1C2130" stroke="#353D52"/>
+    <text x="285" y="258" fill="#E8ECF4" font-weight="600">Route to model</text>
+
+    <rect x="392" y="118" width="150" height="92" rx="11" fill="#1A1430" stroke="#A98BFF" stroke-width="1.4"/>
+    <text x="467" y="150" fill="#C4AEFF" font-size="13" font-weight="700">AIGatewayRoute</text>
+    <text x="467" y="170" fill="#8893A8" font-size="10">one OpenAI-compatible</text>
+    <text x="467" y="184" fill="#8893A8" font-size="10">contract, many models</text>
+  </g>
+
+  <!-- client -->
+  <rect x="16" y="126" width="120" height="82" rx="11" fill="#161A26" stroke="#353D52"/>
+  <text x="76" y="158" text-anchor="middle" fill="#E8ECF4" font-size="13" font-weight="600">Your app</text>
+  <text x="76" y="176" text-anchor="middle" fill="#8893A8" font-size="11">/ agent</text>
+  <text x="76" y="194" text-anchor="middle" fill="#7FF0D6" font-size="10">OpenAI SDK</text>
+
+  <!-- providers -->
+  <g font-size="12" text-anchor="middle">
+    <rect x="616" y="70" width="120" height="48" rx="10" fill="#161A26" stroke="#353D52"/>
+    <text x="676" y="92" fill="#E8ECF4" font-weight="600">OpenAI</text><text x="676" y="108" fill="#8893A8" font-size="10">gpt-*</text>
+    <rect x="616" y="138" width="120" height="48" rx="10" fill="#161A26" stroke="#353D52"/>
+    <text x="676" y="160" fill="#E8ECF4" font-weight="600">Anthropic</text><text x="676" y="176" fill="#8893A8" font-size="10">claude-*</text>
+    <rect x="616" y="206" width="120" height="48" rx="10" fill="#161A26" stroke="#353D52"/>
+    <text x="676" y="228" fill="#E8ECF4" font-weight="600">Bedrock</text><text x="676" y="244" fill="#8893A8" font-size="10">/ Vertex</text>
+  </g>
+
+  <!-- arrows: request (teal) -->
+  <path d="M136 158 H206" fill="none" stroke="#4FE3C1" stroke-width="2.2" marker-end="url(#arp-req)"/>
+  <!-- gateway to providers (silver) -->
+  <path d="M542 150 C 580 120, 590 100, 612 94" fill="none" stroke="#8FB3FF" stroke-width="2" marker-end="url(#arp-up)"/>
+  <path d="M542 164 H612" fill="none" stroke="#8FB3FF" stroke-width="2" marker-end="url(#arp-up)"/>
+  <path d="M542 178 C 580 210, 590 224, 612 230" fill="none" stroke="#8FB3FF" stroke-width="2" marker-end="url(#arp-up)"/>
+  <!-- response (violet) with token meter -->
+  <path d="M206 198 C 150 230, 150 240, 136 196" fill="none" stroke="#A98BFF" stroke-width="2.2" marker-end="url(#arp-res)"/>
+  <circle cx="172" cy="244" r="14" fill="#1A1430" stroke="#A98BFF"/>
+  <text x="172" y="248" text-anchor="middle" fill="#C4AEFF" font-size="10" font-weight="700">tok</text>
+  <text x="172" y="272" text-anchor="middle" fill="#8893A8" font-size="10">usage metered on the way back</text>
+
+  <!-- legend -->
+  <g font-size="11">
+    <rect x="190" y="300" width="18" height="3" fill="#4FE3C1"/><text x="214" y="304" fill="#8893A8">request</text>
+    <rect x="300" y="300" width="18" height="3" fill="#8FB3FF"/><text x="324" y="304" fill="#8893A8">to provider</text>
+    <rect x="420" y="300" width="18" height="3" fill="#A98BFF"/><text x="444" y="304" fill="#8893A8">response + token usage</text>
+  </g>
+</svg>

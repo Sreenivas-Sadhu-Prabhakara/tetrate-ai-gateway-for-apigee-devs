@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6.4 Production readiness: SLOs, rollout & cost dashboards · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li class="active" data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="28">
+      <div class="crumbs"><span class="crumb-part">Part 6 — Observability &amp; operations</span><span class="crumb-sep">·</span><span class="crumb-code">Session 6.4</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-27.html">6.3 · Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</a></div><h1 id="64-production-readiness-slos-rollout-cost-dashboards">6.4 — Production readiness: SLOs, rollout &amp; cost dashboards</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Before an AI gateway carries real traffic it needs the same go-live discipline you'd give any other front door — plus three AI-specific items: <strong>token-budget</strong> enforcement, <strong>guardrail</strong> coverage, and a <strong>safe model-rollout</strong> plan. By the end of this session you can write SLOs for the gateway (latency + availability), read the cost/usage dashboards in <strong>Tetrate Agent Operations Director</strong>, and swap a backing provider model behind a stable <strong>virtual model name</strong> using a <strong>canary</strong> fraction — watching quality and cost, not just whether the lights are green.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Everything in Part 6 so far made the gateway <em>observable</em> (6.1), <em>debuggable</em> (6.2), and <em>operated as config-as-code</em> (6.3). Production readiness is the step that turns "it runs" into "we'll page someone when it doesn't, and we know what 'doesn't' means." That part isn't new — it's the readiness review you've run a dozen times. What <em>is</em> new is that an AI edge has failure modes a payments service never had.</p>
+<p>The sharpest one is <strong>model rollout</strong>. On a REST backend, swapping the implementation behind a stable contract is routine: same request shape in, same response shape out, you canary on error rate and move on. Swap the backing model behind your gateway's <code>chat-default</code> and the wire contract is identical — same OpenAI-shaped JSON — but the <em>content</em> can shift underneath you. A newer model may format JSON differently, refuse prompts the old one allowed, get slower per token, or cost 3× more for the same answer. Latency and availability can stay perfectly green while the thing your users actually receive quietly degrades. So the readiness review here has to cover dimensions your old SRE checklist never measured: output quality and per-call cost.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is your <strong>Apigee production-readiness checklist</strong>, extended for AI. Everything you'd sign off before promoting a proxy to prod transfers: SLOs and error budgets, an on-call rotation, environment promotion (6.3), and a tested rollback. Apigee Analytics becomes <strong>Agent Operations Director</strong> for the cost view. The new line items are AI-specific:</p>
+<table>
+<thead>
+<tr>
+<th>Apigee readiness item</th>
+<th>AI-gateway equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quota tuned &amp; enforced</td>
+<td><strong>Token budgets</strong> fire over limit (3.1)</td>
+</tr>
+<tr>
+<td>Threat/JSON policies on</td>
+<td><strong>Guardrails + PII</strong> cover every path (4.2–4.4)</td>
+</tr>
+<tr>
+<td>Target health &amp; failover</td>
+<td><strong>Provider fallback</strong> proven (2.x)</td>
+</tr>
+<tr>
+<td>Revision rollout / rollback</td>
+<td><strong>Virtual-model swap + canary</strong> (3.x)</td>
+</tr>
+<tr>
+<td>Analytics dashboards live</td>
+<td><strong>Agent Operations Director</strong> cost/usage</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>This is the <strong>pre-launch readiness review you'd run before flipping a feature flag on a payments service</strong> — applied to the AI edge. You already know the moves: define SLOs and an error budget, roll out behind a flag to a small cohort first, watch the dashboards, keep the kill-switch one click away. A model swap behind a virtual name <em>is</em> a feature flag: the candidate model is the new code path, the canary fraction is your percentage rollout, and "revert config" is toggling the flag back off — no client redeploy.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>On a payments service, the contract is the schema: if the response still validates, the rollout is safe and a green error rate genuinely means "ship it." A model swap holds the <em>schema</em> identical while changing the <em>substance</em> — tone, format discipline, refusal behaviour, tokens burned per answer. So the usual signals lie. A 100% success rate and flat latency can sit on top of a model that now returns prose where the old one returned strict JSON, or costs triple for the same task. There is no <code>@Valid</code> and no HTTP status that catches a quality or cost regression — you have to measure those directly, which no readiness review you've run before required.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>A safe model rollout fronts a <strong>stable virtual model name</strong> (the client-facing string your apps send, defined back in 3.x) and changes only what's <em>behind</em> it — first for a canary fraction of traffic, then for everyone once the canary clears a quality-and-cost gate:</p>
+<pre class="mermaid">flowchart LR
+  app[&quot;Your apps / agents&lt;br/&gt;model: chat-default&lt;br/&gt;&lt;i&gt;(stable virtual name — never changes)&lt;/i&gt;&quot;] --&gt;|&quot;OpenAI-shaped request&quot;| split
+  split{&quot;Canary split&lt;br/&gt;at the gateway&quot;}
+  split --&gt;|&quot;95%&quot;| stable[&quot;Backing model A&lt;br/&gt;gpt-4o-mini&lt;br/&gt;&lt;i&gt;current&lt;/i&gt;&quot;]
+  split --&gt;|&quot;5% canary&quot;| cand[&quot;Backing model B&lt;br/&gt;gpt-4o&lt;br/&gt;&lt;i&gt;candidate&lt;/i&gt;&quot;]
+  stable --&gt; obs[&quot;Observe (6.1) + Agent Operations Director&lt;br/&gt;latency · availability · &lt;b&gt;quality&lt;/b&gt; · &lt;b&gt;cost&lt;/b&gt;&quot;]
+  cand --&gt; obs
+  obs --&gt;|&quot;canary clears quality + cost gate&quot;| promote[&quot;Promote: 100% → model B&lt;br/&gt;roll back = revert config (6.3)&quot;]</pre>
+<p>The unit you protect is the <strong>virtual model name</strong>, never the provider model string. Apps keep sending <code>chat-default</code>; operations decides what answers it. That decoupling — taught in 3.3 as the approved-model catalog — is exactly what makes a canary possible: you can route a slice of <code>chat-default</code> traffic to a candidate model without touching a single client.</p>
+<p>SLOs for the gateway split cleanly into things the gateway <em>owns</em> and things it <em>passes through</em>. The gateway owns its own <strong>availability</strong> (did it accept and route the request?) and its <strong>added latency</strong> (time spent in auth, guardrails, routing — not the model's generation time, which you can't control). Measure those separately, because a slow <em>provider</em> is not a gateway SLO breach, and conflating them sends you debugging the wrong layer at 3am.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Swapping a model can silently change output <strong>quality, format, and cost</strong> even when latency and availability look perfect. A model that returns prose where the old one returned strict JSON will pass every availability probe and break every downstream parser. <strong>Canary on quality and cost, not just on whether the call succeeded.</strong> A green <code>200</code> rate is necessary but nowhere near sufficient for a model rollout.</p>
+</div>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Don't write an SLO against the <em>provider's</em> end-to-end latency — you don't control how long a model takes to generate. Scope your latency SLO to <strong>gateway-added overhead</strong> (auth + guardrails + routing), and track provider generation time as a separate observed metric so a provider slowdown doesn't burn your error budget for code you can't fix.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-write-slos-and-execute-a-canary-model-swap">Lab — write SLOs and execute a canary model swap</h4>
+<p><strong>Prereqs:</strong> the operated gateway from 6.3 (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), <code>kubectl</code>, the observability stack from 6.1 wired to Agent Operations Director, and a route exposing a <strong>virtual model name</strong> <code>chat-default</code> (from 3.3) currently backed by <code>gpt-4o-mini</code>.</p>
+<p><strong>1. Write down the SLOs</strong> as plain config you can review and version — keep it next to the manifests from 6.3:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># slo.gateway.yaml — the contract you&#39;ll be paged against</span>
+<span class="nt">gateway_slos</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">availability</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">objective</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99.9%</span><span class="w">          </span><span class="c1"># gateway accepted + routed the request</span>
+<span class="w">    </span><span class="nt">window</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">28d</span>
+<span class="w">    </span><span class="nt">excludes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">provider_5xx</span><span class="p p-Indicator">]</span><span class="w">  </span><span class="c1"># a provider outage is not a gateway breach</span>
+<span class="w">  </span><span class="nt">added_latency</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">objective_p95_ms</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span><span class="w">      </span><span class="c1"># auth + guardrails + routing ONLY</span>
+<span class="w">    </span><span class="nt">note</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">provider generation time tracked separately, not in this SLO</span>
+<span class="w">  </span><span class="nt">budget_enforcement</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">objective</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;100%</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">over-budget</span><span class="nv"> </span><span class="s">calls</span><span class="nv"> </span><span class="s">rejected&quot;</span><span class="w">   </span><span class="c1"># 3.1 token limits MUST fire</span>
+<span class="w">  </span><span class="nt">guardrail_coverage</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">objective</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;100%</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">chat</span><span class="nv"> </span><span class="s">AND</span><span class="nv"> </span><span class="s">tool</span><span class="nv"> </span><span class="s">paths</span><span class="nv"> </span><span class="s">inspected&quot;</span><span class="w"> </span><span class="c1"># 4.2-4.4, incl. MCP (5.x)</span>
+</code></pre></div>
+
+<p><strong>2. Stand up the canary</strong> by giving <code>chat-default</code> two backends and weighting them — 95% to the current model, 5% to the candidate. Apps keep sending <code>chat-default</code>; only this config changes:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat-default</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span><span class="w">        </span><span class="c1"># the virtual name clients send (3.3)</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat-default</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-gpt-4o-mini</span><span class="w">        </span><span class="c1"># current — 95%</span>
+<span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">95</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-gpt-4o</span><span class="w">             </span><span class="c1"># candidate — 5% canary</span>
+<span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</code></pre></div>
+
+<p><strong>3. Apply it and confirm both backends are programmed:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>chat-default-canary.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>chat-default<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Drive traffic and watch the canary on quality + cost, not just status.</strong> Fire a batch as a real caller and compare the candidate's behaviour against the baseline:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">50</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;chat-default&quot;,&quot;max_tokens&quot;:256,</span>
+<span class="s1">         &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Return strict JSON: {\&quot;ok\&quot;:true}&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;{model:.model, tokens:.usage.total_tokens, body:.choices[0].message.content}&#39;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p>In <strong>Agent Operations Director</strong>, slice the dashboard by backing model and compare candidate vs baseline on: tokens-per-call (cost), p95 generation latency, error rate, and — read it yourself — whether the candidate still returns parseable JSON. That last check is the one no probe does for you.</p>
+<p><strong>5. Promote or roll back.</strong> If the candidate clears the gate, raise its weight to 100. If quality or cost regressed, set it back to 0 — a pure config revert (6.3), no client redeploy:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># roll back instantly: candidate weight -&gt; 0, current -&gt; 100, re-apply</span>
+kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>chat-default-canary.yaml<span class="w">   </span><span class="c1"># edited weights, GitOps-tracked</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A canary that's too small or too short proves nothing. 5% of low-traffic minutes may be a handful of calls — not enough to surface a quality regression that only shows on certain prompt shapes. Size the canary by <strong>call volume and prompt diversity</strong>, and hold it long enough to see real user inputs, not just your smoke test.</p>
+</div>
+<p><strong>What success looks like:</strong> an SLO file you'd be comfortable being paged against, a <code>chat-default</code> route serving 5% of traffic from a candidate model with no client change, an Agent Operations Director view comparing candidate and baseline on <strong>cost and quality</strong> (not just availability), and a one-command rollback that reverts config rather than redeploying any app.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Green SLOs, broken output.</strong> Availability and latency are nominal but the new model changed its output format or refused prompts the old one served. You measured the wrong dimensions — quality and cost must be in the rollout gate.</li>
+<li><strong>Latency SLO blames the gateway for the provider.</strong> Scoping the latency objective to end-to-end time means every provider slowdown burns your error budget for overhead you don't own. Separate gateway-added latency from provider generation time.</li>
+<li><strong>Clients pinned to the provider model string.</strong> If an app hard-codes <code>gpt-4o-mini</code> instead of the virtual <code>chat-default</code>, you can't canary or roll back without redeploying it — the whole decoupling from 3.3 is defeated.</li>
+<li><strong>No tested rollback.</strong> A rollout plan without a rehearsed revert isn't a plan. Confirm the weight-to-zero rollback actually restores the old behaviour <em>before</em> you need it at 3am.</li>
+<li><strong>Budgets and guardrails left out of readiness.</strong> Latency and availability are table stakes; if token limits (3.1) don't fire over budget or a guardrail (4.2–4.4) misses a path, you're "ready" on the wrong axis.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Add an <strong>error-budget burn alert</strong> to your gateway availability SLO and wire it to on-call: when the 28-day budget burns faster than a threshold, page. Then deliberately point the canary at a model you know formats output differently and confirm your quality gate catches it <em>before</em> you'd have promoted — proving the review measures the dimensions that actually break users, not just the ones that are easy to graph.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now run a go-live review for an AI gateway: write <strong>SLOs</strong> that separate gateway-owned availability and added latency from provider behaviour, read <strong>cost and usage</strong> in Agent Operations Director, and execute a <strong>safe model swap</strong> behind a stable virtual model name with a canary fraction — gating promotion on quality and cost, with a one-command config rollback. Production readiness is now an operated discipline, not a hope.</p>
+<p><strong>Next — 7.1:</strong> the capstone. You'll assemble every layer of the course — caller auth, model tiers, token budgets and cost attribution, guardrails and PII, routing and fallback, egress control, MCP tools, all observed and operated as config-as-code — into one governed multi-provider agent platform, and run an end-to-end readiness review against the assembled whole.</p><div class="session-complete" data-session-code="6.4"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 6.4 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-27.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">6.3 · Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a>
+<a class="next" href="session-29.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">7.1 · Capstone: a governed multi-provider agent platform on Tetrate</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

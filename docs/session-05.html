@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.5 Self-host it: Envoy AI Gateway's three core resources · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li class="active" data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="5">
+      <div class="crumbs"><span class="crumb-part">Part 1 — Why an AI gateway exists</span><span class="crumb-sep">·</span><span class="crumb-code">Session 1.5</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-04.html">1.4 · Hello, gateway: TARS as a drop-in OpenAI endpoint</a></div><h1 id="15-self-host-it-envoy-ai-gateways-three-core-resources">1.5 — Self-host it: Envoy AI Gateway's three core resources</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>A self-hosted AI gateway is <strong>three declarative resources</strong> layered on Envoy Gateway and the Kubernetes Gateway API: an <strong>AIServiceBackend</strong> (the provider and its API schema), a <strong>BackendSecurityPolicy</strong> (the upstream credential), and an <strong>AIGatewayRoute</strong> (the client-facing route). By the end of this session you can install the gateway with Helm, apply those three CRDs, and route a hello-world chat completion through your own cluster — the same OpenAI-shaped call you made against TARS in 1.4, now on infrastructure you operate.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 1.4 you pointed a base URL at a managed endpoint and it just worked. That's the right first step, but plenty of teams need the gateway <em>inside their own trust boundary</em> — same VPC as the apps, their own audit log, their own provider keys never leaving the cluster. Self-hosting Envoy AI Gateway gives you exactly that: the identical OpenAI-compatible contract, running on Envoy Gateway, configured entirely as Kubernetes resources.</p>
+<p>The reason it's worth a whole session is that self-hosting forces you to see the <strong>anatomy</strong> the managed product hides. A governed model call doesn't come from one magic object — it's assembled from three resources, each owning one concern: <em>which provider and protocol</em> (AIServiceBackend), <em>what credential to present upstream</em> (BackendSecurityPolicy), and <em>which client requests map to which backend</em> (AIGatewayRoute). Get these three straight and every later session — credentials, routing, fallback, token limits — is just adding policy onto a skeleton you already understand.</p>
+<p>This is also the moment the mental model flips from <em>code</em> to <em>config</em>. There is no application to write. You declare desired state in YAML, <code>kubectl apply</code>, and the Envoy AI Gateway controller programs the data plane. The "deployment" is a set of CRDs in a Git repo.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is the <strong>bundle anatomy of the AI world</strong>, and it maps almost one-to-one onto the proxy bundle you've shipped a hundred times:</p>
+<table>
+<thead>
+<tr>
+<th>Apigee object</th>
+<th>Envoy AI Gateway resource</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ProxyEndpoint (the basepath clients hit)</td>
+<td><strong>AIGatewayRoute</strong></td>
+<td>client-facing route + match rules</td>
+</tr>
+<tr>
+<td>TargetEndpoint / TargetServer</td>
+<td><strong>AIServiceBackend</strong></td>
+<td>the upstream provider + its API schema</td>
+</tr>
+<tr>
+<td>Target auth (KVM/credential the proxy injects)</td>
+<td><strong>BackendSecurityPolicy</strong></td>
+<td>the upstream credential</td>
+</tr>
+<tr>
+<td>Environment / Gateway listener</td>
+<td><strong>Gateway</strong> (Gateway API)</td>
+<td>where the proxy is exposed</td>
+</tr>
+</tbody>
+</table>
+<p>The difference is purely <em>where it lives</em>: instead of an XML bundle pushed to an Apigee org, it's CRDs applied to a cluster. The decomposition — route, target, credential — is the one you already think in.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>You're used to wiring this in code: a <code>@Configuration</code> class with an <code>@Bean</code> for the <code>RestClient</code>, the base URL from <code>application.yml</code>, the API key from a <code>@Value</code>, and an <code>interceptor</code> bean for auth. Self-hosting moves all of that out of the JVM and into <strong>declarative CRDs</strong>. The AIServiceBackend is the <code>RestClient</code> bean's target; the BackendSecurityPolicy is the auth interceptor; the AIGatewayRoute is the <code>@RequestMapping</code> that decides which request reaches which client. It's the same dependency graph you'd assemble with Spring's <code>@Bean</code> wiring — but configured, not coded, and reconciled by a controller instead of an application context.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>An Apigee bundle is a single versioned artifact you deploy atomically; these three CRDs are <strong>independent objects reconciled continuously and asynchronously</strong>. You can apply the AIGatewayRoute before its AIServiceBackend exists, or update a BackendSecurityPolicy with the route untouched — and the gateway converges toward whatever the current set of objects describes, on its own schedule. There is no single "deploy" event and no bundle revision. You reason in <em>desired state and status conditions</em> (is this object <code>Accepted</code>?), not in a deploy log — which is liberating once it clicks and confusing if you expect Apigee's atomic push.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>These three resources are the machinery that makes the gateway box from session 1.1 real. The same request path you already know — app to one endpoint, policies, route to a provider — but now each segment is backed by a named CRD you can <code>kubectl get</code>:</p>
+<figure class="svg-figure">
+<img src="assets/svg/ai-request-path.svg" alt="Your app calls one OpenAI-compatible endpoint; the gateway authenticates, meters, and routes to a provider. The route is an AIGatewayRoute, the provider an AIServiceBackend, the upstream credential a BackendSecurityPolicy.">
+<figcaption>The three resources that make the gateway box real. The AIGatewayRoute is the client-facing contract; behind it, an AIServiceBackend names the provider and its API schema, and a BackendSecurityPolicy supplies the upstream credential. Later sessions add policy onto this skeleton.</figcaption>
+</figure>
+
+<p>Read the resources from the outside in. The <strong>AIGatewayRoute</strong> attaches to a <code>Gateway</code> (the listener clients hit) via <code>parentRefs</code> and carries <code>rules</code> whose <code>matches</code> key on the <code>x-ai-eg-model</code> header — the model name the gateway extracts from the request body — to choose a <code>backendRefs</code> target. The <strong>AIServiceBackend</strong> is that target: it declares <code>spec.schema.name</code> (e.g. <code>OpenAI</code>) so the gateway knows the provider's API dialect, and a <code>backendRef</code> to an Envoy Gateway <code>Backend</code> (the actual host:port). The <strong>BackendSecurityPolicy</strong> attaches to the AIServiceBackend via <code>targetRefs</code> and points at a Kubernetes <code>Secret</code> holding the provider key, which the gateway injects on the upstream call.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The group matters and it's easy to mix up. The AI CRDs live under <code>aigateway.envoyproxy.io/v1alpha1</code>. The <code>Backend</code> an AIServiceBackend points at is an <strong>Envoy Gateway</strong> resource under <code>gateway.envoyproxy.io</code>, and the <code>Gateway</code> an AIGatewayRoute attaches to is a <strong>Gateway API</strong> resource under <code>gateway.networking.k8s.io</code>. Three different API groups in three references. Copy a <code>group:</code> value from the wrong example and the object is rejected or silently never <code>Accepted</code>. Field names track the release — verify against the API reference for your version.</p>
+</div>
+<p>The payoff of this split is that each concern changes independently. Rotating a key touches only the Secret. Adding a provider adds an AIServiceBackend and a route rule. Changing who can reach the gateway is the <code>Gateway</code> and (later) auth policy. Nothing is entangled in app code.</p>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-stand-up-the-gateway-and-route-a-hello-world-completion">Lab — stand up the gateway and route a hello-world completion</h4>
+<p><strong>Prereqs:</strong> a Kubernetes cluster (a local <code>kind</code> cluster is fine), <code>kubectl</code>, <code>helm</code>, and an OpenAI API key. Export <code>$NAMESPACE</code> (use <code>default</code> for this lab) and you'll set <code>$GATEWAY_HOST</code> after the gateway is up.</p>
+<p><strong>1. Install Envoy Gateway, then Envoy AI Gateway.</strong> The AI gateway runs <em>on</em> Envoy Gateway, so install that first, then the AI Gateway CRDs and controller. (Pin <code>--version</code> to a real release tag for your install; <code>v0.0.0-latest</code> tracks main and drifts.)</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Envoy Gateway (the data plane the AI gateway programs)</span>
+helm<span class="w"> </span>upgrade<span class="w"> </span>-i<span class="w"> </span>eg<span class="w"> </span>oci://docker.io/envoyproxy/gateway-helm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--version<span class="w"> </span>v0.0.0-latest<span class="w"> </span>--namespace<span class="w"> </span>envoy-gateway-system<span class="w"> </span>--create-namespace
+kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--timeout<span class="o">=</span>2m<span class="w"> </span>-n<span class="w"> </span>envoy-gateway-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>deployment/envoy-gateway<span class="w"> </span>--for<span class="o">=</span><span class="nv">condition</span><span class="o">=</span>Available
+
+<span class="c1"># Envoy AI Gateway CRDs + controller</span>
+helm<span class="w"> </span>upgrade<span class="w"> </span>-i<span class="w"> </span>aieg-crd<span class="w"> </span>oci://docker.io/envoyproxy/ai-gateway-crds-helm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--version<span class="w"> </span>v0.0.0-latest<span class="w"> </span>--namespace<span class="w"> </span>envoy-ai-gateway-system<span class="w"> </span>--create-namespace
+helm<span class="w"> </span>upgrade<span class="w"> </span>-i<span class="w"> </span>aieg<span class="w"> </span>oci://docker.io/envoyproxy/ai-gateway-helm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--version<span class="w"> </span>v0.0.0-latest<span class="w"> </span>--namespace<span class="w"> </span>envoy-ai-gateway-system<span class="w"> </span>--create-namespace
+kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--timeout<span class="o">=</span>2m<span class="w"> </span>-n<span class="w"> </span>envoy-ai-gateway-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>deployment/ai-gateway-controller<span class="w"> </span>--for<span class="o">=</span><span class="nv">condition</span><span class="o">=</span>Available
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Order and readiness are not optional. If you apply the AI CRDs before the Envoy Gateway control plane is <code>Available</code>, the AIGatewayRoute may never reach <code>Accepted</code> because there's no controller to program. Always <code>kubectl wait</code> on each deployment before moving on — a route stuck in <code>Pending</code> is almost always "the layer below isn't ready yet," not a YAML bug.</p>
+</div>
+<p><strong>2. Create the provider Secret</strong> holding your OpenAI key. The key inside the Secret is named <code>apiKey</code>:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>openai-apikey<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">apiKey</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p><strong>3. Apply the three resources plus the <code>Gateway</code> and <code>Backend</code> they reference.</strong> Read it top-down: Gateway (listener), Backend (the provider host), AIServiceBackend (provider + schema), BackendSecurityPolicy (credential), AIGatewayRoute (route):</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gateway</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gatewayClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">envoy-ai-gateway-basic</span><span class="w">   </span><span class="c1"># the GatewayClass the AI gateway ships</span>
+<span class="w">  </span><span class="nt">listeners</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http</span>
+<span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTP</span>
+<span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">endpoints</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fqdn</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.openai.com</span>
+<span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIServiceBackend</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OpenAI</span><span class="w">                 </span><span class="c1"># the provider&#39;s API dialect</span>
+<span class="w">  </span><span class="nt">backendRef</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">                 </span><span class="c1"># -&gt; the Backend above</span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendSecurityPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-cred</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APIKey</span>
+<span class="w">  </span><span class="nt">apiKey</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secretRef</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-apikey</span><span class="w">        </span><span class="c1"># the Secret from step 2 (key: apiKey)</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIServiceBackend</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">               </span><span class="c1"># attach the credential to the backend</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">           </span><span class="c1"># -&gt; the Gateway above</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gateway</span>
+<span class="w">      </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exact</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span><span class="w">   </span><span class="c1"># the gateway fills this from the body&#39;s &quot;model&quot;</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">              </span><span class="c1"># -&gt; the AIServiceBackend</span>
+</code></pre></div>
+
+<p><strong>4. Confirm each object is accepted, then resolve the address.</strong> Status conditions are how you "read a deploy log" here:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+<span class="c1"># port-forward the generated Envoy service for local testing</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GATEWAY_HOST</span><span class="o">=</span>localhost:8080
+kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>envoy-gateway-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>svc/<span class="k">$(</span>kubectl<span class="w"> </span>get<span class="w"> </span>svc<span class="w"> </span>-n<span class="w"> </span>envoy-gateway-system<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-l<span class="w"> </span>gateway.envoyproxy.io/owning-gateway-name<span class="o">=</span>ai-gateway<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.items[0].metadata.name}&#39;</span><span class="k">)</span><span class="w"> </span><span class="m">8080</span>:80
+</code></pre></div>
+
+<p><strong>5. Route a hello-world completion</strong> through your own gateway — the exact OpenAI-shaped call from 1.4, now hitting your cluster. The <code>model</code> in the body is what the gateway turns into the <code>x-ai-eg-model</code> match:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Say hello from my self-hosted gateway.&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> the AIGatewayRoute reports <code>Accepted: True</code>, and the curl returns a real completion routed OpenAI ← AIGatewayRoute ← AIServiceBackend ← BackendSecurityPolicy — through a gateway you installed and own. Your app sent no provider key; the gateway injected it.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're done when you can see the three resources doing their jobs:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute,aiservicebackend,backendsecuritypolicy<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<ul>
+<li>All three exist and the route is <code>Accepted</code>. If the route is <code>Pending</code>, the Gateway or the layer below it isn't ready — check <code>kubectl get gateway</code> and the controller deployments.</li>
+<li>The completion succeeds with <strong>no provider key in the request</strong> — the credential came from the BackendSecurityPolicy, not the caller. That's the whole point of the split, and it's the subject of session 2.2.</li>
+<li>For pure local dev with no cluster, <code>aigw run &lt;config&gt;</code> runs the same gateway as a standalone proxy with no Docker or Kubernetes — handy for iterating on config before you apply it.</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Wrong API group on a reference.</strong> The <code>Backend</code> is <code>gateway.envoyproxy.io</code>, the <code>Gateway</code> is <code>gateway.networking.k8s.io</code>, the AI CRDs are <code>aigateway.envoyproxy.io</code>. A mismatched <code>group:</code> leaves the object un-<code>Accepted</code>. <em>(Symptom: route stuck <code>Pending</code>, no error in the app.)</em></li>
+<li><strong>Secret key name mismatch.</strong> The BackendSecurityPolicy <code>apiKey.secretRef</code> expects the Secret's key to be <code>apiKey</code>. Name it <code>api-key</code> or <code>OPENAI_API_KEY</code> and the upstream call gets no credential. <em>(Symptom: 401 from the provider.)</em></li>
+<li><strong>Skipping the readiness waits.</strong> Applying CRDs before Envoy Gateway is <code>Available</code> produces a route that never programs. <em>(Symptom: <code>Accepted</code> never flips to <code>True</code>.)</em></li>
+<li><strong>No backend match for the model.</strong> The <code>value:</code> in the route's header match must equal the <code>model</code> your client sends. A typo means no rule matches and the request 404s at the route.</li>
+<li><strong>Pinning to <code>v0.0.0-latest</code> in anything but a throwaway.</strong> It tracks <code>main</code> and can change under you; pin a release tag.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Run the same config locally with the <code>aigw</code> CLI: <code>aigw run</code> against a config file, no cluster involved, and send the identical curl. Then apply the unchanged manifests to a <code>kind</code> cluster and confirm both paths serve the same completion — proving the config is portable from laptop to cluster, which is exactly the config-as-code story you'll lean on for promotion in 6.3.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now install Envoy AI Gateway on Envoy Gateway and the Gateway API, and read the three resources that define a self-hosted AI gateway: <strong>AIServiceBackend</strong> (provider + schema), <strong>BackendSecurityPolicy</strong> (upstream credential), and <strong>AIGatewayRoute</strong> (client route). You routed a real completion through a gateway you own, with the provider key living in a Secret instead of your app — and you reason about it in status conditions, not deploy logs.</p>
+<p><strong>Next — 2.1:</strong> lean on the AIServiceBackend's <code>schema</code> field. You'll use <strong>one OpenAI-compatible API to reach many providers</strong>, adding a second backend behind the same route so the same client code reaches a different vendor by changing only the <code>model</code> name.</p><div class="session-complete" data-session-code="1.5"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 1.5 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-04.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">1.4 · Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a>
+<a class="next" href="session-06.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">2.1 · One API, many providers: the OpenAI-compatible schema</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

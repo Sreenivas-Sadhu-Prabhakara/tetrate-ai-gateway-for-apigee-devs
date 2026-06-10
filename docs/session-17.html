@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4.3 PII redaction & data-loss prevention · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li class="active" data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="17">
+      <div class="crumbs"><span class="crumb-part">Part 4 — Security &amp; guardrails</span><span class="crumb-sep">·</span><span class="crumb-code">Session 4.3</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-16.html">4.2 · AI guardrails: prompt-injection &amp; jailbreak defense</a></div><h1 id="43-pii-redaction-data-loss-prevention">4.3 — PII redaction &amp; data-loss prevention</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>The gateway sees every prompt and every completion in full — which makes it the one place you can stop sensitive data from leaving. In this session you configure <strong>PII redaction</strong> so card numbers, emails, and secrets are detected and masked <strong>on the request before egress</strong> to a third-party provider <strong>and on the response before it reaches the client or your logs</strong>. The rule that catches most people: redacting only the response still leaks the PII to the provider on the way <em>in</em>, so you redact on <strong>both</strong> paths — and you remember that masking a value in logs is not the same as removing it from the payload.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Once your apps call models through the gateway, every prompt your users type — support tickets, code snippets, customer records — flows to a third-party provider you don't control and into whatever logging the call produces. A user pastes a full credit-card number into a "help me dispute this charge" prompt; without intervention, that number goes to OpenAI, into the provider's logs, and into yours.</p>
+<p>PII redaction makes the gateway detect sensitive values (card numbers, emails, SSNs, API keys, phone numbers) and replace them with a placeholder before the payload moves on. Because the gateway is the <strong>single chokepoint</strong> every call passes through, you redact once, centrally, and cover every app and model — instead of trusting each service to scrub its own prompts and logs correctly (they won't).</p>
+<p>The critical detail is <em>direction</em>. The provider sees the <strong>request</strong>, so PII has to be redacted on the way <em>in</em>, before egress — not just on the way out. And the gateway's own traces and logs capture both; redact before they're written, or your audit trail becomes the leak.</p>
+<h2 id="the-concept">The concept</h2>
+<p>Redaction is a guardrail-band policy that runs on <strong>both</strong> legs of the call — outbound to the provider and inbound to the client and logs:</p>
+<pre class="mermaid">flowchart LR
+  app[&quot;Your app / agent&quot;] --&gt;|&quot;prompt with PII&lt;br/&gt;(card, email)&quot;| rin
+
+  subgraph gw[&quot;AI gateway — single chokepoint&quot;]
+    rin[&quot;redact request&lt;br/&gt;before egress&quot;]
+    rout[&quot;redact response&lt;br/&gt;before client + logs&quot;]
+    log[(&quot;traces / logs&lt;br/&gt;store redacted only&quot;)]
+    rin --&gt; rout
+    rin -.-&gt;|&quot;masked&quot;| log
+    rout -.-&gt;|&quot;masked&quot;| log
+  end
+
+  rin --&gt;|&quot;redacted prompt&quot;| prov[&quot;LLM provider&lt;br/&gt;(never sees raw PII)&quot;]
+  prov --&gt;|&quot;completion&quot;| rout
+  rout --&gt;|&quot;redacted completion&quot;| app
+
+  classDef gwbox fill:#1b2233,stroke:#4FE3C1,stroke-width:1px,color:#E8ECF4;
+  classDef store fill:#161A26,stroke:#8FB3FF,color:#E8ECF4;
+  class rin,rout gwbox;
+  class log store;</pre>
+<p>This sits in the <strong>Guardrails</strong> layer alongside injection defense (4.2) and content safety (4.4). You configure it as request <em>and</em> response policies on the <code>AIGatewayRoute</code>: the gateway already holds the full prompt and completion at this chokepoint (for metering and guardrails), so it detects PII patterns and masks them inline before the data egresses to the provider or is written to a trace.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><strong>Redaction on the response only still leaks PII to the provider.</strong> The provider receives the <em>request</em> — so if you redact just the completion on the way back, the raw card number already went upstream (and into the provider's logs) before any masking ran. Redact on the <strong>request path (egress)</strong> too. And remember: masking a value in <em>your</em> logs is not the same as removing it from the <em>payload</em> you sent — log scrubbing and request redaction are two separate switches, and you need both.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>You've done <strong>data masking</strong> in Apigee — configuring mask configurations so sensitive fields don't show up in the trace tool and debug sessions. PII redaction here is that idea raised a level. Apigee masking hides values in the <em>observability</em> surface; the underlying request still carried them to the backend. At the AI edge, redaction also rewrites the <strong>payload that egresses</strong> to the provider, so the third party never receives the raw value at all — not just "you can't see it in the trace," but "it never left your boundary unmasked."</p>
+<table>
+<thead>
+<tr>
+<th>Apigee</th>
+<th>AI edge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mask config (hide in trace/debug)</td>
+<td>response/log redaction</td>
+</tr>
+<tr>
+<td>— (request still carried raw value)</td>
+<td>request redaction before egress</td>
+</tr>
+<tr>
+<td>masking scope = observability</td>
+<td>redaction scope = payload <strong>and</strong> observability</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>It's the log-scrubbing and DLP you'd bolt onto one service — a Logback masking converter, a <code>MaskingPatternLayout</code>, a regex that turns card numbers into <code>****</code> before they hit the log file — applied to <strong>every</strong> prompt and completion at one chokepoint instead of per service. And it goes further than log scrubbing: your masking converter only cleans what <em>you</em> log, but the gateway also cleans what <em>leaves your boundary</em> to the provider. One policy at the edge replaces a scrubber you'd otherwise have to add, test, and maintain in every service that talks to a model.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A Logback masking layout runs at the very end, on the log line you're about to write — it never touches the data your service already sent over the wire. Gateway redaction has to act <em>earlier</em>, on the request body itself, <em>before</em> it egresses, because the provider is the party you're protecting against. So the mental model isn't "scrub the logs"; it's "rewrite the payload in flight, on both directions, and the logs get the already-redacted version for free." Conflating the two leads to the classic miss: scrubbing logs while the provider quietly receives everything.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-redact-a-card-number-before-it-leaves-and-in-the-logs">Lab — redact a card number before it leaves, and in the logs</h4>
+<p><strong>Prereqs:</strong> the gateway and <code>AIGatewayRoute</code> from 1.5 with caller auth (4.1) in place (export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, and a valid <code>$GATEWAY_KEY</code>), and <code>kubectl</code>. (Redaction field names track your Envoy AI Gateway / Tetrate AI Guardrails release — verify against the PII/guardrails docs for your version.)</p>
+<p><strong>1. Configure PII redaction on both the request and the response.</strong> The request rule protects egress to the provider; the response rule protects the client and logs:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">          </span><span class="c1"># the route from session 1.5</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># ...existing rules/backendRefs from earlier sessions...</span>
+<span class="w">  </span><span class="nt">guardrails</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">request</span><span class="p">:</span><span class="w">                       </span><span class="c1"># redact BEFORE egress to the provider</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pii-redact-in</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PIIRedaction</span>
+<span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Redact</span><span class="w">             </span><span class="c1"># mask, don&#39;t block</span>
+<span class="w">        </span><span class="nt">entities</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CREDIT_CARD</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">EMAIL</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">PHONE_NUMBER</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">US_SSN</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">response</span><span class="p">:</span><span class="w">                      </span><span class="c1"># redact BEFORE the client + logs see it</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pii-redact-out</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PIIRedaction</span>
+<span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Redact</span>
+<span class="w">        </span><span class="nt">entities</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">CREDIT_CARD</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">EMAIL</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">PHONE_NUMBER</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">US_SSN</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+<p><strong>2. Apply it and confirm the route is accepted:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>ai-route-pii.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Send a prompt containing fake PII</strong> (a test card number and email) and capture the completion:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,</span>
+<span class="s1">       &quot;content&quot;:&quot;Draft a reply about the charge on card 4111 1111 1111 1111, reply to jane.doe@example.com.&quot;}]}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Confirm the PII was redacted before egress AND in the gateway's logs.</strong> The provider-bound request should show a placeholder, not the raw value:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the gateway&#39;s access/guardrail logs must show the masked form, never the raw card/email</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>deploy/ai-gateway<span class="w"> </span>--tail<span class="o">=</span><span class="m">50</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-iE<span class="w"> </span><span class="s2">&quot;redact|&lt;CREDIT_CARD&gt;|&lt;EMAIL&gt;&quot;</span>
+<span class="c1"># you should see the masked tokens (e.g. &lt;CREDIT_CARD&gt;, &lt;EMAIL&gt;) — and NOT 4111 1111 1111 1111</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>If you configured only the <code>response</code> rule, this lab will <em>look</em> fine in the completion while the raw card number was already sent to the provider on the request — the leak you can't see. Verify the <strong>request</strong> side explicitly: grep the egress/guardrail log for the raw digits and confirm they're absent. A clean response is not evidence the request was clean.</p>
+</div>
+<p><strong>What success looks like:</strong> the prompt's card number and email appear <strong>only as placeholders</strong> (e.g. <code>&lt;CREDIT_CARD&gt;</code>, <code>&lt;EMAIL&gt;</code>) in what egresses to the provider and in the gateway's logs/traces — the raw values never leave your boundary and never land in an audit record — while the model still returns a useful, coherent reply built around the masked tokens.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Redacting the response only.</strong> The raw PII already egressed to the provider on the request. Always configure the request (egress) rule too — this is the single most common and most damaging miss.</li>
+<li><strong>Masking logs but not the payload.</strong> A clean log line doesn't mean a clean request. Log scrubbing and request redaction are separate; verify the provider-bound body, not just the trace.</li>
+<li><strong>Entity gaps.</strong> Redaction covers the entity types you enable. If you mask cards and emails but not SSNs or API keys, the unlisted types flow through untouched. Enumerate every category you care about and revisit the list.</li>
+<li><strong>Over-redaction breaking answers.</strong> Mask too aggressively and the model loses context it needed (e.g. an order ID it should echo back). Tune entities and placeholders so the completion stays useful.</li>
+<li><strong>Assuming redaction replaces auth or guardrails.</strong> It hides sensitive <em>values</em>; it doesn't authenticate the caller (4.1) or stop an injection (4.2). It's one layer in the band, not a substitute for the others.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Add an entity type the defaults miss — an internal employee ID format or an API-key pattern specific to your org — as a custom redaction rule, then send a prompt containing it and confirm it's masked on egress and in the logs. Most real DLP gaps aren't the standard cards-and-emails the built-in detectors already catch; they're the org-specific identifiers no off-the-shelf classifier knows about.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now redact PII at the gateway on <strong>both</strong> directions — masking sensitive values on the request before they egress to a provider and on the response before they reach the client or your logs — using the gateway as the single chokepoint that covers every app and model. You can also articulate the two traps: response-only redaction still leaks to the provider, and masking logs is not removing from the payload.</p>
+<p><strong>Next — 4.4:</strong> redaction hides sensitive data; the last guardrail judges the <em>content itself</em>. You'll add <strong>content safety and output moderation</strong> so the gateway can refuse or flag toxic, unsafe, or policy-violating completions before they reach a user.</p><div class="session-complete" data-session-code="4.3"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 4.3 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-16.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">4.2 · AI guardrails: prompt-injection &amp; jailbreak defense</span></a>
+<a class="next" href="session-18.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">4.4 · Content safety &amp; output moderation</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

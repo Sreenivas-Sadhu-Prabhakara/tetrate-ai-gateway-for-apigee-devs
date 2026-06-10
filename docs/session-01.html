@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.1 What an AI gateway is — and why 'just call OpenAI' stops working · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li class="active" data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="1">
+      <figure class="hero"><img src="assets/heroes/part-1.svg" alt="A crescent moon at first rise" loading="lazy"><figcaption class="hero-cap"><span class="hero-eyebrow">Part 1</span><span class="hero-headline">Why an AI gateway exists</span></figcaption></figure><div class="crumbs"><span class="crumb-part">Part 1 — Why an AI gateway exists</span><span class="crumb-sep">·</span><span class="crumb-code">Session 1.1</span><span class="crumb-sep">·</span><span class="crumb-min">~35 min</span></div><div class="builds-on builds-on--start"><span class="builds-on-tag">Start here</span> This is the first session — nothing to build on yet.</div><h1 id="11-what-an-ai-gateway-is-and-why-just-call-openai-stops-working">1.1 — What an AI gateway is — and why "just call OpenAI" stops working</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>An <strong>AI gateway</strong> is an API-management product for LLM and agent traffic: one governed edge that sits between your apps and the model providers. By the end of this session you can explain what it adds over calling a provider SDK directly from each service, and why that direct approach quietly falls apart once you have many apps, many models, and a finance team asking questions.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Right now, somewhere in your estate, a Spring service does this: reads <code>OPENAI_API_KEY</code> from config, builds a <code>ChatClient</code>, calls <code>chat.completions</code>, maybe wraps it in a Resilience4j retry, logs the prompt, and ships. It works. So does the next service. And the next. That's exactly the problem.</p>
+<p>Every one of those services now independently owns: a <strong>provider key</strong> (rotated how?), a <strong>retry/fallback</strong> policy (consistent with the others?), <strong>logging</strong> that may be leaking prompts containing PII, and <strong>zero shared answer</strong> to "how many tokens did the payments team burn on GPT-class models last week, and were they even allowed to use that model?" Multiply by every service and every model, and you have the same sprawl an API gateway was invented to solve — except the payload is now <strong>tokens, prompts, and tool calls</strong>, and the cost is metered by the <em>thousand tokens</em>, not the request.</p>
+<p>An AI gateway is the one place those cross-cutting concerns live. Your apps make a normal, OpenAI-shaped call to <strong>one endpoint</strong>; the gateway authenticates the caller, meters tokens, enforces budgets and which models are allowed, redacts PII, applies guardrails, routes to the right provider (with fallback), and records every call for cost and audit.</p>
+<h2 id="the-concept">The concept</h2>
+<p>The shape is the same one you already trust from API management: a request enters one edge, policies run, a backend is called, and the response comes back metered. Hold this silhouette — we dissect each box in later sessions:</p>
+<figure class="svg-figure">
+<img src="assets/svg/ai-request-path.svg" alt="Your app calls one endpoint; the AI gateway authenticates, meters tokens, applies guardrails, routes to a provider, and meters the response back.">
+<figcaption>The AI gateway request path. Your app speaks one OpenAI-compatible API; the gateway governs the call and fans out to providers. This is the "you are here" map for the whole course.</figcaption>
+</figure>
+
+<p>The mental shift is small but real: you stop thinking <em>"which provider SDK does this service call?"</em> and start thinking <em>"what is </em><em>configured</em><em> to run at the edge, for all of them?"</em> The unit of work becomes a <strong>policy</strong> at the gateway, not a code path in each app.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Don't let "it's just a base-URL change" fool you into skipping the design. <em>Adoption</em> is one line; <em>what the edge enforces</em> — budgets, model access, guardrails — is real policy you have to think through. Teams that flip the base URL and configure nothing have moved the calls but governed nothing.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>You've built this before — for REST. An AI gateway is <strong>Apigee for model traffic</strong>. The proxy that fronted your backend is now an <strong>AIGatewayRoute</strong> fronting model providers; <strong>VerifyAPIKey/OAuthV2</strong> still gate the caller; <strong>Quota</strong> still protects capacity (but counts <strong>tokens</strong>); <strong>API Products</strong> still decide who gets what (but the "what" is <strong>models and tiers</strong>); <strong>Analytics</strong> still tells you who called what (but the dimensions are model, tokens, and cost). If you can explain why a team shouldn't call backends directly without a gateway, you already understand 80% of why they shouldn't call OpenAI directly either.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Think about the boilerplate around every LLM call in your services: the key in <code>application.yml</code>, the <code>RestClient</code>/<code>ChatClient</code> timeout and retry, the <code>try/catch</code> that falls back to a cheaper model, the logging interceptor. That's the <strong>same cross-cutting code, copied per service</strong> — exactly the stuff you'd normally push into a filter, an aspect, or a shared library. The gateway is that shared library, but as <strong>operated infrastructure</strong>: you point <code>spring.ai.openai.base-url</code> at it and delete the rest.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>Two things have no clean Apigee or Spring equivalent, and they're the reason this course exists:</p>
+<ol>
+<li><strong>The cost unit is non-deterministic.</strong> A REST call is one unit against a quota. An LLM call costs a <em>variable</em> number of tokens you only know <strong>after</strong> the model responds. Rate limiting, budgets, and caching all have to reason about that — your per-pod <code>RateLimiter</code> and fixed <code>count</code> quotas simply can't.</li>
+<li><strong>The payload is natural language and tools.</strong> "Validate the input" used to mean a schema. Now it means defending against <strong>prompt injection</strong>, redacting <strong>PII from free text</strong>, and authorizing <strong>tool calls</strong> an agent decides to make at runtime. There's no <code>@Valid</code> for that.</li>
+</ol>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<p>You set up a real gateway in 1.4 (managed) and 1.5 (self-hosted). This first lab needs no infrastructure — it's the highest-leverage 20 minutes in the course: see your own sprawl, and preview the one-line change that ends it.</p>
+<div class="lab">
+<h4 id="lab-inventory-your-direct-llm-calls">Lab — inventory your direct LLM calls</h4>
+<p><strong>1. Find every place your code calls a model provider directly.</strong> In a Spring estate that's usually a base URL or an SDK client. Grep for the tells:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># provider SDKs, base URLs, and keys scattered across services</span>
+grep<span class="w"> </span>-rEn<span class="w"> </span><span class="s2">&quot;api\.openai\.com|OpenAiChatModel|spring\.ai\.openai|OPENAI_API_KEY|anthropic|bedrockruntime&quot;</span><span class="w"> </span>.<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--include<span class="o">=</span>*.java<span class="w"> </span>--include<span class="o">=</span>*.yml<span class="w"> </span>--include<span class="o">=</span>*.yaml<span class="w"> </span>--include<span class="o">=</span>*.properties
+</code></pre></div>
+
+<p><strong>2. For each hit, tally what that call site owns itself</strong> — be honest, most own all of it:</p>
+<div class="codehilite"><pre><span></span><code>[ ] the provider API key (and its rotation)
+[ ] retry / timeout / fallback to another model
+[ ] which model name is hard-coded
+[ ] prompt/response logging (PII risk?)
+[ ] any per-user or per-team cost limit (usually: none)
+[ ] any guardrail on input or output (usually: none)
+</code></pre></div>
+
+<p><strong>3. Preview the change that's coming.</strong> Here is the <em>only</em> code difference between calling OpenAI directly and calling it through a gateway — the base URL. Today (direct):</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># application.yml — direct to the provider, key in your app</span>
+<span class="nt">spring</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ai</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">openai</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://api.openai.com</span>
+<span class="w">      </span><span class="nt">api-key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${OPENAI_API_KEY}</span>
+</code></pre></div>
+
+<p>In session 1.4 it becomes this — your app no longer holds a provider key at all:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># application.yml — through the gateway; the gateway holds the provider key</span>
+<span class="nt">spring</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ai</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">openai</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://router.tetrate.ai</span><span class="w">     </span><span class="c1"># the gateway endpoint</span>
+<span class="w">      </span><span class="nt">api-key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${GATEWAY_KEY}</span><span class="w">                  </span><span class="c1"># a gateway key, not a provider key</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The provider key must leave the app <em>entirely</em> — not linger in <code>application.yml</code> "as a backup." Every app that still holds a real provider key can call the provider directly and bypass every gateway policy. Adoption isn't done until the app holds only a <strong>gateway</strong> key.</p>
+</div>
+<p><strong>What success looks like:</strong> a written list of every direct call site and the concerns each duplicates, plus a clear understanding that adopting the gateway is, from the app's side, a <strong>one-line base-URL change</strong> — everything else you listed moves to the edge.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're ready to move on when you can answer, without looking back:</p>
+<ul>
+<li>What does an AI gateway add over a direct provider call? <em>(One governed edge for identity, token metering, budgets, model access, guardrails, routing, and audit — instead of each service owning all of it.)</em></li>
+<li>Why can't your existing per-pod rate limiter govern LLM cost? <em>(Cost is tokens, known only after the response, and counted across the whole fleet — not per request, per pod.)</em></li>
+<li>From an app's perspective, how invasive is adoption? <em>(A base-URL change; the provider key leaves your app entirely.)</em></li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>"We already have an API gateway, so we're covered."</strong> A classic API gateway can proxy the HTTP call, but it doesn't understand tokens, can't meter cost, and has no concept of prompts or tools. <em>(Symptom: a quota that counts requests while your bill is measured in tokens.)</em></li>
+<li><strong>Treating the LLM call as just another REST call.</strong> It's variable-cost and natural-language — the two things that make AI governance hard. Designing as if it's a fixed-cost JSON endpoint is how budgets and guardrails get skipped.</li>
+<li><strong>Putting business logic at the AI edge.</strong> The gateway governs <em>traffic</em>; your domain logic and prompt construction stay in the app. <em>(Symptom: the gateway "knows" about your use case.)</em></li>
+<li><strong>Letting provider keys stay in apps "for now."</strong> Every app that holds a key is a rotation and leak liability the gateway exists to remove.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Take the inventory from the lab and estimate one number you almost certainly can't produce today: <strong>token spend per team, last month.</strong> Try to reconstruct it from logs. The difficulty of that exercise — and it will be difficult — is the single clearest business case for the gateway you'll build in this course.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now say what an AI gateway is (an API-management product for model traffic), why direct per-service calls don't scale (duplicated concerns, no cost governance, leaking prompts), and how small adoption is from the app side (a base-URL change). You also have a concrete inventory of your own sprawl — the backlog this course works through.</p>
+<p><strong>Next — 1.2:</strong> map the AI gateway onto the <strong>Apigee gateway you already know</strong>, object by object — and pin down the handful of things that are genuinely new because the payload is tokens, prompts, and tools.</p><div class="session-complete" data-session-code="1.1"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 1.1 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="index.html"><span class="pager-dir">&larr;</span><span class="pager-label">Overview</span></a>
+<a class="next" href="session-02.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">1.2 · The AI gateway vs the API gateway you know</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

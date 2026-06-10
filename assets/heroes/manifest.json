@@ -1,0 +1,18 @@
+{
+  "_comment": "Hero image slots. build.py reads `src` and overlays the eyebrow/headline as crisp HTML. Placeholders are abstract moon SVGs (tools/gen_placeholders.py). To use generated raster art, drop a PNG into assets/heroes/ and point `src` at it.",
+  "splash": {
+    "src": "assets/heroes/splash.svg",
+    "alt": "A full moon over a midnight horizon scattered with stars",
+    "eyebrow": "Tetrate AI Gateway · for Apigee & Java developers",
+    "headline": "Govern LLMs and AI agents at the edge — anchored to what you already know"
+  },
+  "parts": {
+    "1": {"src": "assets/heroes/part-1.svg", "alt": "A crescent moon at first rise", "eyebrow": "Part 1", "headline": "Why an AI gateway exists"},
+    "2": {"src": "assets/heroes/part-2.svg", "alt": "A waxing moon over a still horizon", "eyebrow": "Part 2", "headline": "The unified multi-provider gateway"},
+    "3": {"src": "assets/heroes/part-3.svg", "alt": "A bright moon with a measured halo", "eyebrow": "Part 3", "headline": "Governance: tokens, cost & quotas"},
+    "4": {"src": "assets/heroes/part-4.svg", "alt": "A near-full moon behind a guarded sky", "eyebrow": "Part 4", "headline": "Security & guardrails"},
+    "5": {"src": "assets/heroes/part-5.svg", "alt": "A full moon over a constellation of nodes", "eyebrow": "Part 5", "headline": "The agentic turn: MCP & tools"},
+    "6": {"src": "assets/heroes/part-6.svg", "alt": "A moon over a calm, level horizon", "eyebrow": "Part 6", "headline": "Observability & operations"},
+    "7": {"src": "assets/heroes/part-7.svg", "alt": "A full moon at zenith, brightest of the set", "eyebrow": "Part 7", "headline": "Capstone — a governed agent platform"}
+  }
+}

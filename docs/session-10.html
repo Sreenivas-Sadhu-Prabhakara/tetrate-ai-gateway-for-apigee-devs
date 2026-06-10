@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.5 Beyond chat: embeddings, multimodal & other endpoints · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li class="active" data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="10">
+      <div class="crumbs"><span class="crumb-part">Part 2 — The unified multi-provider gateway</span><span class="crumb-sep">·</span><span class="crumb-code">Session 2.5</span><span class="crumb-sep">·</span><span class="crumb-min">~40 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-09.html">2.4 · Fallback, retries &amp; failover across providers</a></div><h1 id="25-beyond-chat-embeddings-multimodal-other-endpoints">2.5 — Beyond chat: embeddings, multimodal &amp; other endpoints</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Chat completions are not the only model traffic in your estate — <strong>embeddings</strong> power every RAG and search pipeline, and <strong>multimodal</strong> calls are growing. The same gateway routes all of them: one OpenAI-compatible endpoint, one approved catalog, one set of policies. By the end you can send an <strong>embeddings</strong> request through the gateway, confirm it's routed and metered, and understand why embeddings need their own metering thinking.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>If only your <code>ChatClient</code> goes through the gateway, you've governed the visible half of your AI traffic and left the rest ungoverned. The unglamorous truth is that <strong>embeddings often dominate by volume</strong>: every document you ingest for RAG, every user query that hits a vector search, every re-index of a knowledge base is an embeddings call. Those run in batch loops, thousands at a time, and if they bypass the gateway they bypass your catalog, your budgets, your audit — the exact governance you spent Part 2 building.</p>
+<p>The good news is there's almost nothing new to learn. Embeddings, multimodal, audio, and image endpoints are just <strong>different operations on the same OpenAI-compatible contract</strong>: <code>/v1/embeddings</code>, <code>/v1/chat/completions</code>, and friends. The gateway already fronts that contract. Routing a non-chat call is the same <code>AIGatewayRoute</code> machinery from 2.3 — match the model name, pick an approved backend — pointed at an embeddings model instead of a chat model. Your <code>EmbeddingClient</code> changes its base URL exactly the way your <code>ChatClient</code> did, and your whole vector pipeline inherits metering, the approved catalog, and the failover you built in 2.4 <em>for free</em>.</p>
+<p>The one place this genuinely differs is <strong>metering</strong>, and it's a trap worth naming up front. Chat is billed on input <em>and</em> output tokens; an embeddings call has <strong>no completion</strong> — it returns vectors, not generated text, so its cost is <strong>input tokens only</strong>. Any budget, rate limit, or chargeback report keyed on <em>output</em> or <em>total-with-output</em> tokens will systematically under-count embeddings, sometimes to nearly zero. The endpoint is the same shape; the cost model is not.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>These are <strong>different operations (resources/verbs) on the same API Product</strong>, exactly like an Apigee proxy exposing <code>/search</code>, <code>/orders</code>, and <code>/orders/{id}</code> under one basepath with per-resource RouteRules. <code>/v1/embeddings</code> and <code>/v1/chat/completions</code> are distinct paths scoped by the route, the way proxy <em>resources</em> (the conditional flows in your <code>proxies/default.xml</code>) scope behaviour per path+verb. You'd never put each operation behind its own proxy and key; you put them under one product and let RouteRules dispatch. Same here: one gateway, one credential surface, route rules that send each endpoint to the right backend — and the same analytics dimensions apply, just remember the <strong>unit differs by operation</strong> (embeddings meter input only).</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>In Spring AI you already hold two beans against the same provider: an <code>EmbeddingClient</code> (or <code>EmbeddingModel</code>) and a <code>ChatClient</code>, configured from the same <code>spring.ai.openai.*</code> block. When you repointed <code>base-url</code> at the gateway in 1.4, you may have only redirected the chat client and left embeddings pointing at the provider — splitting your governance in half without noticing. Point <strong>both</strong> beans at the gateway and your vector-ingest jobs, your RAG retrieval path, and your chat path all flow through one governed edge. The embedding pipeline that feeds your vector store inherits the catalog, the token limits, and the cross-vendor failover with no extra code — it was always the same client family, just a different operation.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>The Apigee instinct says "different operations are interchangeable units against the same quota" — and here they are emphatically <strong>not the same unit</strong>. A chat call and an embeddings call can both succeed against the same product, but one is metered on input+output tokens and the other on input only, so treating them as fungible against a single token budget mis-prices both. And the Spring instinct that "it's the same provider, so it's the same governance" misses that a multimodal request may carry an <strong>image or audio payload</strong>, not text — sizes, timeouts, and even what "a token" means shift, so the request-shape assumptions baked into your chat-tuned policies (max body size, per-try timeout from 2.4) won't automatically fit. Same contract, genuinely different payload economics.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Every endpoint speaks the same OpenAI-compatible API and rides the same route machinery — but <strong>what each is metered on differs</strong>, and that difference drives your budgets and limits downstream:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>OpenAI-compatible path</th>
+<th>Typical payload</th>
+<th>Metered on</th>
+<th>Governance note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chat / completions</strong></td>
+<td><code>/v1/chat/completions</code></td>
+<td>text in → text out</td>
+<td><strong>input + output</strong> tokens</td>
+<td>the default everything in Part 3 assumes</td>
+</tr>
+<tr>
+<td><strong>Embeddings</strong></td>
+<td><code>/v1/embeddings</code></td>
+<td>text in → vectors out</td>
+<td><strong>input tokens only</strong> (no completion)</td>
+<td>high volume; output-keyed limits under-count it</td>
+</tr>
+<tr>
+<td><strong>Multimodal (vision)</strong></td>
+<td><code>/v1/chat/completions</code></td>
+<td>text + image in → text out</td>
+<td>input (incl. image tokens) + output</td>
+<td>larger bodies; revisit max-body / timeout from 2.4</td>
+</tr>
+<tr>
+<td><strong>Audio (speech / transcribe)</strong></td>
+<td><code>/v1/audio/*</code></td>
+<td>audio ↔ text</td>
+<td>seconds or characters, <strong>not tokens</strong></td>
+<td>token budgets may not apply at all — meter by the vendor's unit</td>
+</tr>
+<tr>
+<td><strong>Image generation</strong></td>
+<td><code>/v1/images/*</code></td>
+<td>text in → image out</td>
+<td><strong>per image</strong>, by size/quality</td>
+<td>not token-based; needs its own cost dimension</td>
+</tr>
+</tbody>
+</table>
+<p>The shape is identical to 2.3: the gateway lifts the <code>model</code> from the body into <code>x-ai-eg-model</code>, a route rule matches it to an approved <code>AIServiceBackend</code>, and policies apply. The <em>only</em> thing you add per endpoint is a route rule pointing at the right backend (an embeddings model, a vision model) — the catalog, the credential handling (2.2), and the failover (2.4) come along unchanged. The work is almost entirely in <strong>getting the metering dimension right per endpoint</strong>, not in the routing.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Embeddings are <strong>input-token metered — there is no output completion</strong> — so any budget or rate limit keyed only on <em>output</em> tokens (or on <code>llm_total_token</code> where "total" is computed as input+output and your embeddings provider reports output as <code>0</code>) will count a massive embeddings re-index as nearly <strong>free</strong>, then act surprised at the bill. When you build token limits in Part 3, key embeddings traffic on <strong>input/prompt tokens</strong> explicitly, and budget it separately from chat. The failure is silent: the dashboard looks calm while a batch ingest quietly burns through input-token spend no output-based counter ever sees.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-route-and-meter-an-embeddings-request-through-the-gateway">Lab — route and meter an embeddings request through the gateway</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway and <code>Gateway</code> from 1.5, a working credential (2.2), <code>kubectl</code>, and <code>$NAMESPACE</code> / <code>$GATEWAY_HOST</code> exported. The goal: add an <strong>embeddings</strong> backend + route rule alongside your existing chat route, send a real embeddings call, and confirm it's routed and metered. (Field names track the Envoy AI Gateway version — verify the <code>schema</code> and route shape against the supported-endpoints docs for your release.)</p>
+<p><strong>1. Declare an embeddings backend.</strong> It's an ordinary <code>AIServiceBackend</code> — same shape as your chat backend, pointed at an embeddings-capable model:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIServiceBackend</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-embeddings</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OpenAI</span><span class="w">                         </span><span class="c1"># same OpenAI-compatible contract</span>
+<span class="w">  </span><span class="nt">backendRef</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">                         </span><span class="c1"># the Backend (gateway.envoyproxy.io/v1alpha1) from 2.1</span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io</span>
+</code></pre></div>
+
+<p><strong>2. Add an embeddings route rule</strong> beside your chat rule — same route, a new approved catalog entry:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">                   </span><span class="c1"># the Gateway from 1.5</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span><span class="w">                            </span><span class="c1"># existing chat rule (from 2.3) stays</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">Exact</span><span class="p p-Indicator">,</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">x-ai-eg-model</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="nv">chat-default</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">          </span><span class="nt">modelNameOverride</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span><span class="w">                            </span><span class="c1"># NEW: embeddings as an approved catalog entry</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">Exact</span><span class="p p-Indicator">,</span><span class="nt"> name</span><span class="p">:</span><span class="w"> </span><span class="nv">x-ai-eg-model</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="nv">embeddings-default</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-embeddings</span>
+<span class="w">          </span><span class="nt">modelNameOverride</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">text-embedding-3-small</span>
+</code></pre></div>
+
+<p><strong>3. Apply and confirm the route is programmed:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>embeddings-backend.yaml<span class="w"> </span>-f<span class="w"> </span>aigatewayroute.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Send a real embeddings request</strong> to <code>/v1/embeddings</code> through the gateway — note the path and body differ from chat, but the gateway and credential are the same:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/embeddings&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;embeddings-default&quot;,</span>
+<span class="s1">       &quot;input&quot;:&quot;Governance applies to vectors too, not just chat.&quot;}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;{model: .model, dims: (.data[0].embedding | length), usage: .usage}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Look at <code>usage</code> in that response: you'll see <code>prompt_tokens</code> (the input) and <code>total_tokens</code>, but <strong>no <code>completion_tokens</code></strong> — embeddings produce no completion. If your metering reads only <code>completion_tokens</code>, this entire call meters as <strong>zero</strong>. Confirm now that the dimension you intend to budget on (input/prompt tokens) is actually present and non-zero for embeddings <em>before</em> you wire limits in Part 3.</p>
+</div>
+<p><strong>5. Prove it was routed and metered</strong> through the gateway, not sent direct. Check the gateway's telemetry / access logs (full observability is 6.1) for the embeddings model and its token usage:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>deploy/envoy-ai-gateway<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;embeddings-default&quot;</span>
+<span class="c1"># expect: x-ai-eg-model=embeddings-default, a 200, and a non-zero input/prompt token count</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> the curl in step 4 returns a real embedding vector (a non-trivial <code>dims</code> count) through the <strong>gateway</strong> using the <strong>same credential and base URL</strong> as your chat traffic, the <code>usage</code> block shows <strong>input/prompt tokens with no completion tokens</strong>, and the gateway logs the call under <code>embeddings-default</code> — proof your vector pipeline now flows through the governed edge and is metered on the right dimension.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're done when non-chat traffic is as governed as chat:</p>
+<ul>
+<li>An embeddings request to <code>/v1/embeddings</code> with <code>model: embeddings-default</code> returns vectors with a <code>200</code>; an <em>unlisted</em> embeddings model 404s at the route exactly like chat — the catalog applies to all operations, not just chat.</li>
+<li>The response <code>usage</code> for embeddings shows input/prompt tokens and <strong>no completion tokens</strong> — confirming the metering dimension differs from chat and your Part 3 budgets must account for it.</li>
+<li>Both your <code>EmbeddingClient</code> and <code>ChatClient</code> (or the equivalent curl calls) reach the same <code>$GATEWAY_HOST</code> with the same gateway credential — neither still points at a provider directly.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># confirm the embeddings rule is present in the approved catalog:</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s1">&#39;value: embeddings&#39;</span>
+</code></pre></div>
+
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Embeddings still bypass the gateway.</strong> Only the chat client was repointed in 1.4; the embedding/ingest job still hits the provider directly, so a huge volume of traffic is ungoverned and unmetered. <em>(Symptom: vector-store ingest spend appears nowhere in gateway analytics.)</em></li>
+<li><strong>Metering keyed only on output/completion tokens.</strong> Embeddings have none, so they meter as ~zero and silently escape budgets and limits. <em>(Symptom: calm dashboards, a surprising input-token bill.)</em></li>
+<li><strong>Reusing chat policy verbatim for multimodal.</strong> Image/audio payloads are larger; the chat-tuned max-body size or per-try timeout (2.4) rejects or times out big requests. <em>(Symptom: multimodal <code>413</code>/<code>504</code> while chat is fine.)</em></li>
+<li><strong>Assuming all endpoints are token-metered.</strong> Audio and image endpoints meter on seconds, characters, or per-image — token budgets don't map. <em>(Symptom: image-generation spend invisible to any token counter.)</em></li>
+<li><strong>No catalog entry for the new endpoint.</strong> The embeddings model isn't in any route rule, so the call 404s — or worse, an over-broad rule lets an unvetted embeddings model through. Add an explicit, scoped rule.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Wire a small Spring AI RAG flow whose <strong>both</strong> <code>EmbeddingModel</code> and <code>ChatModel</code> point at the gateway: embed a few documents into a vector store, retrieve, then chat over the context — all through one governed edge. Then read the gateway's metering and produce a single number you couldn't get before: <strong>input-token spend on embeddings vs. input+output spend on chat for the same RAG request.</strong> Seeing how much of a RAG pipeline's cost hides in embeddings is the clearest argument for governing non-chat traffic, and the setup you'll meter properly in Part 3.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now route <strong>non-chat endpoints</strong> — embeddings first, then multimodal, audio, and image — through the <em>same</em> governed gateway using the same <code>AIGatewayRoute</code> machinery from 2.3, so your vector and RAG pipelines inherit the catalog, credentials, and failover for free. The one thing that genuinely differs is <strong>metering</strong>: embeddings are input-token-only, and other endpoints meter on entirely non-token units — a distinction your budgets must respect.</p>
+<p><strong>Next — 3.1:</strong> with all your AI traffic now flowing through one edge, you start governing its cost. You'll build <strong>token-based rate limiting</strong> — counting tokens, not requests — per model and per user, the single most important AI-gateway idea and the foundation budgets, tiers, and chargeback all stand on.</p><div class="session-complete" data-session-code="2.5"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 2.5 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-09.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">2.4 · Fallback, retries &amp; failover across providers</span></a>
+<a class="next" href="session-11.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">3.1 · Token-based rate limiting: count tokens, not requests</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

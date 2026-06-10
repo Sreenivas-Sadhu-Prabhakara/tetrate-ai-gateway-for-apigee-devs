@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4.5 Securing the upstream: provider auth, mTLS & egress · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li class="active" data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="19">
+      <div class="crumbs"><span class="crumb-part">Part 4 — Security &amp; guardrails</span><span class="crumb-sep">·</span><span class="crumb-code">Session 4.5</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-18.html">4.4 · Content safety &amp; output moderation</a></div><h1 id="45-securing-the-upstream-provider-auth-mtls-egress">4.5 — Securing the upstream: provider auth, mTLS &amp; egress</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Everything so far secured the <strong>north-bound</strong> leg — the caller reaching the gateway. This session secures the <strong>south-bound</strong> leg — the gateway reaching the provider or tool server. Three controls: upstream <strong>auth</strong> (the gateway injects provider credentials, recap from 2.2), <strong>TLS/mTLS</strong> to the upstream so the connection is encrypted and the upstream is who it claims to be, and an <strong>egress allow-list</strong> so the gateway can <em>only</em> reach the provider hosts you sanctioned. By the end you can restrict egress to approved hosts and prove a request to a rogue host is blocked.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>You spent Part 4 hardening the front door: authenticating callers (4.1), filtering prompts (4.2), redacting PII (4.3), moderating output (4.4). All of that governs traffic <em>into</em> the gateway. None of it governs traffic <em>out</em> of it.</p>
+<p>The gateway-to-provider leg is where the real secrets live and where data actually leaves your perimeter. If that leg is unencrypted, prompts (and the PII you didn't catch) cross the wire in clear. If the gateway trusts any upstream, a DNS hijack or a typo'd hostname silently exfiltrates traffic to an impostor. And if the gateway can dial <em>any</em> host on the internet, an attacker who lands a foothold can use your sanctioned, credentialed gateway as an exfiltration proxy to a destination you never approved. Securing the upstream closes all three.</p>
+<p>The keystone is <strong>where the provider credentials live</strong>. The entire model of this course is that apps hold a <em>gateway</em> key, never a provider key (1.1) — the gateway is the single place that holds the real OpenAI/Anthropic/Bedrock credential and injects it on the way out (2.2). That centralisation is only worth anything if the gateway is genuinely the <strong>only</strong> path with those credentials, on an outbound leg you control end to end.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is the <strong>south-bound trust story you already configure on TargetServers and target endpoints</strong> — just pointed at LLM providers and tool servers instead of REST backends. The pieces map cleanly:</p>
+<table>
+<thead>
+<tr>
+<th>Apigee south-bound</th>
+<th>AI gateway equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TargetServer / target endpoint TLS, truststore</td>
+<td><code>BackendTLSPolicy</code> — CA pinning to the upstream</td>
+</tr>
+<tr>
+<td>Two-way TLS (client keystore on the target)</td>
+<td>mTLS — client cert presented to the provider</td>
+</tr>
+<tr>
+<td>Credential injection (e.g. service-account or key on the target)</td>
+<td><code>BackendSecurityPolicy</code> injects the provider key (2.2)</td>
+</tr>
+<tr>
+<td>Locking targets to known hosts / no open egress</td>
+<td>egress allow-list, deny-by-default</td>
+</tr>
+</tbody>
+</table>
+<p>If you've configured a target SSLInfo with a truststore and restricted a proxy to its TargetServers, you've already built this — for REST targets. The novelty is only the upstream's identity (a model provider) and the credential's nature (a provider API key).</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Each Spring service that calls an external API configures this per service: a <code>RestClient</code>/<code>WebClient</code> with a <strong>truststore</strong> (and a keystore for mTLS) so it trusts the right upstream, a credential pulled from config, and — if your platform is mature — an <strong>egress allow-list</strong> at the sidecar or <code>NetworkPolicy</code> so the pod can only reach sanctioned hosts. The gateway <strong>centralises all three</strong>. Instead of every service shipping its own truststore, its own provider key, and its own egress rules (and drifting), the gateway holds the credential, pins the upstream, and enforces egress once. You delete the per-service south-bound config the same way you deleted the per-service provider key in 1.1.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>For a REST backend, "egress" is a network nicety — the service still works if you skip it. Here, the allow-list is a <strong>data-exfiltration control wired to where your most sensitive payloads and your only provider credentials sit</strong>. The blast radius is different: a foothold in a REST service leaks that service's data; a foothold in (or around) the AI gateway, if egress is open, turns a <em>sanctioned, credentialed</em> path into an exfiltration proxy for prompts, PII, and tool results across your whole estate. Treat south-bound egress here as a security boundary, not the optional hardening it often is for plain microservices.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>North-bound auth proves <em>who is calling the gateway</em>; south-bound controls prove <em>that the gateway reaches only sanctioned providers, encrypted, with the right credential injected</em>. The egress allow-list is the new lock:</p>
+<pre class="mermaid">flowchart LR
+  app[&quot;Your app / agent&lt;br/&gt;(holds GATEWAY_KEY)&quot;] --&gt;|&quot;north-bound:&lt;br/&gt;caller auth (4.1)&quot;| gw
+
+  subgraph gw[&quot;AI gateway&quot;]
+    auth[&quot;BackendSecurityPolicy&lt;br/&gt;injects provider credential (2.2)&quot;]
+    egress[&quot;egress allow-list&lt;br/&gt;(approved hosts only)&quot;]
+    auth --&gt; egress
+  end
+
+  egress --&gt;|&quot;south-bound: mTLS,&lt;br/&gt;provider key injected&quot;| ok[&quot;api.openai.com ✓&lt;br/&gt;(approved)&quot;]
+  egress -.-&gt;|&quot;blocked&quot;| bad[&quot;evil.example.com ✗&lt;br/&gt;(not on allow-list)&quot;]</pre>
+<p>Three layers stack on the south-bound leg. <strong>Upstream auth</strong> — <code>BackendSecurityPolicy</code> (2.2) attaches the provider API key or cloud credential to the outbound request, so the app never holds it. <strong>Transport security</strong> — a <code>BackendTLSPolicy</code> pins the upstream's CA and, for mTLS, presents a client certificate, so the connection is encrypted and the upstream is authenticated, not just trusted by hostname. <strong>Egress restriction</strong> — the gateway's allowed destinations are an explicit allow-list of provider/tool hosts; anything not on it is refused at the gateway, so even a compromised route or a mistyped backend can't reach an unsanctioned endpoint.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The egress allow-list is <strong>defeated the instant a provider key lives in one of your apps.</strong> If any service still holds a real OpenAI key, that service can call <code>api.openai.com</code> directly — bypassing the gateway, its budgets (3.2), its guardrails (4.2–4.4), and this very allow-list. A leaked app key is then a direct line to the provider that no gateway policy can see or stop. Egress control is only as strong as your guarantee that the <strong>gateway is the sole holder of provider credentials</strong>. Audit for stray keys (the 1.1 inventory) <em>before</em> you trust the allow-list, or you've locked the front door and left the credential under the mat.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-restrict-egress-to-approved-provider-hosts">Lab — restrict egress to approved provider hosts</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway from 1.5 with an <code>AIServiceBackend</code> and a <code>BackendSecurityPolicy</code> injecting your provider key (from 2.2), plus <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, <code>$GATEWAY_KEY</code>, and <code>kubectl</code>. (Egress / TLS field names track your Envoy Gateway release — verify against the docs for your version.)</p>
+<p><strong>1. Define the approved-hosts allow-list.</strong> Restrict what the gateway is permitted to dial to your sanctioned provider host(s) only — here, OpenAI:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTrafficPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">provider-egress-allowlist</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gateway</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">                </span><span class="c1"># the Gateway from session 1.5</span>
+<span class="w">  </span><span class="nt">egress</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">allowedHosts</span><span class="p">:</span><span class="w">                     </span><span class="c1"># the ONLY destinations the gateway may reach</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.openai.com</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.anthropic.com</span>
+<span class="w">    </span><span class="nt">defaultAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deny</span><span class="w">               </span><span class="c1"># everything not listed is refused</span>
+</code></pre></div>
+
+<p><strong>2. Pin transport security to the approved upstream</strong> so the connection is encrypted and the upstream CA is verified (add a client cert here for full mTLS):</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTLSPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-tls</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">                    </span><span class="c1"># the AIServiceBackend&#39;s upstream</span>
+<span class="w">  </span><span class="nt">validation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api.openai.com</span>
+<span class="w">    </span><span class="nt">caCertificateRefs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">provider-ca-bundle</span><span class="w">      </span><span class="c1"># the CA you trust for the provider</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><code>defaultAction: Deny</code> is the whole point — an allow-list with a default of <em>allow</em> governs nothing. And be careful with wildcards: an over-broad entry like <code>*.example.com</code> re-opens the exfiltration path you just closed. List exact provider hostnames, deny by default, and add a host only when there's an approved provider behind it.</p>
+</div>
+<p><strong>3. Apply both policies and confirm they're accepted:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>provider-egress-allowlist.yaml<span class="w"> </span>-f<span class="w"> </span>openai-tls.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>provider-egress-allowlist<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Prove an approved call still works:</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;approved provider -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;chat-default&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;ping&quot;}]}&#39;</span>
+<span class="c1"># → approved provider -&gt; HTTP 200</span>
+</code></pre></div>
+
+<p><strong>5. Prove a rogue upstream is blocked.</strong> Point a test backend/route at an unapproved host and call through it; the gateway must refuse to dial it:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># a route whose AIServiceBackend resolves to evil.example.com (not on the allow-list)</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;rogue host -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;rogue-route&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;ping&quot;}]}&#39;</span>
+<span class="c1"># → rogue host -&gt; HTTP 502/503  (gateway refused the unapproved egress)</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> the approved provider call returns <code>200</code>, the rogue-host call fails at the gateway because the destination isn't on the allow-list, and at no point did a provider credential leave the gateway. The gateway is now the <em>only</em> credentialed path out, encrypted to a verified upstream, and unable to reach anything you didn't sanction.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Provider keys still in apps.</strong> The single biggest hole: a leaked app key calls the provider directly and bypasses egress control, budgets, and every guardrail. The gateway must be the <em>only</em> holder of provider credentials.</li>
+<li><strong>Allow-list defaults to allow.</strong> Without <code>defaultAction: Deny</code>, the list is decorative — anything unlisted still gets out. Deny by default, permit the exact hosts.</li>
+<li><strong>No upstream TLS verification.</strong> Encrypting without verifying the upstream CA/hostname leaves you open to a hijacked or impersonated provider endpoint. Pin the CA (and use mTLS where the provider supports it).</li>
+<li><strong>Wildcard egress entries.</strong> <code>*.somecloud.com</code> re-opens the exfiltration path. Prefer exact hostnames; treat every wildcard as a decision to defend.</li>
+<li><strong>Forgetting tool servers.</strong> Agentic tool backends (Part 5) are upstreams too. An allow-list covering only model providers leaves MCP/tool egress wide open.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Stand up a deliberate exfiltration test: a route whose backend points at a host you control but did <em>not</em> add to the allow-list, and confirm the gateway refuses to reach it. Then flip <code>defaultAction</code> to <code>Allow</code> and watch the same request succeed — the gap between those two outcomes is precisely the value of deny-by-default egress. Finish by grepping your estate (the 1.1 inventory) one more time for any service still holding a real provider key; until that returns nothing, your allow-list has a bypass.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now secure the south-bound leg: inject provider credentials at the gateway (2.2), encrypt and verify the upstream with <code>BackendTLSPolicy</code> / mTLS, and restrict egress to an explicit allow-list of sanctioned provider and tool hosts with deny-by-default. Combined with Part 4's north-bound controls, both directions are governed and the gateway is the single credentialed path to your providers. That completes Part 4.</p>
+<p><strong>Next — 5.1:</strong> the workload changes shape. A chat completion is one request; an <strong>agent</strong> is a loop of them — the model calls a tool, reads the result, calls another, and only then answers. You'll see what that does to budgets, guardrails, and identity when a single user prompt fans out into many governed round-trips.</p><div class="session-complete" data-session-code="4.5"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 4.5 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-18.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">4.4 · Content safety &amp; output moderation</span></a>
+<a class="next" href="session-20.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">5.1 · From chat to agents: what changes for the gateway</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

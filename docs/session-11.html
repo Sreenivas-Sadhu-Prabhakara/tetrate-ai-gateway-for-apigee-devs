@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.1 Token-based rate limiting: count tokens, not requests · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li class="active" data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="11">
+      <figure class="hero"><img src="assets/heroes/part-3.svg" alt="A bright moon with a measured halo" loading="lazy"><figcaption class="hero-cap"><span class="hero-eyebrow">Part 3</span><span class="hero-headline">Governance: tokens, cost &amp; quotas</span></figcaption></figure><div class="crumbs"><span class="crumb-part">Part 3 — Governance: tokens, cost &amp; quotas</span><span class="crumb-sep">·</span><span class="crumb-code">Session 3.1</span><span class="crumb-sep">·</span><span class="crumb-min">~55 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-10.html">2.5 · Beyond chat: embeddings, multimodal &amp; other endpoints</a></div><h1 id="31-token-based-rate-limiting-count-tokens-not-requests">3.1 — Token-based rate limiting: count tokens, not requests</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>The single most important AI-gateway idea: you rate-limit on <strong>tokens</strong>, not requests. By the end of this session you can configure a distributed limit on input + output tokens, scoped per model and per user, using the gateway's token metering — so one user firing a few enormous completions can't blow the budget while ten thousand tiny calls sail through.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>A request-based limit is a lie for AI traffic. "100 requests/minute" treats a 20-token "hi" and a 60,000-token document summarisation as equal, even though one costs <strong>3,000×</strong> the other. Cost and provider capacity are measured in tokens, so your limit has to be too.</p>
+<p>This is also where the <em>variable, after-the-fact</em> nature of LLM cost finally bites. You don't know a call's token count when it arrives — only after the model responds. So the gateway meters usage from the <strong>response</strong>, attributes it to the right caller and model, and decrements a distributed counter. That's a thing no per-pod limiter can do correctly, and it's the foundation every later governance feature (budgets, tiers, chargeback) builds on.</p>
+<h2 id="the-concept">The concept</h2>
+<p>Token rate limiting is one layer in the governance stack — the one that turns raw token usage into an enforced limit, keyed by <strong>who</strong> (a user/team identity) and <strong>what</strong> (the model):</p>
+<figure class="svg-figure">
+<img src="assets/svg/governance-stack.svg" alt="A request descends through identity, model entitlement, token rate limit, budget attribution, and guardrails; token usage is metered to cost.">
+<figcaption>The token rate-limit layer reads usage the gateway extracts from each response and counts it against a distributed budget, keyed by model and identity. Budgets (3.2) and tiers (3.3) build directly on this counter.</figcaption>
+</figure>
+
+<p>Mechanically, Envoy AI Gateway leans on Envoy Gateway's <strong>global rate limit</strong> with <strong>cost</strong>: the AI Gateway filter inserts an <code>x-ai-eg-model</code> header (the model name, pulled from the request body) and exposes the response's token usage as metadata. A <code>BackendTrafficPolicy</code> then defines a rule keyed on that model header plus a user identity, whose <strong>cost is the token count</strong> rather than a flat <code>1</code>. "Global" matters: the counter is shared across every gateway replica, so the limit is real fleet-wide, not per instance.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>"Global" is load-bearing. If you reach for a per-replica limiter instead of the gateway's global counter, your real limit is silently <code>limit × replicas</code> and it shifts every time the gateway autoscales — the exact bug token budgets exist to prevent.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is <strong>Apigee Quota, with tokens as the unit.</strong> Everything you know transfers: a distributed counter over an interval, keyed by an identifier (there, <code>client_id</code>; here, user + model), enforced fleet-wide. The one change is the <em>count source</em>: instead of <code>+1</code> per call, the gateway does <code>+N</code> where N is the tokens the model reported — the same way you'd drive Quota from a <code>countRef</code> instead of a fixed <code>count</code>, except the gateway computes N for you from the response.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>You've reached for Bucket4j or a Resilience4j <code>RateLimiter</code> around an LLM call and felt it not fit — because it's <strong>per pod</strong> (so your real limit is <code>limit × replicas</code>, and it drifts as you autoscale) and it can only count <strong>calls</strong>, not the tokens each call actually cost. The gateway's limit is <strong>distributed</strong> (one shared counter) and <strong>usage-based</strong> (it counts the tokens the model returned). It's the limiter you wanted but couldn't build at the application layer.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A request quota decides admission <em>before</em> the work runs. A token limit can only know the true cost <em>after</em> the model responds — so a single in-flight request can overshoot the budget by its own size before the counter catches up. You govern the <em>next</em> request, not the current one. That's acceptable and normal, but if you reason about it like an Apigee request quota ("nothing over the line ever runs"), the overshoot will surprise you. Pair token limits with a sane <strong>max-tokens</strong> ceiling so a single call can't overshoot wildly.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-cap-tokens-per-user-per-model">Lab — cap tokens per user, per model</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway from 1.5 with an <code>AIGatewayRoute</code> serving a model (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), and <code>kubectl</code>. Callers pass a <code>x-user-id</code> header (you enforce real identity in 4.1).</p>
+<p><strong>1. Define a token budget</strong> with a <code>BackendTrafficPolicy</code> whose rate-limit cost comes from token usage, keyed by user and the gateway's model header. (Field names track the Envoy AI Gateway version — verify against the usage-based rate-limiting docs for your release.)</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTrafficPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token-budget</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">          </span><span class="c1"># the route from session 1.5</span>
+<span class="w">  </span><span class="nt">rateLimit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Global</span>
+<span class="w">    </span><span class="nt">global</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">clientSelectors</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-user-id</span><span class="w">          </span><span class="c1"># who</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span><span class="w">       </span><span class="c1"># which model (inserted by the gateway)</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+<span class="w">          </span><span class="nt">limit</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">requests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span><span class="w">              </span><span class="c1"># 100k tokens...</span>
+<span class="w">            </span><span class="nt">unit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hour</span><span class="w">                    </span><span class="c1"># ...per user, per model, per hour</span>
+<span class="w">          </span><span class="nt">cost</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">request</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">                   </span><span class="c1"># don&#39;t charge on the way in</span>
+<span class="w">            </span><span class="nt">response</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metadata</span><span class="w">              </span><span class="c1"># charge the tokens the model reported</span>
+<span class="w">              </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">io.envoy.ai_gateway</span>
+<span class="w">                </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llm_total_token</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The whole policy hinges on <code>cost.response.from: Metadata</code> pointing at the <strong>token</strong> metadata. If that key is missing or mistyped, the rule silently falls back to counting <strong>requests</strong> — you'll believe you have a token budget while a few giant completions sail through. Confirm the metadata namespace/key match your gateway release.</p>
+</div>
+<p><strong>2. Apply it and confirm it's accepted:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>token-budget.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>token-budget<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[0].type}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Spend the budget and watch it throttle.</strong> Fire a few large completions as one user and read the rate-limit headers:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;call </span><span class="nv">$i</span><span class="s2"> -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;x-user-id: alice&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;max_tokens&quot;:1024,</span>
+<span class="s1">         &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Write a long detailed essay about the moon.&quot;}]}&#39;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> the first call or two return <code>200</code>, and once Alice's metered tokens cross 100k for that model in the hour, further calls return <strong><code>429 Too Many Requests</code></strong> — while a <em>different</em> <code>x-user-id</code>, or the <em>same</em> user on a <em>different</em> model, is unaffected. You're now limiting on real token usage, distributed across every gateway replica.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<ul>
+<li>Send the same load under two different <code>x-user-id</code> values: each gets its own budget. If both share one counter, your <code>clientSelectors</code> aren't keyed on the user header.</li>
+<li>Compare a burst of tiny prompts against one huge prompt: the huge one exhausts the budget far faster, because cost is tokens, not calls. That asymmetry is the whole point.</li>
+<li>Check the <code>429</code> arrives <em>after</em> the overshooting call completes, not before — confirming limits govern the next request (see the breaks callout).</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Limiting on requests, not tokens.</strong> A request limit lets a few giant calls torch the budget. If your <code>cost.response.from</code> isn't token metadata, you haven't actually built a token limit. <em>(Symptom: spend spikes while the request graph looks flat.)</em></li>
+<li><strong>Forgetting the model key.</strong> Limit per user only, and a user's cheap-model traffic and premium-model traffic share one budget — so cheap calls can starve premium ones (and vice versa). Key on <strong>user + model</strong>.</li>
+<li><strong>Per-pod thinking.</strong> If you reach for a local limiter instead of the gateway's global one, your real limit silently multiplies by replica count and moves when you autoscale.</li>
+<li><strong>No max-tokens ceiling.</strong> Without a per-call cap, one request can overshoot the whole budget by itself before the counter updates.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Take a Resilience4j <code>RateLimiter</code> config you have today around an LLM call and write, side by side, the <code>BackendTrafficPolicy</code> that replaces it. Note the two things the YAML expresses that the Java config <em>cannot</em>: distributed (fleet-wide) counting, and cost measured in returned tokens. That gap is exactly why this belongs at the edge.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now explain why AI traffic must be limited on <strong>tokens</strong>, configure a distributed, usage-based limit keyed on <strong>user + model</strong>, and reason about the after-the-fact overshoot. This token counter is the substrate everything else in Part 3 stands on.</p>
+<p><strong>Next — 3.2:</strong> turn raw token metering into money. You'll attribute spend to the right <strong>user, team, and app</strong> and enforce <strong>budgets</strong> — the core of Tetrate Agent Operations Director, and the chargeback report you could never produce from logs.</p><div class="session-complete" data-session-code="3.1"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 3.1 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-10.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">2.5 · Beyond chat: embeddings, multimodal &amp; other endpoints</span></a>
+<a class="next" href="session-12.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">3.2 · Budgets &amp; cost attribution per user, team &amp; app</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

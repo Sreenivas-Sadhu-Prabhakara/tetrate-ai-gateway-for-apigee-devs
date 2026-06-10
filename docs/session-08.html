@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.3 Model routing & the approved model catalog · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li class="active" data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="8">
+      <div class="crumbs"><span class="crumb-part">Part 2 — The unified multi-provider gateway</span><span class="crumb-sep">·</span><span class="crumb-code">Session 2.3</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-07.html">2.2 · Provider credentials &amp; secrets: BackendSecurityPolicy</a></div><h1 id="23-model-routing-the-approved-model-catalog">2.3 — Model routing &amp; the approved model catalog</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>An <strong>AIGatewayRoute</strong> doesn't just pick a <em>provider</em> — it picks a <em>model</em>, matching the <code>x-ai-eg-model</code> header the gateway derives from the request body. That makes the route the place where you publish a <strong>curated catalog of approved models</strong>, and where you define <strong>virtual model names</strong> — a client-facing alias like <code>chat-default</code> that <code>modelNameOverride</code> maps to a concrete provider model. By the end you can route by model name, alias a virtual model, and swap the model behind it with <strong>zero client change</strong>.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 2.1 you put many providers behind one OpenAI-compatible contract; in 2.2 the gateway, not your app, holds the keys. But your clients are still sending raw provider model IDs — <code>gpt-4o-mini</code>, <code>anthropic.claude-3-5-sonnet-20241022-v2:0</code> — and <em>any</em> string they invent reaches <em>some</em> upstream unless a rule says otherwise. That's two problems wearing one coat. First, there's no <strong>approved list</strong>: a team can name a model you never vetted for cost, residency, or safety, and the gateway happily forwards it. Second, the concrete model ID is <strong>hard-coded in every caller</strong>, so the day you want to move off a deprecated model, or A/B a cheaper one, you're chasing redeploys across a dozen services.</p>
+<p>The AIGatewayRoute solves both because it matches on the model name. A request only succeeds if its model maps to a rule you wrote — so the set of rules <em>is</em> the catalog of what's allowed, and everything else 404s at the edge. That turns "which models exist here?" from tribal knowledge scattered across <code>application.yml</code> files into one declarative object an operator owns.</p>
+<p>The second half of the answer is <strong>virtualization</strong>. The route can match a <em>virtual</em> name — <code>chat-default</code>, <code>embeddings-prod</code> — and use <code>modelNameOverride</code> on the backend to rewrite it to the provider's real model ID before the upstream call. Clients ask for the stable alias; you decide, at the edge, what that alias currently resolves to. Swapping <code>gpt-4o-mini</code> for a newer model, or shifting an alias from OpenAI to Bedrock, becomes a one-line route edit with no client awareness at all.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>Two Apigee constructs map cleanly here. The matching is <strong>RouteRules with a condition keyed on the request</strong> — except the condition reads a model name (surfaced as <code>x-ai-eg-model</code>) instead of a path or a header you set by hand, and it selects a backend the way your RouteRules selected a TargetEndpoint. The catalog is an <strong>API Product, but for models</strong>: in Apigee a Product bundles the operations a key is entitled to call; here the set of route rules bundles the models that are reachable at all. And the virtual name is the same instinct as fronting a backend whose real URL changes behind a stable proxy basepath — <code>modelNameOverride</code> is the AssignMessage that rewrites the target identifier on the way out, so the client-facing name never moves.</p>
+<table>
+<thead>
+<tr>
+<th>Apigee</th>
+<th>AI gateway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RouteRule condition selecting a TargetEndpoint</td>
+<td>AIGatewayRoute rule matching <code>x-ai-eg-model</code> → <code>backendRefs</code></td>
+</tr>
+<tr>
+<td>API Product = the set of allowed operations</td>
+<td>The route's rules = the set of allowed models (the catalog)</td>
+</tr>
+<tr>
+<td>Stable proxy basepath, changeable target URL</td>
+<td>Virtual model name, changeable <code>modelNameOverride</code></td>
+</tr>
+<tr>
+<td>AssignMessage rewriting the target on egress</td>
+<td><code>modelNameOverride</code> rewriting the model ID upstream</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Today the model string is a magic constant sprinkled across services — <code>"gpt-4o-mini"</code> in a <code>@Value</code>, a constructor arg, a prompt-builder, three different YAMLs that have already drifted. You know how this ends, because you've lived it with feature flags and endpoint URLs: the moment the value needs to change, it's a coordinated redeploy and a hunt for the copies you missed. The approved catalog is the <strong>single place "which models exist" lives</strong>, exactly like pulling shared configuration into a config server so services read a name, not a hard-coded value. The virtual model alias is that config key: services ask for <code>chat-default</code>, and the resolution to a concrete model happens centrally, server-side, with no rebuild when it changes.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>An Apigee API Product is an explicit allow-list object you attach to a key; the model catalog here is <strong>emergent from the route rules</strong> — there's no separate "Product" resource that says "these five models." Reason about it as "what a rule matches is what exists," not "what's listed in a product," or you'll look for an entitlement object that isn't there (per-caller model entitlement is a <em>later</em> concern — that's identity and tiers in Part 4, not this route). And the config-server analogy breaks on <em>direction</em>: a config server hands a value to the app, which then acts on it; here the app never receives the resolved model name at all — the rewrite happens <strong>after</strong> the app's request leaves it, on the upstream hop, so the client genuinely cannot tell which concrete model answered. The indirection is one-way and invisible by design.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>The <code>model</code> field in the JSON body becomes the routing key. The gateway lifts it into the <code>x-ai-eg-model</code> header, a route rule matches it, and the selected backend may rewrite it to the real provider model before the upstream call:</p>
+<pre class="mermaid">flowchart LR
+  app[&quot;Your app / agent&lt;br/&gt;model: chat-default&quot;] --&gt;|&quot;OpenAI-shaped request&quot;| hdr
+
+  subgraph gw[&quot;AI gateway — AIGatewayRoute (the approved catalog)&quot;]
+    hdr[&quot;gateway derives&lt;br/&gt;x-ai-eg-model: chat-default&quot;]
+    r1[&quot;rule: value = chat-default&quot;]
+    miss[&quot;no rule matches&lt;br/&gt;→ 404 (not in catalog)&quot;]
+    hdr --&gt; r1
+    hdr -.-&gt;|&quot;unlisted name&quot;| miss
+    r1 --&gt;|&quot;modelNameOverride:&lt;br/&gt;gpt-4o-mini&quot;| b1[&quot;AIServiceBackend: openai&quot;]
+  end
+
+  b1 --&gt;|&quot;upstream sees gpt-4o-mini&quot;| p1[&quot;OpenAI&quot;]</pre>
+<p>Mechanically: the AI Gateway filter reads <code>model</code> from the body and exposes it as <code>x-ai-eg-model</code>. Each <code>rules[].matches[].headers</code> entry tests that header (<code>type: Exact</code>, a <code>value:</code>), and the matching rule's <code>backendRefs</code> names the AIServiceBackend to call. The new field for this session is <code>modelNameOverride</code>, set <strong>per backendRef</strong>: when present, the gateway rewrites the outgoing model identifier to that value before signing the upstream call. So a client-facing <code>chat-default</code> can resolve to <code>gpt-4o-mini</code> on OpenAI today and to a Bedrock Claude model tomorrow — same alias, different override, no client change. Because only named values match, an unlisted model name has nowhere to go: it 404s at the route, which is precisely the enforcement that makes the rule set an <em>approved</em> catalog rather than a suggestion.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A virtual model name is <strong>only</strong> approved if a rule actually matches it. There is no implicit pass-through: a request for a model with no matching rule fails at the route, but a request that <em>does</em> match an over-broad rule succeeds unconditionally — the route does not check <em>who</em> is asking. So don't mistake "the catalog exists" for "this caller may use this model." The catalog says which models the platform offers; per-team or per-tier entitlement (only the <code>premium</code> team may reach <code>chat-premium</code>) is identity-scoped policy you add in Part 4. Treating a permissive catalog as an authorization boundary is how an intern's service ends up calling your most expensive model.</p>
+</div>
+<p>A useful consequence of <code>modelNameOverride</code> living on the <em>backendRef</em>: the same virtual name can fan out to multiple backends, each rewriting to its own native ID. <code>chat-default</code> → OpenAI's <code>gpt-4o-mini</code> and Bedrock's Claude ID under one rule is how cross-provider failover (2.4) and weighted A/B both express themselves — different overrides, one alias the client never has to learn.</p>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-define-a-virtual-model-and-swap-the-model-behind-it">Lab — define a virtual model and swap the model behind it</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway from 1.5 with a working OpenAI backend and credential (2.1/2.2), <code>kubectl</code>, and <code>$NAMESPACE</code> / <code>$GATEWAY_HOST</code> exported. The goal: publish a virtual <code>chat-default</code>, prove clients reach a real model through it, then change the backing model with <strong>no client edit</strong>. (Field names track the Envoy AI Gateway version — verify the <code>modelNameOverride</code> and route shape against the model-name-virtualization docs for your release.)</p>
+<p><strong>1. Add a rule that matches a virtual name and overrides it to a real model.</strong> Define the route from 2.1 so <code>chat-default</code> resolves to <code>gpt-4o-mini</code> on the OpenAI backend:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">                 </span><span class="c1"># the Gateway from 1.5</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span><span class="w">                          </span><span class="c1"># the VIRTUAL model: the approved catalog entry</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exact</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat-default</span><span class="w">       </span><span class="c1"># what clients ask for (stable alias)</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">          </span><span class="nt">modelNameOverride</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span><span class="w">   </span><span class="c1"># what the upstream actually receives</span>
+</code></pre></div>
+
+<p><strong>2. Apply it and confirm the route is programmed:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>aigatewayroute.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The <code>value:</code> clients send and the route's match must be identical, character for character — and clients now send the <strong>virtual</strong> name (<code>chat-default</code>), not the provider ID. If a service still hard-codes <code>gpt-4o-mini</code> in its <code>model</code> field, it bypasses your alias entirely (or 404s if you removed the raw rule), and the swap in step 5 won't reach it. The whole payoff depends on callers having moved to the virtual name; grep your services for raw model strings before you rely on the indirection.</p>
+</div>
+<p><strong>3. Call the model through the virtual name.</strong> The client never names <code>gpt-4o-mini</code>:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;chat-default&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Which model answered this?&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Confirm an unlisted model is rejected — the catalog is enforced.</strong> A model with no rule has nowhere to go:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;unlisted model -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;some-unapproved-model&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+<span class="c1"># expect a 404 from the route: not in the catalog</span>
+</code></pre></div>
+
+<p><strong>5. Swap the backing model — one line, no client change.</strong> Re-point the alias (e.g. to a newer or cheaper model) by editing only <code>modelNameOverride</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">          </span><span class="nt">modelNameOverride</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o</span><span class="w">          </span><span class="c1"># was gpt-4o-mini; clients unaware</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>aigatewayroute.yaml
+<span class="c1"># re-run the curl from step 3 — identical request body, now served by the new model.</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> step 3 returns a completion though the client asked for <code>chat-default</code>; step 4 returns <strong>404</strong> for an unapproved model (the catalog rejected it); and step 5 changes which real model answers <code>chat-default</code> with <strong>zero</strong> change to the client's request. The model identity is now an operations decision at the edge, not a constant in every service.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're done when the alias is real and the catalog is enforced:</p>
+<ul>
+<li>A request for <code>chat-default</code> succeeds, but the response never reveals — and the client never sent — the concrete model ID. The indirection holds.</li>
+<li>A request for an <strong>unlisted</strong> model returns <code>404</code> at the route. If it succeeds, you have an over-broad rule (a bare match, or a leftover raw-model rule) acting as an open door — tighten it.</li>
+<li>Editing <code>modelNameOverride</code> and re-applying changes which model answers the <em>same</em> request body. If you had to touch a client to make the swap, the client wasn't using the virtual name.</li>
+</ul>
+<p>Confirm the catalog is exactly what you think it is:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the approved catalog = the model values your route matches:</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A1<span class="w"> </span><span class="s1">&#39;name: x-ai-eg-model&#39;</span>
+</code></pre></div>
+
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Clients still send raw provider IDs.</strong> The virtual name exists but nobody uses it, so a swap reaches nothing. <em>(Symptom: editing <code>modelNameOverride</code> changes behavior for no real traffic.)</em></li>
+<li><strong>An over-broad or leftover rule.</strong> A catch-all match, or the original <code>gpt-4o-mini</code> rule left in place, lets unapproved models through. <em>(Symptom: a model you never vetted returns 200.)</em></li>
+<li><strong><code>modelNameOverride</code> set to a name the provider doesn't recognise.</strong> The route matches and forwards, but the upstream rejects the model. <em>(Symptom: 404/400 from the provider, not the route — green route, failed upstream.)</em></li>
+<li><strong>Confusing catalog with entitlement.</strong> Assuming a model in the catalog means a given caller may use it. The route gates <em>existence</em>, not <em>who</em>; per-caller limits are identity policy (Part 4).</li>
+<li><strong>Alias collides with a real model name.</strong> Naming a virtual model the same as a concrete provider ID makes routing ambiguous and migrations confusing — keep virtual names clearly synthetic (<code>chat-default</code>, not <code>gpt-4o</code>).</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Point a Spring AI app's <code>model</code> at the virtual <code>chat-default</code> (not a provider ID), then perform a migration the app can't see: change <code>modelNameOverride</code> to route <code>chat-default</code> to a <em>different vendor's</em> model via a second AIServiceBackend, and confirm the app keeps answering with no rebuild. That's a provider migration executed entirely at the edge — the strongest argument for never letting a concrete model ID into application code again.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now route on the <strong>model name</strong> the gateway exposes as <code>x-ai-eg-model</code>, treat the set of route rules as an <strong>enforced approved catalog</strong> (unlisted models 404), and publish <strong>virtual model names</strong> whose <code>modelNameOverride</code> you change to swap the backing model with no client change. Model identity is now governed at the edge, decoupled from every caller.</p>
+<p><strong>Next — 2.4:</strong> one virtual name, two backends behind it — and what happens when the first one fails. You'll configure <strong>retries, timeouts, and cross-provider fallback</strong> with a <code>BackendTrafficPolicy</code> and prioritized <code>backendRefs</code>, then force the primary to fail and watch the gateway serve transparently from the fallback.</p><div class="session-complete" data-session-code="2.3"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 2.3 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-07.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">2.2 · Provider credentials &amp; secrets: BackendSecurityPolicy</span></a>
+<a class="next" href="session-09.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">2.4 · Fallback, retries &amp; failover across providers</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

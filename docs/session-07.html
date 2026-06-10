@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.2 Provider credentials & secrets: BackendSecurityPolicy · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li class="active" data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="7">
+      <div class="crumbs"><span class="crumb-part">Part 2 — The unified multi-provider gateway</span><span class="crumb-sep">·</span><span class="crumb-code">Session 2.2</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-06.html">2.1 · One API, many providers: the OpenAI-compatible schema</a></div><h1 id="22-provider-credentials-secrets-backendsecuritypolicy">2.2 — Provider credentials &amp; secrets: BackendSecurityPolicy</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>A <strong>BackendSecurityPolicy</strong> is how the gateway — not your app — holds the provider credential. It references a Kubernetes <code>Secret</code> and attaches to an AIServiceBackend via <code>targetRefs</code>; on every upstream call the gateway injects that credential (a bearer key, AWS SigV4, etc.) so the request to the provider is authenticated without the client ever seeing it. By the end you can delete <code>OPENAI_API_KEY</code> from an app's config, prove the app sends no provider key, and rotate the key by editing only the Secret.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In session 1.1 you inventoried provider keys scattered across services. Each one is a liability: it can leak in a log, a heap dump, a misconfigured env var, or a stale <code>application.yml</code> in a Git history. Worse, <em>rotation</em> means touching and redeploying every service that holds the key — so in practice keys don't get rotated, which is exactly the audit finding you don't want.</p>
+<p>The BackendSecurityPolicy moves that secret to one place: the gateway. The client authenticates to the <em>gateway</em> (with a gateway key or JWT — that's session 4.1); the gateway authenticates to the <em>provider</em> using the credential in the policy. Two separate trust legs, and the provider key never crosses into application space. This is the single most concrete payoff of self-hosting: a clean answer to "where do our model-provider keys live?" — in one Secret, governed by one policy, injected on the upstream hop.</p>
+<p>Because the credential is decoupled from app code, <strong>rotation becomes a Secret edit</strong>. Update the <code>Secret</code>, and the next upstream call uses the new key — no service redeploys, no coordinated rollout. The thing that was painful and therefore skipped becomes a one-line change with no blast radius on the apps.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is <strong>the gateway holding the backend credential</strong> — exactly Apigee target authentication. You've stored a backend's API key or service-account credential in a KVM (or an encrypted KVM) and had the proxy inject it on the TargetEndpoint via an AssignMessage or a service-callout, so the <em>client</em> never holds the backend secret. The BackendSecurityPolicy is that KVM-plus-injection, made first-class: the <code>Secret</code> is the (encrypted) KVM entry, <code>targetRefs</code> is "attach this credential to that target," and the injection happens automatically per the policy <code>type</code>. Rotating the KVM value without redeploying the proxy is the same muscle as editing the Secret here.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Picture deleting <code>spring.ai.openai.api-key: ${OPENAI_API_KEY}</code> from <code>application.yml</code> and removing the env var from the deployment — and the app still works. That's the move. Today the key reaches your app from a secret manager (Vault, AWS Secrets Manager) or is injected by a sidecar, and your code reads it to build the client. The gateway makes the app's credential awareness <strong>zero</strong>: the secret manager / sidecar role moves to the BackendSecurityPolicy, and your app's config no longer references a provider key at all. Rotation that used to mean a Vault update <em>plus</em> a rolling restart now means just the Secret update — the app never re-reads anything.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>Apigee target auth was often request-scoped logic you could shape per call in a flow; a BackendSecurityPolicy is a <strong>declarative attachment reconciled by a controller</strong>, not code that runs in your proxy pipeline. And the injection is <strong>provider-shaped, not a generic header-set</strong>: <code>type: APIKey</code> adds a bearer token, but <code>type: AWSCredentials</code> performs full SigV4 request signing (a keyed hash over method, headers, and body) and <code>GCPCredentials</code> mints short-lived tokens. You're not templating a header — you're selecting an auth <em>scheme</em> the gateway implements. Reasoning about it like a simple "add this Authorization header" AssignMessage will mislead you the moment a provider needs signing or token exchange.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Two distinct authentication legs, with the provider key confined to the upstream one. The client never holds it; the gateway injects it from the policy's Secret:</p>
+<div class="widget" data-widget="sequence"><script type="application/json">{"type": "sequence", "title": "Credential injection on the upstream call", "actors": [{"id": "app", "label": "Your app"}, {"id": "gw", "label": "AI gateway"}, {"id": "sec", "label": "Secret (via BackendSecurityPolicy)"}, {"id": "prov", "label": "Provider"}], "steps": [{"from": "app", "to": "gw", "label": "POST /v1/chat/completions", "note": "Carries a gateway credential (or none yet) \u2014 but NO provider key. The body names the model."}, {"from": "gw", "to": "gw", "label": "resolve backend + policy", "note": "The route picks the AIServiceBackend; its attached BackendSecurityPolicy says which credential to present."}, {"from": "gw", "to": "sec", "label": "read credential", "note": "The gateway reads the Secret referenced by the policy (key: apiKey for APIKey, or AWS creds for AWSCredentials)."}, {"from": "gw", "to": "prov", "label": "upstream call + injected auth", "note": "APIKey -&gt; Authorization: Bearer \u2026; AWSCredentials -&gt; SigV4-signed request. The injection matches the provider's scheme."}, {"from": "prov", "to": "gw", "kind": "return", "label": "completion", "note": "Authenticated by the gateway-held credential \u2014 the app was never involved."}, {"from": "gw", "to": "app", "kind": "return", "label": "OpenAI-shaped response", "note": "The app got its answer and never saw a provider key. Rotation = edit the Secret only."}]}</script></div>
+<p>The policy itself is small: a <code>type</code> that selects the auth scheme, a credential reference (e.g. <code>apiKey.secretRef</code> for <code>APIKey</code>), and <code>targetRefs</code> binding it to one or more AIServiceBackends. That binding is the whole trick — the credential is associated with a <em>backend</em>, so any route that lands on that backend gets the credential automatically, and a backend with no attached policy simply has no upstream auth.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A BackendSecurityPolicy can be <code>Accepted</code> while the upstream auth is still broken, because acceptance only validates the <em>object</em>, not that the Secret exists, has the right key name, or holds a valid credential. The <code>APIKey</code> type reads the Secret's <code>apiKey</code> key specifically — a Secret with the value under <code>api-key</code> or <code>token</code> injects nothing. So a green status and a 401 from the provider coexist happily. Always test an actual upstream call, and check the <em>provider's</em> response code, not just the policy condition.</p>
+</div>
+<p>A useful consequence: because the credential lives in the Secret and the policy points at it by name, <strong>key rotation never touches the app and rarely touches the policy</strong>. You update the Secret's value (or roll to a new Secret and repoint <code>secretRef</code>), and the next call signs/bears the new key. No redeploy of the gateway config, no redeploy of any service.</p>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-take-the-provider-key-out-of-the-app">Lab — take the provider key out of the app</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway and OpenAI route from 1.5/2.1 (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), <code>kubectl</code>, and an OpenAI key. The goal is to <em>prove</em> the app holds no provider key while calls still succeed, then rotate without an app change.</p>
+<p><strong>1. Put the provider key in a Secret</strong> under the key name the <code>APIKey</code> policy expects — <code>apiKey</code>:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>openai-apikey<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">apiKey</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$OPENAI_API_KEY</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p><strong>2. Create the BackendSecurityPolicy and attach it to the OpenAI backend</strong> via <code>targetRefs</code>. This is the only object that references the Secret:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendSecurityPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-cred</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APIKey</span><span class="w">                     </span><span class="c1"># inject Authorization: Bearer &lt;key&gt;</span>
+<span class="w">  </span><span class="nt">apiKey</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secretRef</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-apikey</span><span class="w">          </span><span class="c1"># the Secret from step 1; key must be &quot;apiKey&quot;</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIServiceBackend</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">                 </span><span class="c1"># bind the credential to the OpenAI backend</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>openai-cred.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendsecuritypolicy<span class="w"> </span>openai-cred<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The <code>targetRefs</code> <code>kind</code> here is <strong>AIServiceBackend</strong>, not <code>Gateway</code> or <code>HTTPRoute</code> — the credential attaches to the <em>backend</em> (which provider to authenticate to), not to the route (who's calling). Point <code>targetRefs</code> at the route and the policy is <code>Accepted</code> but never injects anything, because no backend is bound to it. <em>(Symptom: 401 from the provider despite a green policy.)</em></p>
+</div>
+<p><strong>3. Prove the app holds no provider key.</strong> Send the completion with <strong>only</strong> a gateway credential (or, in this lab, no auth header at all) and explicitly <em>no</em> <code>Authorization</code> bearing the provider key. The gateway adds the upstream auth itself:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Note: no OpenAI key anywhere in this request. The gateway injects it.</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Confirm: did the gateway supply my key?&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Rotate the key — Secret only, no app or route change.</strong> This is the rotation drill you could never do cheaply before:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>openai-apikey<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">apiKey</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$NEW_OPENAI_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run<span class="o">=</span>client<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
+<span class="c1"># re-run the curl from step 3 — it now authenticates with the new key.</span>
+<span class="c1"># No service redeployed; no AIGatewayRoute or BackendSecurityPolicy edited.</span>
+</code></pre></div>
+
+<p><strong>5. (App side) Delete the provider key from config.</strong> In the Spring app pointed at the gateway, remove the provider key entirely — the app now depends only on the gateway:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># application.yml — BEFORE: app holds the provider key</span>
+<span class="c1"># spring.ai.openai.api-key: ${OPENAI_API_KEY}   &lt;- delete this line</span>
+<span class="nt">spring</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ai</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">openai</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://your-gateway-host</span><span class="w">        </span><span class="c1"># the gateway; no provider key here</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> the completion in step 3 succeeds with <strong>no provider key in the request</strong> — the gateway injected it from the Secret. Step 4 swaps the key with zero redeploys and the call keeps working. And the app's config in step 5 no longer contains any <code>OPENAI_API_KEY</code>. The provider credential now lives in exactly one place you control.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>Confirm the credential is the gateway's, not the app's:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the only object that should reference a provider Secret:</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>backendsecuritypolicy<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A2<span class="w"> </span>secretRef
+<span class="c1"># and prove the app&#39;s config is clean:</span>
+grep<span class="w"> </span>-rEn<span class="w"> </span><span class="s2">&quot;OPENAI_API_KEY|openai.*api-key|sk-[A-Za-z0-9]&quot;</span><span class="w"> </span>your-app/<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--include<span class="o">=</span>*.yml<span class="w"> </span>--include<span class="o">=</span>*.yaml<span class="w"> </span>--include<span class="o">=</span>*.properties<span class="w"> </span>--include<span class="o">=</span>*.java
+</code></pre></div>
+
+<ul>
+<li>The completion succeeds while the request carries no provider key — the BackendSecurityPolicy supplied it on the upstream hop.</li>
+<li>The app grep returns nothing. If it returns a key, you've left a credential — and a rotation liability — in app space.</li>
+<li>A rotation (step 4) takes effect without redeploying any service. If you found yourself restarting pods to pick up the new key, the key was still in the app, not the gateway.</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Secret key name isn't <code>apiKey</code>.</strong> The <code>APIKey</code> policy reads that specific key; <code>api-key</code>/<code>token</code>/<code>OPENAI_API_KEY</code> inject nothing. <em>(Symptom: policy <code>Accepted</code>, provider returns 401.)</em></li>
+<li><strong><code>targetRefs</code> points at the route, not the AIServiceBackend.</strong> The credential never binds to a backend. <em>(Symptom: green policy, 401 upstream.)</em></li>
+<li><strong>Wrong <code>type</code> for the provider.</strong> <code>APIKey</code> for a backend that needs <code>AWSCredentials</code>/<code>GCPCredentials</code> — a bearer header where signing or token-exchange is required. Match <code>type</code> to the provider's scheme.</li>
+<li><strong>Leaving the key in the app "as a fallback."</strong> Now you have two places to rotate and one to leak. Delete it; the gateway is the single owner.</li>
+<li><strong>Secret in the wrong namespace.</strong> The policy and Secret must be reachable per the reference; a Secret in another namespace without the right cross-namespace grant won't be read.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Take a real provider key out of a Spring service and into a BackendSecurityPolicy end to end: delete it from <code>application.yml</code> and the deployment env, apply the policy, and confirm the service still completes calls through the gateway. Then rotate the key via the Secret and watch traffic keep flowing with <strong>zero</strong> service restarts — the operational win you'll cite when this gets reviewed by security.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now keep provider keys entirely out of app code with a <strong>BackendSecurityPolicy</strong>: a Secret plus a <code>type</code> that selects the auth scheme, bound to an AIServiceBackend via <code>targetRefs</code>, injected by the gateway on the upstream call. You proved an app sends no provider key yet its calls succeed, and rotated a key by editing only the Secret — no redeploys, no app awareness, one place to govern.</p>
+<p><strong>Next — 2.3:</strong> now that credentials are handled, control <em>which</em> models callers may reach. You'll do <strong>model routing and build an approved model catalog</strong> — virtual model names mapped to concrete backends, so clients stop carrying raw provider IDs and you decide, at the edge, which models exist.</p><div class="session-complete" data-session-code="2.2"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 2.2 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-06.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">2.1 · One API, many providers: the OpenAI-compatible schema</span></a>
+<a class="next" href="session-08.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">2.3 · Model routing &amp; the approved model catalog</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

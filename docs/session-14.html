@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.4 Caching to cut cost & latency · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li class="active" data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="14">
+      <div class="crumbs"><span class="crumb-part">Part 3 — Governance: tokens, cost &amp; quotas</span><span class="crumb-sep">·</span><span class="crumb-code">Session 3.4</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-13.html">3.3 · Sanctioned-model governance &amp; access tiers</a></div><h1 id="34-caching-to-cut-cost-latency">3.4 — Caching to cut cost &amp; latency</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>The cheapest, fastest token is the one you never send to a provider. By the end of this session you can enable <strong>caching at the gateway</strong> for a safe-to-cache call, measure the latency and cost drop on a repeated request, and — most importantly — reason about <em>which</em> responses are safe to cache. You'll meet three flavours: <strong>response caching</strong> (exact match), <strong>prompt caching</strong> (provider-side reuse of a prompt prefix), and <strong>semantic caching</strong> (match by embedding similarity), and the hard rule that ties them together: cache only what's deterministic and not per-user.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 3.1–3.3 every governed call still went to the provider and still cost tokens. But a great deal of AI traffic is <strong>repeated</strong>: the same embedding request for the same document, the same deterministic classification, the same FAQ-style question asked a thousand ways. Paying the provider — in money <em>and</em> in seconds of latency — for an answer you already computed is pure waste. Caching at the gateway turns the second-and-onward identical call into a local lookup: no provider round-trip, no tokens billed, milliseconds instead of seconds.</p>
+<p>Doing it at the <strong>gateway</strong> rather than in each app matters for the same reason everything else in this course does: a per-service <code>@Cacheable</code> only helps that service and its own pods, while a gateway cache is <strong>shared across every app and replica</strong> — one service warms the cache, all of them benefit. The catch, and the reason this is a whole session rather than a config flag, is that LLM responses are not obviously cacheable: many are non-deterministic, and many are personalised. Cache the wrong one and you don't just serve stale data — you hand one user <strong>another user's answer</strong>.</p>
+<h2 id="the-concept">The concept</h2>
+<p>A cache hit short-circuits the expensive path entirely: the gateway answers from its store and the provider is never called — no tokens, no latency:</p>
+<div class="widget" data-widget="sequence"><script type="application/json">{"type": "sequence", "title": "A cache hit at the AI gateway", "actors": [{"id": "app", "label": "Your app"}, {"id": "gw", "label": "AI gateway (cache)"}, {"id": "prov", "label": "Provider"}], "steps": [{"from": "app", "to": "gw", "label": "POST /v1/... (1st time)", "note": "First call. The gateway builds a cache key from the request \u2014 model + normalized body, plus any dimensions you add (e.g. tenant)."}, {"from": "gw", "to": "prov", "label": "MISS \u2192 upstream call", "note": "No entry yet, so the gateway calls the provider, pays the tokens, and stores the response under the key."}, {"from": "prov", "to": "gw", "kind": "return", "label": "completion (billed)", "note": "The real, token-costing response \u2014 cached on the way back out."}, {"from": "gw", "to": "app", "kind": "return", "label": "response", "note": "App gets its answer; first call paid full price."}, {"from": "app", "to": "gw", "label": "POST /v1/... (identical)", "note": "Same request again \u2014 same cache key."}, {"from": "gw", "to": "app", "kind": "return", "label": "HIT \u2014 no provider call", "note": "Served from cache: zero provider tokens, millisecond latency. The provider is never touched."}]}</script></div>
+<p>There are three flavours, and they differ in <em>how</em> they decide two requests are "the same." <strong>Response caching</strong> keys on an exact (normalized) match of the request — identical model and body return the stored answer. <strong>Prompt caching</strong> is a provider-side feature where a long, stable prompt <em>prefix</em> (a big system prompt, a shared context) is cached upstream so repeated calls re-pay only for the changing suffix — cheaper, but the call still happens. <strong>Semantic caching</strong> is the clever one: it embeds the incoming prompt and serves a stored answer when an existing entry is <em>similar enough</em> by vector distance, so "What's your refund policy?" and "How do I get a refund?" can hit the same cached answer. Power and danger rise together down that list.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><strong>Caching a non-deterministic or per-user response serves the wrong answer.</strong> Two failure shapes: (1) a high-<code>temperature</code> or personalised completion <em>should</em> differ each call — caching it freezes one random or one user's result for everyone; (2) a response that embeds user-specific or PII-bearing context, cached under a key that omits the user, will leak <strong>one tenant's answer to another tenant</strong>. The defences are inseparable: cache only <strong>deterministic, idempotent, non-personalised</strong> calls (e.g. <code>temperature: 0</code> classification, stable embeddings), and put every dimension that <em>changes the correct answer</em> into the cache key (tenant, locale, the relevant context). A cache key that's too coarse is a cross-user data leak wearing a performance win.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is <strong>ResponseCache, pointed at model traffic</strong> — and your Apigee instincts mostly transfer. You already think in cache <em>keys</em> (<code>CacheKey</code> with <code>KeyFragment</code>s), <em>TTLs</em>, and <em>cache population vs. lookup</em>; a gateway AI cache is the same machinery with model + request body as the key. But two ResponseCache habits become safety-critical here. First, <strong><code>KeyFragment</code> selection is now a security control</strong>: forgetting to include the user/tenant fragment on a REST cache served a slightly-stale list; forgetting it on an AI cache serves another user's <em>generated answer</em>. Second, you cached responses you knew were <strong>idempotent</strong>; for LLMs you must additionally confirm the call is <strong>deterministic</strong>, because the same input can legitimately produce different output. Same pattern, sharper edges.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>You've reached for <code>@Cacheable</code> around an expensive embedding or classification call — keyed on the method arguments, backed by Caffeine or Redis. The gateway cache is that annotation <strong>moved to the edge and shared across every service</strong>, so one app's cache warm-up benefits all of them instead of living in one pod's heap. The discipline is identical and you already know it: <code>@Cacheable</code> on a method whose result depends on the <em>current user</em> but whose key omits that user is the classic Spring cache-poisoning bug — you've seen it serve user B the object cached for user A. The gateway cache has the exact same trap at fleet scale; the <code>key</code> SpEL you'd write to include the principal is the cache-key dimension you must include here.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A REST <code>ResponseCache</code> or <code>@Cacheable</code> decides "same request" by <strong>exact key equality</strong> — bytes match or they don't. <strong>Semantic caching breaks that entirely</strong>: it serves a hit for a request that is <em>not identical</em>, only <em>similar</em>, judged by embedding distance against a threshold. There is no equivalent in Apigee or Spring caching, and it brings a failure mode neither has: set the similarity threshold too loose and the cache confidently returns an answer to a <em>different question</em> that merely sounds alike. You're no longer caching exact answers — you're betting that "close enough in vector space" means "correct," and that bet is tunable, fallible, and entirely new. Exact-match caching can be stale; semantic caching can be <strong>wrong</strong>.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-cache-a-deterministic-call-and-measure-the-win">Lab — cache a deterministic call and measure the win</h4>
+<p><strong>Prereqs:</strong> the gateway and <code>AIGatewayRoute</code> from 1.5 (export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, <code>$GATEWAY_KEY</code>), and <code>kubectl</code>. We cache a <strong>safe</strong> call: an embeddings request (deterministic, no per-user content) — the canonical cacheable AI workload.</p>
+<p><strong>1. Enable response caching on the route</strong> with a cache key built from the model and the request body, and a TTL. Caching is a <code>BackendTrafficPolicy</code> concern, alongside the rate limits you set in 3.1:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTrafficPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-response-cache</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">            </span><span class="c1"># the route from 1.5</span>
+<span class="w">  </span><span class="nt">responseCache</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
+<span class="w">    </span><span class="nt">key</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># the dimensions that define &quot;the same request&quot; — model + body...</span>
+<span class="w">      </span><span class="nt">includeBody</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">includeHeaders</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-tenant</span><span class="w">                      </span><span class="c1"># ...and tenant, so caches never cross tenants</span>
+</code></pre></div>
+
+<p><strong>2. Apply and confirm acceptance:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>ai-response-cache.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>ai-response-cache<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[0].type}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Time the first (miss) call</strong> — it pays full price and warms the cache:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;MISS: %{http_code} in %{time_total}s\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/embeddings&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-tenant: acme&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;text-embedding-3-small&quot;,&quot;input&quot;:&quot;the quick brown fox&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Repeat the identical call</strong> — this should be a hit: no provider round-trip, far lower latency:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;HIT:  %{http_code} in %{time_total}s\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/embeddings&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-tenant: acme&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;text-embedding-3-small&quot;,&quot;input&quot;:&quot;the quick brown fox&quot;}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Notice <code>x-tenant</code> is part of the cache key. Drop it and tenant <code>acme</code>'s embedding answer is served to tenant <code>globex</code> for the same input string — fine for a public sentence, a <strong>data leak</strong> the moment the input is a customer record. When in doubt about whether a dimension affects the correct answer, <strong>include it in the key</strong>; an over-keyed cache merely misses more often, an under-keyed one serves the wrong tenant's data. Never cache a high-<code>temperature</code> chat completion this way — only deterministic calls belong here.</p>
+</div>
+<p><strong>What success looks like:</strong> the second call returns the <strong>same body</strong> as the first but with a <strong>markedly lower <code>time_total</code></strong> (the provider round-trip is gone), and the gateway's token meter from 3.1 shows <strong>no new tokens</strong> for the repeated call — the hit cost zero provider tokens. You've cut both latency and cost on identical traffic, fleet-wide, without touching a line of app code.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You've cached safely when all of these hold:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># same input, two different tenants — answers must NOT cross</span>
+<span class="k">for</span><span class="w"> </span>t<span class="w"> </span><span class="k">in</span><span class="w"> </span>acme<span class="w"> </span>globex<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$t</span><span class="s2"> -&gt; %{http_code} in %{time_total}s\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/embeddings&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;x-tenant: </span><span class="nv">$t</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;text-embedding-3-small&quot;,&quot;input&quot;:&quot;customer record 42&quot;}&#39;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<ul>
+<li>The repeated identical call is <strong>dramatically faster</strong> and bills <strong>no new tokens</strong> — if latency and token count are unchanged, caching isn't engaged (check the policy <code>Accepted</code> and that the body normalized to the same key).</li>
+<li>Two tenants sending the <em>same</em> input each get their <strong>own</strong> cache entry — if the second tenant's call is an instant hit, your key is missing the tenant dimension and you're leaking across tenants.</li>
+<li>Changing any byte of the input produces a <strong>miss</strong> — exact-match caching must not collapse different inputs onto one entry (that's semantic caching's job, with its own threshold to tune).</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Caching non-deterministic completions.</strong> A high-<code>temperature</code> chat response should vary; caching freezes one sample for everyone. Only cache <code>temperature: 0</code> / idempotent calls.</li>
+<li><strong>Cache key too coarse.</strong> Omitting tenant/user/locale serves one caller's generated answer to another — a data leak, not just staleness. Every dimension that changes the correct answer belongs in the key.</li>
+<li><strong>Semantic threshold too loose.</strong> Set the similarity bar low and the cache answers a <em>different</em> question that merely sounds alike. Tune the threshold and measure wrong-hit rate, don't eyeball it.</li>
+<li><strong>Stale answers past their usefulness.</strong> A TTL that's too long serves outdated completions after the underlying data or prompt changed. Match TTL to how fast the right answer goes stale.</li>
+<li><strong>Assuming a hit is free of governance.</strong> A cached response still belongs to a caller — keep attribution (3.2) meaningful even when tokens are zero, so a heavily-cached team isn't invisible.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Enable <strong>semantic caching</strong> on a deterministic Q&amp;A endpoint and probe its boundary: send a question, then a paraphrase, then a <em>related-but-different</em> question. Find the similarity threshold where paraphrases correctly hit the same answer but the different question correctly misses — and note how moving the threshold a little trades cost savings against the risk of confidently answering the wrong question. That tuning dial, absent from any exact-match cache, is the whole reason semantic caching is powerful and dangerous in equal measure.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now cut cost and latency with <strong>caching at the gateway</strong> — response (exact match), prompt (provider-side prefix reuse), and semantic (embedding similarity) — measure the win on a repeated call, and, above all, decide <em>what is safe to cache</em>: deterministic, idempotent, non-personalised requests, with every answer-changing dimension in the cache key. That discipline is what separates a performance win from a cross-tenant leak. With rate limits, budgets, tiers, and caching in place, Part 3's cost-and-governance layer is complete.</p>
+<p><strong>Next — 4.1:</strong> every control so far trusted a <code>x-user-id</code>, <code>x-team</code>, or <code>x-tier</code> header the client simply asserted. Now you make identity <em>real</em> — <strong>authenticating callers at the AI edge</strong> so the principal behind every budget, tier, and cache key is verified, not claimed.</p><div class="session-complete" data-session-code="3.4"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 3.4 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-13.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">3.3 · Sanctioned-model governance &amp; access tiers</span></a>
+<a class="next" href="session-15.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">4.1 · Authenticating callers at the AI edge</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

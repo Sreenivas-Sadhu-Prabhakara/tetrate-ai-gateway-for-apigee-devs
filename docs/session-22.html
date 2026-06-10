@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5.3 Tool routing, aggregation & multiplexing · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li class="active" data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="22">
+      <div class="crumbs"><span class="crumb-part">Part 5 — The agentic turn: MCP &amp; tools</span><span class="crumb-sep">·</span><span class="crumb-code">Session 5.3</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-21.html">5.2 · MCP gateways: the MCPRoute resource</a></div><h1 id="53-tool-routing-aggregation-multiplexing">5.3 — Tool routing, aggregation &amp; multiplexing</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>One agent connection, many tool servers behind it. An <strong>MCPRoute</strong> with multiple <code>backendRefs</code> <strong>aggregates</strong> several MCP servers into one tool surface; the gateway <strong>multiplexes</strong> them by prefixing every tool name <code>server__tool</code> so collisions can't route the wrong call, and <code>toolSelector</code> exposes only the subset you intend. By the end you can put two MCP servers behind one route, see both servers' tools (prefixed) in a single <code>tools/list</code>, and narrow the catalog to a safe set.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 5.2 you fronted <em>one</em> tool server with an MCPRoute. Real agents need several at once — a GitHub server, a docs server, an internal-API server — and the naïve fix is to open three MCP connections from the agent, which is exactly the per-tool-client sprawl 5.2 set out to remove, just at a larger scale.</p>
+<p>Aggregation collapses that back to one. You list multiple <code>backendRefs</code> on a single MCPRoute, and the gateway presents their combined catalog over <strong>one</strong> session at <code>spec.path</code>. Two new problems appear the moment you do this, and the gateway solves both: <strong>collisions</strong> (two servers each ship a tool called <code>search</code>) and <strong>over-exposure</strong> (a server ships 40 tools, 3 of which are destructive). Prefixing handles the first; <code>toolSelector</code> handles the second. This session is where "front a tool server" becomes "operate a tool <em>estate</em>."</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is a <strong>facade proxy that aggregates several backends behind one route</strong> — but for tools. In Apigee you'd point one proxy at three target servers and use RouteRules to disambiguate; here one MCPRoute lists three <code>backendRefs</code> and the gateway disambiguates by <strong>prefixing tool names</strong> (<code>github__</code>, <code>context7__</code>) instead of by path or RouteRule.</p>
+<table>
+<thead>
+<tr>
+<th>Apigee facade</th>
+<th>MCP aggregation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One proxy, several TargetServers</td>
+<td>One MCPRoute, several <code>backendRefs</code></td>
+</tr>
+<tr>
+<td>RouteRule selects the target</td>
+<td>Tool-name prefix selects the backend</td>
+</tr>
+<tr>
+<td>Resource paths scope the API surface</td>
+<td><code>toolSelector</code> (<code>include</code>/<code>includeRegex</code>) scopes the tool surface</td>
+</tr>
+<tr>
+<td>Two backends sharing a path → routing conflict</td>
+<td>Two servers sharing a tool name → disambiguated by prefix</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Today an agent framework injects N clients — one bean per tool server, each with its own URL and wiring. Aggregation makes the gateway your <strong>service-discovery layer</strong>: the agent depends on a <em>single</em> tool endpoint and one catalog, the way a service mesh gives you one logical address while routing to many instances. You stop maintaining a tool registry in agent code; the registry is the merged catalog the gateway publishes, and adding a server is a YAML <code>backendRef</code>, not a new injected client.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A facade proxy routes by <strong>path</strong>, which is hierarchical and collision-proof by construction. MCP routes by <strong>tool name</strong>, a flat namespace where two servers genuinely can ship the same name — so the disambiguator (<code>server__</code>) is part of the tool's <em>identity</em>, not just its address. And unlike service discovery, where instances are interchangeable, each MCP backend exposes a <em>different</em> set of tools, so "discovery" here also means <strong>catalog merging and filtering</strong>, not load-balancing equivalent endpoints.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>The gateway sits between the agent and N MCP servers, merging their catalogs into one prefixed, filtered surface:</p>
+<figure class="svg-figure">
+<img src="assets/svg/mcp-topology.svg" alt="An AI agent reaches several MCP tool servers through one MCP gateway, which prefixes each server's tools and exposes only a selected subset.">
+<figcaption>One MCPRoute, several backendRefs. The gateway aggregates the servers' catalogs, prefixes each tool with its server name to disambiguate, and applies each backend's toolSelector before the merged list reaches the agent. OAuth on these tools is 5.4.</figcaption>
+</figure>
+
+<p>Three mechanics do the work. <strong>Aggregation:</strong> each <code>backendRef</code> is one MCP server; the route's catalog is their union. <strong>Multiplexing / prefixing:</strong> the gateway namespaces every tool as <code>server__tool</code> (e.g. <code>github__issue_read</code>, <code>context7__get_library_docs</code>) and strips the prefix again before calling upstream — so the <em>server</em> still sees its native tool name, but the <em>agent</em> sees a globally unique one. <strong>Selective exposure:</strong> per-backend <code>toolSelector.include</code> lists exact tool names, or <code>toolSelector.includeRegex</code> matches a family; tools not selected never appear in <code>tools/list</code> and cannot be called.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Two servers with a same-named tool (say both expose <code>search</code>) rely <strong>entirely</strong> on the prefix to disambiguate — <code>github__search</code> vs <code>context7__search</code>. Any code, prompt, or hard-coded allow-list that assumes the <strong>bare</strong> name <code>search</code> is ambiguous and will route to whichever server the gateway resolves it to. Always reference tools by their full prefixed name once aggregation is in play.</p>
+</div>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A <code>backendRef</code> with <strong>no</strong> <code>toolSelector</code> exposes that server's <strong>entire</strong> surface — including any destructive tools (<code>delete_repo</code>, <code>force_push</code>, <code>drop_table</code>) you never meant to hand an autonomous agent. Selection here is exposure control, not cosmetics; the security boundary that <em>enforces</em> who may call what comes in 5.4, but if a dangerous tool isn't selected, it isn't in the catalog to begin with.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-aggregate-two-mcp-servers-behind-one-route-exposed-safely">Lab — aggregate two MCP servers behind one route, exposed safely</h4>
+<p><strong>Prereqs:</strong> the gateway and <code>Gateway</code> resource from 1.5 (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), <code>kubectl</code>, and <strong>two</strong> MCP servers reachable in-cluster — this lab assumes <code>github-mcp</code> (from 5.2) and a second, <code>context7-mcp</code> (a docs server). An MCP client or <code>curl</code> over the Streamable-HTTP/JSON-RPC endpoint.</p>
+<p><strong>1. Declare the second MCP backend</strong> (you already have <code>github-mcp</code> from 5.2):</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">context7-mcp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">endpoints</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fqdn</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">context7-mcp.${NAMESPACE}.svc.cluster.local</span>
+<span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+</code></pre></div>
+
+<p><strong>2. Create one MCPRoute with two <code>backendRefs</code>,</strong> each scoped by its own <code>toolSelector</code> so only a safe subset is exposed:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1beta1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MCPRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">              </span><span class="c1"># the Gateway from session 1.5</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mcp</span><span class="w">                        </span><span class="c1"># single endpoint the agent connects to</span>
+<span class="w">  </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-mcp</span>
+<span class="w">      </span><span class="nt">toolSelector</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">include</span><span class="p">:</span><span class="w">                    </span><span class="c1"># exact names — read-only GitHub tools</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issue_read</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issue_search</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">context7-mcp</span>
+<span class="w">      </span><span class="nt">toolSelector</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">includeRegex</span><span class="p">:</span><span class="w">               </span><span class="c1"># a whole read-only docs family</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;get_.*&quot;</span>
+</code></pre></div>
+
+<p><strong>3. Apply both and confirm the route is programmed:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>context7-mcp.yaml<span class="w"> </span>-f<span class="w"> </span>mcproute.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>mcproute<span class="w"> </span>tools<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. List the merged catalog</strong> — one <code>tools/list</code> must return tools from <strong>both</strong> servers, each under its server prefix:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;tools/list&quot;}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.result.tools[].name&#39;</span>
+<span class="c1"># → &quot;github__issue_read&quot;  &quot;github__issue_search&quot;</span>
+<span class="c1">#   &quot;context7__get_library_docs&quot;  &quot;context7__resolve_library_id&quot; ...</span>
+</code></pre></div>
+
+<p><strong>5. Call one tool from each server by its prefixed name</strong> and confirm the gateway routes to the right backend (it strips the prefix upstream):</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:2,&quot;method&quot;:&quot;tools/call&quot;,</span>
+<span class="s1">       &quot;params&quot;:{&quot;name&quot;:&quot;context7__get_library_docs&quot;,</span>
+<span class="s1">                 &quot;arguments&quot;:{&quot;library&quot;:&quot;spring-ai&quot;}}}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.result&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>If <code>tools/list</code> returns tools you didn't select — or a GitHub tool like <code>issue_create</code> you left out of <code>include</code> — your <code>toolSelector</code> didn't apply. Check it's nested under the right <code>backendRef</code> (per-server, not per-route) and that <code>includeRegex</code> actually anchors the family you meant; <code>get.*</code> quietly also matches <code>get_then_delete</code>.</p>
+</div>
+<p><strong>What success looks like:</strong> a single <code>tools/list</code> over one connection returns tools from <strong>both</strong> servers, every name carries its <code>server__</code> prefix, and <strong>only</strong> the selected subset appears — destructive tools are absent. A <code>tools/call</code> on <code>context7__get_library_docs</code> returns a real result, proving the prefix routed it to the docs server while the agent still talks to just one endpoint.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>No prefix on aggregated names.</strong> If <code>tools/list</code> shows bare names, the agent connected straight to a server instead of the MCPRoute — aggregation and selection are both bypassed.</li>
+<li><strong>Bare-name tool references.</strong> Hard-coding <code>search</code> instead of <code>github__search</code> routes to whichever server resolves first; with two servers exposing it, you'll silently hit the wrong backend.</li>
+<li><strong>Missing <code>toolSelector</code> on a backend.</strong> That server's <em>full</em> surface — destructive tools included — joins the catalog. Absent selection means total exposure, not a safe default.</li>
+<li><strong><code>includeRegex</code> too loose.</strong> An unanchored or greedy pattern pulls in tools you meant to exclude. Prefer exact <code>include</code> for write/destructive families and reserve regex for clearly read-only ones.</li>
+<li><strong>One bad backend fails the whole route.</strong> If a single <code>backendRef</code> server is unreachable, confirm the route's <code>Accepted</code> status and per-backend health before assuming aggregation is broken.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Aggregate a <strong>third</strong> server that deliberately ships a tool whose bare name collides with one already in your catalog (e.g. both a <code>search</code>). Confirm <code>tools/list</code> shows both under distinct prefixes, then call each and verify the result came from the intended server. You've just proven multiplexing — the property 5.4 then secures, so the <em>right identity</em> may call the <em>right</em> prefixed tool.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now put <strong>many</strong> MCP servers behind one MCPRoute: aggregating their catalogs into a single session, relying on <code>server__tool</code> prefixing to multiplex and disambiguate, and using per-backend <code>toolSelector</code> (<code>include</code> / <code>includeRegex</code>) to expose exactly the safe subset. Your agent sees one curated tool surface; operations decides what's behind it.</p>
+<p><strong>Next — 5.4:</strong> decide <em>who</em> may call each of these tools. You'll add <code>securityPolicy.oauth</code> and fine-grained <code>authorization.rules</code> so a token's scopes, claims, and CEL conditions — not just the catalog — gate every <code>tools/call</code>.</p><div class="session-complete" data-session-code="5.3"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 5.3 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-21.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">5.2 · MCP gateways: the MCPRoute resource</span></a>
+<a class="next" href="session-23.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">5.4 · Securing tools: OAuth &amp; fine-grained authorization</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

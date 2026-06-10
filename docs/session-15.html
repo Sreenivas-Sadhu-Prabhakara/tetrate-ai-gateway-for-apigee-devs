@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4.1 Authenticating callers at the AI edge · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li class="active" data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="15">
+      <figure class="hero"><img src="assets/heroes/part-4.svg" alt="A near-full moon behind a guarded sky" loading="lazy"><figcaption class="hero-cap"><span class="hero-eyebrow">Part 4</span><span class="hero-headline">Security &amp; guardrails</span></figcaption></figure><div class="crumbs"><span class="crumb-part">Part 4 — Security &amp; guardrails</span><span class="crumb-sep">·</span><span class="crumb-code">Session 4.1</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-14.html">3.4 · Caching to cut cost &amp; latency</a></div><h1 id="41-authenticating-callers-at-the-ai-edge">4.1 — Authenticating callers at the AI edge</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Before a token limit, a budget, or a guardrail can mean anything, the gateway has to know <strong>who is calling</strong>. In this session you attach an Envoy Gateway <code>SecurityPolicy</code> to the AI route so every request must present a valid <strong>API key, JWT, or OIDC</strong> identity — and you watch a verified claim (a <code>sub</code> or <code>team</code>) flow into the per-user token budget you built in Part 3. Auth is the first policy in the chain because it's what makes every later policy enforceable instead of advisory.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Everything in Part 3 — token rate limits (3.1), budgets (3.2), tiers (3.3) — keys on <em>who</em> the caller is. But so far that "who" has been a bare <code>x-user-id</code> header the client sets itself. That's fine for wiring up the mechanics; it's worthless as governance, because anyone can type <code>x-user-id: alice</code> and spend Alice's budget, or <code>x-user-id: someone-else</code> to dodge their own.</p>
+<p>Caller authentication closes that hole. The gateway demands a <strong>cryptographically verifiable</strong> identity at the edge — a signed JWT, a registered API key, an OIDC login — and rejects anything that can't prove it. Only after that check passes does the request reach the token meter, and the identity the limits key on is now the <em>verified</em> one, not a self-asserted header. This is the difference between a budget that's enforced and a budget that's a suggestion.</p>
+<p>It runs <strong>first</strong> for a reason: there's no point metering tokens, applying guardrails, or paying a provider for a caller you can't name. Reject the unauthenticated request before any of that work — or cost — happens.</p>
+<h2 id="the-concept">The concept</h2>
+<p>A <code>SecurityPolicy</code> attaches to the route via <code>spec.targetRefs</code> and gates the request <em>before</em> the AI policies run. The verified identity is then available downstream as the key the budget counts against:</p>
+<div class="widget" data-widget="sequence"><script type="application/json">{"type": "sequence", "title": "Caller auth at the AI edge, before any limit runs", "actors": [{"id": "app", "label": "Your app / agent"}, {"id": "sec", "label": "SecurityPolicy (edge auth)"}, {"id": "lim", "label": "Token limit / budget"}, {"id": "prov", "label": "LLM provider"}], "steps": [{"from": "app", "to": "sec", "label": "POST /v1/chat/completions + Bearer JWT", "note": "The caller presents a signed JWT (or API key / OIDC token). No identity, no entry."}, {"from": "sec", "to": "sec", "label": "verify signature + claims", "note": "The policy validates the token against the provider's remoteJWKS and checks the required scope/claim. Fail \u2192 401/403; the request stops here."}, {"from": "sec", "to": "lim", "label": "pass: identity = sub/team", "note": "The verified claim becomes the key. The limit now counts against a real identity, not a spoofable header."}, {"from": "lim", "to": "prov", "label": "within budget \u2192 upstream call", "note": "Only an authenticated, in-budget request ever reaches the provider \u2014 or costs a token."}, {"from": "prov", "to": "app", "kind": "return", "label": "completion (metered to that identity)", "note": "Usage is attributed to the verified caller, so chargeback and tiers are trustworthy."}]}</script></div>
+<p>The <code>SecurityPolicy</code> is the same Envoy Gateway resource (<code>gateway.envoyproxy.io/v1alpha1</code>) you'd use to protect any HTTPRoute. <code>spec.jwt</code> defines providers, each with a <code>remoteJWKS</code> URL the gateway fetches signing keys from; <code>spec.apiKeyAuth</code> checks keys against a secret; <code>spec.oidc</code> runs a full login flow. You attach it to the AI route with <code>spec.targetRefs</code>, exactly as you attached the <code>BackendTrafficPolicy</code> for token limits in 3.1.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Until a <code>SecurityPolicy</code> is in place, your per-user budgets are keyed on a <strong>spoofable header</strong>. <code>x-user-id: alice</code> is a claim the client made about itself, not a fact the gateway verified. Auth must establish identity <em>first</em> — otherwise every limit, tier, and chargeback report downstream is built on a value any caller can forge.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is the policy you've put at the top of every proxy flow, unchanged in spirit. <strong>VerifyAPIKey</strong> becomes <code>spec.apiKeyAuth</code>; <strong>OAuthV2 / VerifyJWT</strong> (validating a token against a JWKS) becomes <code>spec.jwt</code> with a <code>remoteJWKS</code> provider; an OIDC login flow becomes <code>spec.oidc</code>. The job is identical: gate the caller at the edge, extract a verified identifier, and let downstream policies (Quota there, token limits here) key on it. The only shift is the resource — a <code>SecurityPolicy</code> attached by <code>targetRefs</code> instead of a policy step in a proxy flow.</p>
+<table>
+<thead>
+<tr>
+<th>Apigee</th>
+<th>AI edge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VerifyAPIKey</td>
+<td><code>SecurityPolicy.spec.apiKeyAuth</code></td>
+</tr>
+<tr>
+<td>OAuthV2 / VerifyJWT (JWKS)</td>
+<td><code>SecurityPolicy.spec.jwt</code> (<code>remoteJWKS</code>)</td>
+</tr>
+<tr>
+<td>OAuth / OIDC login flow</td>
+<td><code>SecurityPolicy.spec.oidc</code></td>
+</tr>
+<tr>
+<td><code>client_id</code> keying a Quota</td>
+<td>verified claim (<code>sub</code>/<code>team</code>) keying a token limit</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>It's the <strong>Spring Security filter chain</strong>, relocated. The <code>OncePerRequestFilter</code> that validates the bearer token, the <code>JwtDecoder</code> wired to a JWKS endpoint, the <code>@PreAuthorize("hasAuthority('SCOPE_...')")</code> on your controller — that whole front-door check now sits in front of <em>every</em> LLM and tool call as a <code>SecurityPolicy</code>, instead of being recompiled into each service. The authenticated principal you'd read from the <code>SecurityContext</code> is the same identity the gateway hands to the token budget.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>In Spring, authentication and authorization usually live in the same place, and you express fine-grained rules (<code>@PreAuthorize</code>, method security) right next to your business logic. At the AI edge they split: the <code>SecurityPolicy</code> proves <em>identity</em> and can require a coarse scope or claim, but the interesting authorization — which models this caller may use, what budget they get, which tools they can invoke — lives in <em>separate</em> policies (model entitlement in Part 2, budgets in 3.2, tool auth in 5.4) keyed on the identity this one establishes. Don't try to encode entitlements in the auth policy; its only job is to turn an untrusted request into a named one.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-require-a-scoped-jwt-then-watch-identity-reach-the-budget">Lab — require a scoped JWT, then watch identity reach the budget</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway and <code>AIGatewayRoute</code> from 1.5 (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), the per-user <code>BackendTrafficPolicy</code> from 3.1, <code>kubectl</code>, and an OIDC issuer that publishes a JWKS (any IdP — the URLs below are placeholders).</p>
+<p><strong>1. Attach a <code>SecurityPolicy</code> requiring a valid JWT</strong> with a specific claim. It targets the same route your AI policies are on, so it runs first:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecurityPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-edge-auth</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">          </span><span class="c1"># the route from session 1.5</span>
+<span class="w">  </span><span class="nt">jwt</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">providers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">corp-idp</span>
+<span class="w">        </span><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://idp.example.com/</span>
+<span class="w">        </span><span class="nt">remoteJWKS</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://idp.example.com/.well-known/jwks.json</span>
+<span class="w">        </span><span class="c1"># expose verified claims as headers so downstream policies can key on them</span>
+<span class="w">        </span><span class="nt">claimToHeaders</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">claim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sub</span>
+<span class="w">            </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-jwt-sub</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">claim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team</span>
+<span class="w">            </span><span class="nt">header</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-jwt-team</span>
+</code></pre></div>
+
+<p><strong>2. Apply it and confirm it's accepted:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>ai-edge-auth.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>securitypolicy<span class="w"> </span>ai-edge-auth<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Prove the gate works. First, call with no token — it must be rejected:</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;no token -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+<span class="c1"># expect: 401</span>
+</code></pre></div>
+
+<p><strong>4. Now call with a valid, correctly-scoped JWT</strong> (mint one from your IdP into <code>$GATEWAY_KEY</code> for this lab). It should pass — and the gateway forwards the verified <code>sub</code>/<code>team</code> as headers your budget keys on:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;valid token -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+<span class="c1"># expect: 200</span>
+</code></pre></div>
+
+<p><strong>5. Point the token budget at the verified claim, not a client header.</strong> Update the <code>BackendTrafficPolicy</code> from 3.1 so its <code>clientSelectors</code> key on <code>x-jwt-sub</code> (set by the gateway from the JWT) instead of the spoofable <code>x-user-id</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">        </span><span class="nt">clientSelectors</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-jwt-sub</span><span class="w">            </span><span class="c1"># verified by SecurityPolicy — not client-set</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">                </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>If your budget still keys on a header the <strong>client</strong> sends (like <code>x-user-id</code>) rather than one the <strong>gateway derived from the verified token</strong> (<code>x-jwt-sub</code>), you've authenticated the caller and then thrown the identity away. The two must connect: the claim the <code>SecurityPolicy</code> verified is the exact header the limit counts. Otherwise a caller could present a valid token but a forged <code>x-user-id</code> and spend someone else's budget.</p>
+</div>
+<p><strong>What success looks like:</strong> the unauthenticated call returns <strong>401</strong> (and an under-scoped token would return <strong>403</strong>), the valid call returns <strong>200</strong>, and spend from the valid call is attributed to the <strong>verified <code>sub</code></strong> in the token budget — so two callers can no longer spend each other's allowance by editing a header.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>No auth at all, budgets on a raw header.</strong> The per-user limit looks real but keys on <code>x-user-id</code>, which any client sets — so identity, budgets, and chargeback are all forgeable. The <code>SecurityPolicy</code> is what makes them enforceable.</li>
+<li><strong>Auth verified but identity discarded.</strong> The JWT is validated, then the budget still keys on a client-set header instead of the verified claim — the proof is thrown away before it's used. Wire <code>claimToHeaders</code> into the limit's <code>clientSelectors</code>.</li>
+<li><strong>JWKS unreachable or stale.</strong> If the gateway can't fetch the <code>remoteJWKS</code>, every call fails closed (or, mis-cached, fails open). Confirm the issuer and JWKS URL are reachable from the gateway and that key rotation is honored.</li>
+<li><strong>Confusing authentication with authorization.</strong> A valid token proves <em>who</em>, not <em>what they may do</em>. Model access, budget tier, and tool scope are separate policies keyed on this identity — don't expect <code>SecurityPolicy</code> to enforce them.</li>
+<li><strong>Issuer or audience not pinned.</strong> Accepting any signed token, or any issuer, lets tokens minted for another system in. Pin <code>issuer</code> (and audience where supported) to your IdP.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Add a second JWT provider for a partner IdP, and require a specific claim value (e.g. <code>tier: premium</code>) to reach the premium-model route from 3.3. Then confirm that a token <em>without</em> that claim is rejected at the edge — your first taste of identity-driven entitlement, where the verified claim doesn't just name the caller but decides what they're allowed to reach.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now place a <code>SecurityPolicy</code> on the AI route so callers must present a verified API key, JWT, or OIDC identity before any model runs, reject unauthenticated (401) or under-scoped (403) calls at the edge, and flow the verified claim into the per-user token budget — turning Part 3's mechanics into real, unforgeable governance. Identity is the foundation every other edge policy stands on.</p>
+<p><strong>Next — 4.2:</strong> with the caller named, defend the <em>prompt</em>. You'll add <strong>AI guardrails</strong> that inspect the request before the model runs and block <strong>prompt-injection and jailbreak</strong> attempts — the input validation <code>@Valid</code> could never express.</p><div class="session-complete" data-session-code="4.1"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 4.1 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-14.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">3.4 · Caching to cut cost &amp; latency</span></a>
+<a class="next" href="session-16.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">4.2 · AI guardrails: prompt-injection &amp; jailbreak defense</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

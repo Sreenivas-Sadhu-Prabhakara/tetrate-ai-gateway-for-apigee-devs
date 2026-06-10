@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.2 Budgets & cost attribution per user, team & app · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li class="active" data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="12">
+      <div class="crumbs"><span class="crumb-part">Part 3 — Governance: tokens, cost &amp; quotas</span><span class="crumb-sep">·</span><span class="crumb-code">Session 3.2</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-11.html">3.1 · Token-based rate limiting: count tokens, not requests</a></div><h1 id="32-budgets-cost-attribution-per-user-team-app">3.2 — Budgets &amp; cost attribution per user, team &amp; app</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Token metering only becomes <em>governance</em> once you attribute spend to a <strong>who</strong> — a user, a team, an app — and put a <strong>budget</strong> on it. By the end of this session you can tag traffic with an identity, produce a per-team token-spend breakdown, and enforce a per-team budget on top of the token counter from 3.1. This is the heart of <strong>Tetrate Agent Operations Director (TAOD)</strong>: discover GenAI usage, attribute cost per user/team/app, and enforce limits — the chargeback report you could never assemble from logs.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 3.1 you proved the gateway can count tokens and stop a runaway user. But a raw token counter answers the wrong question for the people who actually care. Finance doesn't ask "how many tokens crossed the edge?" — they ask "<strong>which team spent what, and were they within budget?</strong>" Without attribution, your beautiful token meter is one undifferentiated number, and the first cost-review meeting goes nowhere.</p>
+<p>Attribution turns metered tokens into accountable money. You stamp every call with the identity it belongs to — <code>x-user-id</code>, <code>x-team</code>, an app id — and the gateway slices usage along those dimensions. From there, two things fall out for free: <strong>showback</strong> (here's what each team consumed) and <strong>chargeback</strong> (here's the bill, enforced as a budget that throttles when crossed). TAOD is the product that does this end to end — discovering shadow GenAI usage you didn't know existed, attributing it, and governing it against ROI and risk policy. Underneath, it's the same Envoy AI Gateway mechanism you already touched in 3.1, keyed on a richer identity.</p>
+<h2 id="the-concept">The concept</h2>
+<p>Budgets and attribution are the layer directly above the token rate limit in the governance stack — the token counter from 3.1 feeds it, and it answers <em>whose</em> spend this was:</p>
+<figure class="svg-figure">
+<img src="assets/svg/governance-stack.svg" alt="A request descends through identity, model entitlement, token rate limit, budget attribution, and guardrails; token usage is metered to cost per user, team, and app.">
+<figcaption>The budget &amp; attribution layer reads the same metered token usage as the rate-limit layer below it, but keys the counter on a richer identity — user, team, app — so spend rolls up the way an org chart does. Same meter, different grouping key.</figcaption>
+</figure>
+
+<p>Mechanically there is no new machinery to learn. It's the <strong>same <code>BackendTrafficPolicy</code></strong> from 3.1, with two changes: you add the identity dimensions you want to bill on (<code>x-team</code>, an app id) to the <code>clientSelectors</code>, and you set the <code>limit</code> to that identity's budget rather than a single user's throttle. The gateway already exposes the per-response token usage as metadata (<code>io.envoy.ai_gateway</code> / <code>llm_total_token</code>); attribution is just <em>which header you group that cost by</em>. A per-user limit governs one noisy user; a per-team limit governs a cost centre.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><strong>Cost is not tokens.</strong> A token on a frontier model can cost 20–60× a token on a small model, so a raw <code>llm_total_token</code> count ranks teams by <em>volume</em>, not <em>spend</em>. A team running a million cheap-model tokens may cost less than a team running fifty thousand premium-model tokens. For a real chargeback figure you must weight tokens by the model's <code>$/token</code> — attribute <strong>model-weighted cost</strong>, not raw token count. Key your policy on <code>x-ai-eg-model</code> as well as identity so each model's spend is separable and can be priced correctly downstream.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>You already run this play for REST. Cost attribution is <strong>Apigee Analytics plus monetization, with tokens as the billable unit.</strong> Analytics sliced traffic by developer, app, and API product; here you slice metered tokens by user, team, and app — the same dimensional rollup, different fact. Monetization let you attach rate plans and spend caps to a developer or product; a per-team token budget is that spend cap, enforced as a <strong>Quota</strong> (3.1) rather than a billing record. The mental model — <em>identity → entitlement → metered usage → enforced limit → report</em> — is unchanged. What's new is only that the meter reads variable token cost from each response instead of <code>+1</code> per call.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>This is the <strong>chargeback you'd otherwise hand-build from Micrometer.</strong> You'd tag an LLM-call timer or counter with <code>team</code> and <code>model</code>, scrape it into Prometheus, and write a Grafana panel that sums token cost per team — then realise the counter is per-pod, drifts under autoscaling, and has no enforcement, so you bolt on a custom budget check in each service. The gateway makes that a first-class, fleet-wide concern: one distributed counter, grouped by identity, with the budget <em>enforced at the edge</em> instead of advisory in a dashboard. You stop maintaining attribution plumbing and start declaring it.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>Apigee monetization and your Micrometer counters both record cost <em>after the fact</em> — they're reporting systems; the spend already happened. A gateway token budget is also an <strong>enforcement</strong> system: cross the line and the next call gets <code>429</code>. That fusion of <em>accounting</em> and <em>admission control</em> in one policy has no clean equivalent on either side. The subtler break is from 3.1 and still bites here: because token cost is only known after the response, a team's budget can <strong>overshoot by one in-flight call</strong> before the counter catches up. Your chargeback total is exact; your real-time enforcement is "next request," not "this request." Reason about it as a billing meter that also brakes, not as a hard pre-admission gate.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-per-team-spend-breakdown-and-a-team-budget">Lab — per-team spend breakdown and a team budget</h4>
+<p><strong>Prereqs:</strong> the gateway and <code>AIGatewayRoute</code> from 1.5 with token metering working from 3.1 (export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, <code>$GATEWAY_KEY</code>), and <code>kubectl</code>. Callers already pass <code>x-user-id</code>; you'll now add <code>x-team</code>.</p>
+<p><strong>1. Tag traffic with a team identity.</strong> Attribution starts at the request. Have each caller stamp the team it belongs to — in Spring this is one header on the outbound <code>ChatClient</code>/<code>RestClient</code>; here we set it directly on the curl so you can see it work:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the payments team makes a call</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;payments -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-user-id: alice&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;x-team: payments&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;max_tokens&quot;:256,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Summarise this invoice.&quot;}]}&#39;</span>
+</code></pre></div>
+
+<p><strong>2. Enforce a per-team budget</strong> — the 3.1 policy, re-keyed on <code>x-team</code> and <code>x-ai-eg-model</code> so each team's spend is separable per model and priceable:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTrafficPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team-budget</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">            </span><span class="c1"># the route from 1.5</span>
+<span class="w">  </span><span class="nt">rateLimit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Global</span>
+<span class="w">    </span><span class="nt">global</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">clientSelectors</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-team</span><span class="w">             </span><span class="c1"># the cost centre we bill</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span><span class="w">      </span><span class="c1"># keep model separable for pricing</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+<span class="w">          </span><span class="nt">limit</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">requests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2000000</span><span class="w">             </span><span class="c1"># 2M tokens per team, per model...</span>
+<span class="w">            </span><span class="nt">unit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Day</span><span class="w">                     </span><span class="c1"># ...per day — the team&#39;s daily budget</span>
+<span class="w">          </span><span class="nt">cost</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">request</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w">                   </span><span class="c1"># don&#39;t charge on the way in</span>
+<span class="w">            </span><span class="nt">response</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metadata</span><span class="w">              </span><span class="c1"># charge the tokens the model reported</span>
+<span class="w">              </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">io.envoy.ai_gateway</span>
+<span class="w">                </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llm_total_token</span>
+</code></pre></div>
+
+<p><strong>3. Apply it and confirm acceptance:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>team-budget.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>team-budget<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[0].type}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Produce a per-team spend breakdown.</strong> Drive a little traffic as two teams on two models, then read the per-identity token usage the gateway records (in a managed deployment this is the TAOD cost dashboard; self-hosted, read it from the metrics the gateway emits, keyed by <code>x-team</code> and <code>x-ai-eg-model</code>):</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># scrape per-team, per-model token usage from the gateway&#39;s metrics endpoint</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost:9090/metrics&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;ai_gateway.*(team|model)&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>token
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A <code>Distinct</code> selector creates a <strong>separate counter per observed header value</strong>, so a team that never calls has no counter and a <em>misspelled</em> <code>x-team</code> silently gets its own private budget — spend you'll never see in the rollup. Validate the header against an allow-list of real teams at the edge (4.x identity), or one fat-fingered <code>x-team: payment</code> becomes untracked, unbudgeted shadow spend.</p>
+</div>
+<p><strong>What success looks like:</strong> you can show a token-spend figure broken out by <code>x-team</code> (and by model within each team), and once a team crosses its daily token budget for a model, that team's further calls on that model return <strong><code>429</code></strong> — while other teams, and the same team on other models, are unaffected. You've turned the 3.1 token meter into an attributed, enforced, per-cost-centre budget.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You've built real cost governance when each of these holds:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># same load under two x-team values lands in two separate counters</span>
+<span class="k">for</span><span class="w"> </span>team<span class="w"> </span><span class="k">in</span><span class="w"> </span>payments<span class="w"> </span>search<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$team</span><span class="s2"> -&gt; %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;x-user-id: svc&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;x-team: </span><span class="nv">$team</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;max_tokens&quot;:512,</span>
+<span class="s1">         &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Write a long essay.&quot;}]}&#39;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<ul>
+<li>Two different <code>x-team</code> values get <strong>independent budgets</strong> — if they share one counter, your <code>clientSelectors</code> aren't keyed on the team header.</li>
+<li>A team's premium-model spend and cheap-model spend show up as <strong>separate lines</strong> — because you keyed on <code>x-ai-eg-model</code>. If they're merged, you can't price the bill correctly.</li>
+<li>The spend breakdown sums to roughly the total tokens the route metered in 3.1 — attribution should <em>partition</em> usage, not lose or double-count it.</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Attributing by token count, not cost.</strong> Ranking teams by raw tokens hides the team quietly burning a frontier model. Always weight by the model's price — see the pitfall above.</li>
+<li><strong>No identity on the request.</strong> If callers don't stamp <code>x-team</code>/app id, every dimension collapses to one anonymous bucket and attribution is impossible. The header is the whole game; enforce it (4.x).</li>
+<li><strong>Trusting an unvalidated identity header.</strong> A client can send any <code>x-team</code> string. Until you bind identity to an authenticated principal (4.1), a caller can mislabel its spend onto another team — or onto a typo'd team that escapes the rollup.</li>
+<li><strong>Confusing showback with enforcement.</strong> A dashboard that <em>reports</em> overspend is not a budget. If there's no <code>BackendTrafficPolicy</code> with a <code>limit</code>, nothing actually throttles when a team blows its cap.</li>
+<li><strong>One global budget instead of per-team.</strong> A single fleet-wide limit protects the provider but tells finance nothing and lets one team starve the rest. Budgets must be keyed on the cost centre.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Build a tiny model-price table (<code>$/1K tokens</code> per model) and combine it with the per-team, per-model token breakdown to compute <strong>model-weighted monthly cost per team</strong> — the actual chargeback number. Then compare two teams with identical token totals but different model mixes and watch their bills diverge. That divergence is precisely why raw token attribution misleads, and why TAOD prices spend by model before it governs it.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now attribute metered tokens to a <strong>user, team, and app</strong> via identity headers, produce a per-team (and per-model) spend breakdown, and enforce a <strong>per-team budget</strong> by re-keying the 3.1 token counter — the core loop of Tetrate Agent Operations Director. Crucially, you know that cost is <strong>model-weighted</strong>, not raw tokens, so your chargeback reflects money rather than volume.</p>
+<p><strong>Next — 3.3:</strong> decide not just <em>how much</em> a team may spend, but <em>which models it's even allowed to call</em>. You'll define <strong>sanctioned-model access tiers</strong> — an API Product for models — and prove a cheap-tier caller is refused the premium model with a <code>403</code>.</p><div class="session-complete" data-session-code="3.2"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 3.2 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-11.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">3.1 · Token-based rate limiting: count tokens, not requests</span></a>
+<a class="next" href="session-13.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">3.3 · Sanctioned-model governance &amp; access tiers</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

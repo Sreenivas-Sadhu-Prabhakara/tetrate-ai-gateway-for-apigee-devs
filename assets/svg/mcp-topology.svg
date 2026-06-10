@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" role="img" aria-labelledby="mcp-title mcp-desc" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <title id="mcp-title">The MCP gateway topology</title>
+  <desc id="mcp-desc">An AI agent reaches many MCP tool servers through one MCP gateway, which authorizes with OAuth and multiplexes tools under prefixed names.</desc>
+  <defs>
+    <marker id="mcp-a" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#4FE3C1"/></marker>
+    <marker id="mcp-b" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8FB3FF"/></marker>
+  </defs>
+
+  <!-- agent -->
+  <rect x="20" y="142" width="126" height="80" rx="12" fill="#161A26" stroke="#353D52"/>
+  <text x="83" y="174" text-anchor="middle" fill="#E8ECF4" font-size="13" font-weight="600">AI agent</text>
+  <text x="83" y="192" text-anchor="middle" fill="#8893A8" font-size="10.5">tool-calling loop</text>
+  <text x="83" y="208" text-anchor="middle" fill="#7FF0D6" font-size="10">one tool surface</text>
+
+  <!-- mcp gateway -->
+  <rect x="282" y="96" width="236" height="172" rx="16" fill="rgba(79,227,193,0.04)" stroke="#4FE3C1" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="400" y="120" text-anchor="middle" fill="#4FE3C1" font-size="13" font-weight="700" letter-spacing=".05em">MCP GATEWAY</text>
+  <text x="400" y="137" text-anchor="middle" fill="#8893A8" font-size="10.5">MCPRoute</text>
+
+  <rect x="304" y="150" width="88" height="44" rx="9" fill="#1A1430" stroke="#A98BFF"/>
+  <text x="348" y="170" text-anchor="middle" fill="#C4AEFF" font-size="11" font-weight="700">OAuth</text>
+  <text x="348" y="184" text-anchor="middle" fill="#8893A8" font-size="9.5">authorize tools</text>
+
+  <rect x="402" y="150" width="96" height="44" rx="9" fill="#1C2130" stroke="#8FB3FF"/>
+  <text x="450" y="170" text-anchor="middle" fill="#8FB3FF" font-size="11" font-weight="700">Multiplex</text>
+  <text x="450" y="184" text-anchor="middle" fill="#8893A8" font-size="9.5">prefix + select</text>
+
+  <text x="400" y="224" text-anchor="middle" fill="#8893A8" font-size="10">Streamable HTTP · toolSelector</text>
+  <text x="400" y="252" text-anchor="middle" fill="#8893A8" font-size="10">one endpoint, many servers</text>
+
+  <!-- tool servers -->
+  <g font-size="12">
+    <rect x="640" y="54" width="180" height="58" rx="10" fill="#161A26" stroke="#353D52"/>
+    <text x="656" y="78" fill="#E8ECF4" font-weight="600">GitHub</text>
+    <text x="656" y="96" fill="#7FF0D6" font-size="10.5" font-family="monospace">github__*</text>
+
+    <rect x="640" y="150" width="180" height="58" rx="10" fill="#161A26" stroke="#353D52"/>
+    <text x="656" y="174" fill="#E8ECF4" font-weight="600">Context7 (docs)</text>
+    <text x="656" y="192" fill="#7FF0D6" font-size="10.5" font-family="monospace">context7__*</text>
+
+    <rect x="640" y="246" width="180" height="58" rx="10" fill="#161A26" stroke="#353D52"/>
+    <text x="656" y="270" fill="#E8ECF4" font-weight="600">Internal DB tool</text>
+    <text x="656" y="288" fill="#7FF0D6" font-size="10.5" font-family="monospace">db__*</text>
+  </g>
+
+  <!-- arrows -->
+  <path d="M146 182 H278" fill="none" stroke="#4FE3C1" stroke-width="2.2" marker-end="url(#mcp-a)"/>
+  <text x="212" y="174" text-anchor="middle" fill="#8893A8" font-size="10">tool call</text>
+
+  <g fill="none" stroke="#8FB3FF" stroke-width="2" marker-end="url(#mcp-b)">
+    <path d="M518 150 C 580 120, 600 100, 636 88"/>
+    <path d="M518 178 H636"/>
+    <path d="M518 206 C 580 240, 600 262, 636 272"/>
+  </g>
+
+  <text x="400" y="324" text-anchor="middle" fill="#8893A8" font-size="11">The agent sees one governed tool catalog; the gateway routes, authorizes, and observes every invocation.</text>
+</svg>

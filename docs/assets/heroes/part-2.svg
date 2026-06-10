@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract Mayari moon motif">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B0E16"/>
+      <stop offset="60%" stop-color="#0D1220"/>
+      <stop offset="100%" stop-color="#10182B"/>
+    </linearGradient>
+    <radialGradient id="moon" cx="42%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#F2F6FF"/>
+      <stop offset="45%" stop-color="#CFDBF2"/>
+      <stop offset="80%" stop-color="#8E9FC6"/>
+      <stop offset="100%" stop-color="#5A6890"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8FB3FF" stop-opacity="0.30"/>
+      <stop offset="55%" stop-color="#4FE3C1" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#4FE3C1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="300" fill="url(#sky)"/>
+  <g>
+  <circle cx="31" cy="17" r="0.60" fill="#9FE0FF" opacity="0.25"/>
+  <circle cx="128" cy="70" r="1.05" fill="#EAF2FF" opacity="0.50"/>
+  <circle cx="419" cy="13" r="0.60" fill="#EAF2FF" opacity="0.62"/>
+  <circle cx="516" cy="66" r="1.05" fill="#9FE0FF" opacity="0.25"/>
+  <circle cx="613" cy="119" r="1.50" fill="#EAF2FF" opacity="0.50"/>
+  <circle cx="710" cy="172" r="1.95" fill="#EAF2FF" opacity="0.75"/>
+  <circle cx="807" cy="9" r="0.60" fill="#EAF2FF" opacity="0.38"/>
+  <circle cx="904" cy="62" r="1.05" fill="#EAF2FF" opacity="0.62"/>
+  <circle cx="1001" cy="115" r="1.50" fill="#9FE0FF" opacity="0.25"/>
+  <circle cx="1098" cy="168" r="1.95" fill="#EAF2FF" opacity="0.50"/>
+  <circle cx="1195" cy="5" r="0.60" fill="#EAF2FF" opacity="0.75"/>
+  <circle cx="92" cy="58" r="1.05" fill="#EAF2FF" opacity="0.38"/>
+  <circle cx="383" cy="1" r="0.60" fill="#EAF2FF" opacity="0.50"/>
+  <circle cx="480" cy="54" r="1.05" fill="#EAF2FF" opacity="0.75"/>
+  <circle cx="577" cy="107" r="1.50" fill="#EAF2FF" opacity="0.38"/>
+  <circle cx="674" cy="160" r="1.95" fill="#EAF2FF" opacity="0.62"/>
+  <circle cx="771" cy="213" r="0.60" fill="#9FE0FF" opacity="0.25"/>
+  <circle cx="868" cy="50" r="1.05" fill="#EAF2FF" opacity="0.50"/>
+  <circle cx="965" cy="103" r="1.50" fill="#EAF2FF" opacity="0.75"/>
+  <circle cx="1062" cy="156" r="1.95" fill="#EAF2FF" opacity="0.38"/>
+  <circle cx="1159" cy="209" r="0.60" fill="#EAF2FF" opacity="0.62"/>
+  <circle cx="56" cy="46" r="1.05" fill="#9FE0FF" opacity="0.25"/>
+  <circle cx="153" cy="99" r="1.50" fill="#EAF2FF" opacity="0.50"/>
+  <circle cx="347" cy="205" r="0.60" fill="#EAF2FF" opacity="0.38"/>
+  <circle cx="444" cy="42" r="1.05" fill="#EAF2FF" opacity="0.62"/>
+  </g>
+  <circle cx="264" cy="120" r="171" fill="url(#halo)"/>
+  <circle cx="264" cy="120" r="90" fill="url(#moon)"/>
+  <circle cx="264" cy="120" r="90" fill="none" stroke="#EAF2FF" stroke-width="1" opacity="0.35"/>
+  <circle cx="363" cy="110" r="90" fill="#0D1220"/>
+  <!-- horizon haze -->
+  <rect x="0" y="228" width="1200" height="72" fill="#070910" opacity="0.6"/>
+</svg>

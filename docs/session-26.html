@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6.2 Debugging AI requests at the gateway · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li class="active" data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="26">
+      <div class="crumbs"><span class="crumb-part">Part 6 — Observability &amp; operations</span><span class="crumb-sep">·</span><span class="crumb-code">Session 6.2</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-25.html">6.1 · Observability for AI traffic: tokens, latency &amp; tracing</a></div><h1 id="62-debugging-ai-requests-at-the-gateway">6.2 — Debugging AI requests at the gateway</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>When an AI request fails or misbehaves, the answer is almost never in your app — it's at the gateway, the one place that sees the request <strong>as transformed</strong> and the <strong>provider's response</strong>. By the end of this session you can reproduce a blocked request and use the gateway's debug and telemetry signals to identify exactly <strong>which policy</strong> (guardrail, limit, or auth) rejected it, <strong>at which stage</strong>, and <strong>why</strong> — instead of guessing from a generic error the client received.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Once governance lives at the edge, so does the failure. A <code>429</code>, a <code>403</code>, a redacted response, a wrong model — none of those happened in your service; they happened in a policy the gateway ran on a request your app no longer fully controls. The call <strong>left your process</strong>, so your debugger and your request logs stop at the point where you handed it off. The gateway picks up exactly there.</p>
+<p>This is the operational flip side of session 6.1. There you wired metrics and traces to <em>watch healthy</em> traffic; here you use the same signals — plus the gateway's request/response view — to <em>diagnose broken</em> traffic. The skill is knowing what the gateway saw: the body it rewrote, the headers it injected, the policy that fired, and the upstream's actual reply.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is the <strong>Apigee Trace/Debug tool, for AI.</strong> You already know the move: capture a session, then step the request flow policy by policy and watch each one's input, output, and verdict to find where it went wrong — a Quota that tripped, a VerifyAPIKey that failed, a JavaScript that mangled the payload. Same instinct here: step the AI request through <strong>routing → guardrails → rate/budget limits → auth → provider call</strong>, and read which step changed or rejected it. The flow has new stations (token limits, prompt guardrails, model entitlement), but the debugging discipline — <em>find the step that fired</em> — is identical.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Think of how you debug a downstream call today: a breakpoint in the client, the request/response logged by an interceptor, the upstream's status and body inspected. For a gateway-fronted LLM call, <strong>the gateway is where you now set that breakpoint</strong> — it holds the transformed request and the provider's raw response that your app never sees. Your service-side logs tell you "the gateway returned 403"; only the gateway's debug view tells you <em>whether a guardrail blocked the prompt or an auth policy rejected the caller</em>. You move from "log inside my service" to "read the edge that spoke for my service."</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>Apigee Trace shows a single request marching through a flow you authored. An AI failure may not be a single request at all — an <strong>agent run</strong> can fail on its third tool call or its second model hop, so the "request that broke" is one span buried in a session. And the failure can be <strong>semantic</strong>, not a status code: a guardrail rewrites the response, or the model returns a confidently wrong answer the gateway happily passed. There's no flow step labelled "the model was wrong." You debug the <em>trace of the run</em> (6.1), not just the one HTTP exchange — and some failures live above the gateway entirely.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Reuse the request-path map from session 1.1 — but now read it as a fault tree. Each station is both where a policy <em>acts</em> and where it can <em>reject</em>, and the gateway records the verdict at each one:</p>
+<figure class="svg-figure">
+<img src="assets/svg/ai-request-path.svg" alt="The AI gateway request path read as a debugging map: authentication, token metering, guardrails, routing, and the provider call are each a stage where a request can be rejected, with the gateway recording which one fired.">
+<figcaption>The session 1.1 request path, reframed as "where to look when it breaks." A request can be stopped at auth, at a token/budget limit, by a guardrail, or fail at the provider — and the gateway records which stage and which policy fired, so you debug the right layer instead of the wrong one.</figcaption>
+</figure>
+
+<p>Read left to right, each station has its own characteristic rejection, and knowing the order tells you what to rule out first. <strong>Auth</strong> rejects before any model work happens — a bad or unentitled caller never reaches a provider. <strong>Token/budget limits</strong> reject a caller who is valid but over their allotment — the request was well-formed, the wallet was empty. A <strong>guardrail</strong> can reject on the way <em>in</em> (a prompt it won't allow) or rewrite on the way <em>out</em> (redaction, a blocked completion) — so a guardrail failure can present as either a <code>4xx</code> or a suspiciously altered <code>200</code>. <strong>Routing</strong> rejects when no rule matches the requested model. Only past all of those does the <strong>provider call</strong> happen, and a failure there is the upstream's, forwarded through. Walking the stations in order turns "it broke" into "it broke <em>here</em>."</p>
+<p>The single most important distinction this view enforces: <strong>gateway-rejected vs. provider-rejected.</strong> A <code>4xx</code> the gateway raised because <em>your policy</em> said no looks, to the client, almost identical to a <code>4xx</code> the <em>upstream provider</em> raised. They demand opposite fixes — one is your config, one is the model API. The gateway's debug signals (the response code's source, the policy/decision metadata, the OpenInference span attributes) tell them apart before you waste an hour debugging the wrong layer.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A <code>4xx</code> from the gateway and a <code>4xx</code> from the provider look the same to the client. Before you debug, establish <em>which layer</em> rejected the call: a gateway policy (your guardrail, your budget, your auth) or the upstream provider (bad model name, provider quota, malformed request the gateway forwarded). Reach for provider-side fixes on a gateway-rejected request and you'll change config that was never the cause.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-reproduce-a-blocked-request-and-find-what-fired">Lab — reproduce a blocked request and find what fired</h4>
+<p><strong>Prereqs:</strong> the gateway from 1.5 with a token/budget limit from Part 3 and a guardrail from Part 4 active, telemetry enabled from 6.1, and <code>kubectl</code>. Export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, and <code>$GATEWAY_KEY</code>.</p>
+<p><strong>1. Deliberately trip a policy.</strong> Send a request you know should be rejected — here, one that blows past a token budget — and capture the full response including headers:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-D<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>/tmp/body.json<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;\nHTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-user-id: alice&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;max_tokens&quot;:4096,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Write the longest possible essay.&quot;}]}&#39;</span>
+</code></pre></div>
+
+<p><strong>2. Read which policy fired, and at which stage.</strong> The response headers and body carry the gateway's verdict; the metadata names the decision. Distinguish gateway from provider first:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the status line + gateway decision headers (rate-limit, guardrail, auth)</span>
+grep<span class="w"> </span>-iE<span class="w"> </span><span class="s2">&quot;x-ai-eg|x-ratelimit|x-envoy|retry-after|^HTTP&quot;</span><span class="w"> </span>/tmp/body.json<span class="w"> </span>/dev/stdin<span class="w"> </span>&lt;<span class="w"> </span>/dev/null
+<span class="c1"># the error body — gateway-shaped error vs. forwarded provider error</span>
+jq<span class="w"> </span><span class="s1">&#39;{message: .error.message, type: .error.type, code: .error.code}&#39;</span><span class="w"> </span>/tmp/body.json
+</code></pre></div>
+
+<p>A <code>429</code> with <code>x-ratelimit-*</code> / <code>retry-after</code> headers and a gateway-shaped error is <strong>gateway-rejected</strong> (your token budget from Part 3). A <code>4xx</code> whose body is the <em>provider's</em> error schema is <strong>provider-rejected</strong> and forwarded — a different fix entirely.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Don't debug from the client's status code alone. The same <code>429</code> can mean "your gateway budget tripped" or "the provider rate-limited the gateway's upstream key." Confirm the <em>source</em> via the decision headers and the error body's shape before touching any config.</p>
+</div>
+<p><strong>3. Confirm against the trace.</strong> Pull the OpenInference trace for this request (6.1) and read the span where the verdict was stamped — the rejecting stage and policy name appear as span attributes, so a misbehaving <em>agent</em> run shows you the exact failing step, not just the final code:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://tempo.</span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span><span class="s2">.svc.cluster.local:3100/api/search?tags=session.id=demo-run-1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.traces[0].spanSet.spans[] | select(.attributes[&quot;ai.gateway.decision&quot;]) |</span>
+<span class="s1">        {stage: .name, decision: .attributes[&quot;ai.gateway.decision&quot;], policy: .attributes[&quot;ai.gateway.policy&quot;]}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Now trip a <em>provider</em> failure and watch the signal change.</strong> Send a request the gateway happily accepts but the upstream rejects — a model name no provider serves — and compare:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-D<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>/tmp/prov.json<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;\nHTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-nonexistent-999&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+<span class="c1"># the error body now carries the PROVIDER&#39;s schema, with no gateway decision header</span>
+jq<span class="w"> </span><span class="s1">&#39;{message: .error.message, type: .error.type, code: .error.code}&#39;</span><span class="w"> </span>/tmp/prov.json
+</code></pre></div>
+
+<p>The status may again be a <code>4xx</code>, but there is <strong>no</strong> <code>x-ratelimit-*</code>/decision header and the body is the provider's error shape — the unmistakable signature of a provider-rejected call. Same client symptom, opposite cause, opposite fix.</p>
+<p><strong>What success looks like:</strong> for your deliberately-blocked request you can state, with evidence from headers, body, and trace, <strong>which</strong> policy rejected it (e.g. the Part 3 token budget), <strong>at which stage</strong> (the rate-limit station), and — by contrast with step 4 — that it was <strong>gateway-rejected, not provider-rejected</strong>. That's the exact triage you'd otherwise have spent an hour guessing at from a bare status code.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Debugging the wrong layer.</strong> Treating a gateway-rejected <code>4xx</code> as a provider problem (or vice versa); always establish the source from decision headers and error-body shape first.</li>
+<li><strong>Trusting the client's error text.</strong> The client sees a sanitised status; the cause — which policy, which stage — lives in the gateway's headers, decision metadata, and span attributes, not in the app log.</li>
+<li><strong>Debugging a single request when it's an agent run.</strong> The failure may be the third tool call or second model hop; read the <em>trace</em>, not just the last HTTP exchange.</li>
+<li><strong>No reproduction.</strong> Diagnosing from a one-off production error without re-tripping the policy on demand — you can't confirm the fix you can't reproduce.</li>
+<li><strong>Assuming <code>200</code> means correct.</strong> A guardrail may rewrite a response, or the model may be confidently wrong; a clean status is not a clean answer.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Build a tiny triage runbook: trip each policy class in turn — auth failure, token-budget <code>429</code>, guardrail block, and a genuine provider error (e.g. an invalid model name forwarded upstream) — and record the distinguishing signal for each (status, decisive header, body shape, span attribute). You now have a one-page "which layer rejected this" lookup that turns the next on-call AI incident from guesswork into a two-minute classification.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now reproduce a blocked AI request and use the gateway's debug and telemetry signals to pinpoint <strong>which policy fired, at which stage, and why</strong> — and, crucially, tell a <strong>gateway-rejected</strong> failure from a <strong>provider-rejected</strong> one before you start fixing. The edge is your breakpoint, the trace is your stack, and the request path is your fault tree.</p>
+<p><strong>Next — 6.3:</strong> you've observed and debugged a running gateway; now you'll <strong>operate</strong> it as config-as-code — the Gateway API and AI CRDs in git, the <code>aigw</code> CLI for local runs, and the same manifests promoted unchanged across clusters via GitOps.</p><div class="session-complete" data-session-code="6.2"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 6.2 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-25.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">6.1 · Observability for AI traffic: tokens, latency &amp; tracing</span></a>
+<a class="next" href="session-27.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">6.3 · Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

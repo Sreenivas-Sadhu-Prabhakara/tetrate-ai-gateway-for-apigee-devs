@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" role="img" aria-labelledby="gov-title gov-desc" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <title id="gov-title">The AI governance stack</title>
+  <desc id="gov-desc">Every request descends through identity, model entitlement, token rate limits, budget attribution, and guardrails before reaching a provider; usage is metered to cost.</desc>
+  <defs>
+    <marker id="gov-d" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#4FE3C1"/></marker>
+    <linearGradient id="gov-meter" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#4FE3C1"/><stop offset="60%" stop-color="#8FB3FF"/><stop offset="100%" stop-color="#FF8C5A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- descending request spine -->
+  <path d="M34 44 V356" fill="none" stroke="#4FE3C1" stroke-width="2.2" marker-end="url(#gov-d)"/>
+  <text x="34" y="36" text-anchor="middle" fill="#4FE3C1" font-size="11" font-weight="700">request</text>
+
+  <!-- layers -->
+  <g font-size="13">
+    <rect x="60" y="52" width="430" height="46" rx="10" fill="#1C2130" stroke="#353D52"/>
+    <circle cx="84" cy="75" r="6" fill="#8FB3FF"/>
+    <text x="104" y="71" fill="#E8ECF4" font-weight="700">Caller identity</text>
+    <text x="104" y="88" fill="#8893A8" font-size="10.5">API key / JWT — like Apigee VerifyAPIKey · OAuthV2</text>
+
+    <rect x="60" y="108" width="430" height="46" rx="10" fill="#1C2130" stroke="#353D52"/>
+    <circle cx="84" cy="131" r="6" fill="#A98BFF"/>
+    <text x="104" y="127" fill="#E8ECF4" font-weight="700">Model entitlement</text>
+    <text x="104" y="144" fill="#8893A8" font-size="10.5">sanctioned-model tier — an API Product for models</text>
+
+    <rect x="60" y="164" width="430" height="46" rx="10" fill="#1B2233" stroke="#4FE3C1" stroke-width="1.4"/>
+    <circle cx="84" cy="187" r="6" fill="#4FE3C1"/>
+    <text x="104" y="183" fill="#E8ECF4" font-weight="700">Token rate limit</text>
+    <text x="104" y="200" fill="#8893A8" font-size="10.5">input + output tokens — Apigee Quota, counting tokens</text>
+
+    <rect x="60" y="220" width="430" height="46" rx="10" fill="#1C2130" stroke="#353D52"/>
+    <circle cx="84" cy="243" r="6" fill="#F5B544"/>
+    <text x="104" y="239" fill="#E8ECF4" font-weight="700">Budget &amp; attribution</text>
+    <text x="104" y="256" fill="#8893A8" font-size="10.5">charge the right team — Analytics + monetization</text>
+
+    <rect x="60" y="276" width="430" height="46" rx="10" fill="#1C2130" stroke="#FF8C5A"/>
+    <circle cx="84" cy="299" r="6" fill="#FF8C5A"/>
+    <text x="104" y="295" fill="#E8ECF4" font-weight="700">Guardrails</text>
+    <text x="104" y="312" fill="#8893A8" font-size="10.5">PII redaction · prompt-injection · output safety</text>
+  </g>
+
+  <!-- provider -->
+  <rect x="120" y="338" width="310" height="44" rx="11" fill="#161A26" stroke="#8FB3FF" stroke-width="1.4"/>
+  <text x="275" y="365" text-anchor="middle" fill="#8FB3FF" font-size="13" font-weight="700">LLM provider / tool server</text>
+
+  <!-- token → cost meter -->
+  <text x="630" y="44" text-anchor="middle" fill="#8893A8" font-size="11" font-weight="700" letter-spacing=".04em">TOKENS → COST</text>
+  <rect x="600" y="56" width="60" height="266" rx="10" fill="#11151F" stroke="#353D52"/>
+  <rect x="608" y="150" width="44" height="164" rx="6" fill="url(#gov-meter)"/>
+  <g font-size="10" fill="#8893A8" text-anchor="start">
+    <text x="672" y="74">budget</text>
+    <line x1="600" y1="70" x2="664" y2="70" stroke="#FF8C5A" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="672" y="156">now</text>
+    <text x="672" y="318">0</text>
+  </g>
+  <text x="630" y="344" text-anchor="middle" fill="#8893A8" font-size="10">metered per</text>
+  <text x="630" y="357" text-anchor="middle" fill="#8893A8" font-size="10">user · team · app</text>
+</svg>

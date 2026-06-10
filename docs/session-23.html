@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5.4 Securing tools: OAuth & fine-grained authorization · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li class="active" data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="23">
+      <div class="crumbs"><span class="crumb-part">Part 5 — The agentic turn: MCP &amp; tools</span><span class="crumb-sep">·</span><span class="crumb-code">Session 5.4</span><span class="crumb-sep">·</span><span class="crumb-min">~55 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-22.html">5.3 · Tool routing, aggregation &amp; multiplexing</a></div><h1 id="54-securing-tools-oauth-fine-grained-authorization">5.4 — Securing tools: OAuth &amp; fine-grained authorization</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>A tool in the catalog isn't a tool the agent may <em>call</em>. <strong><code>securityPolicy.oauth</code></strong> makes the MCPRoute a protected resource per the <strong>MCP Authorization spec</strong> — the agent must present a valid token — and <strong><code>authorization.rules</code></strong> then decide, per invocation, which identities may call which tools using <strong>JWT scopes/claims plus CEL</strong>. By the end you can require a scope to invoke a write tool, prove a read-only token is refused it via a CEL rule, and confirm a read tool still works.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Selection in 5.3 controlled what's <em>visible</em>; it does not control who may <em>act</em>. Two agents — a read-only assistant and a privileged ops agent — may share the same catalog yet must have very different powers over it. Visibility is not authorization.</p>
+<p>So the gateway authenticates the caller (OAuth) and authorizes each call (rules). Per the MCP Authorization spec, the MCPRoute advertises <code>protectedResourceMetadata</code> so an agent's MCP client can discover the authorization server, obtain a token, and present it. On every <code>tools/call</code>, the gateway validates the JWT against the <code>issuer</code> and <code>audiences</code>, then evaluates <code>authorization.rules</code> — matching the token's <strong>scopes and claims</strong> against the <strong>target tool</strong>, with <strong>CEL</strong> for conditions a flat scope list can't express ("<code>tools:write</code> <em>and</em> the tool name starts with <code>github__</code>"). The decision is allow or deny, made at the edge, identically for every agent — not reimplemented inside each tool server.</p>
+<h2 id="the-concept">The concept</h2>
+<p>The agent presents a token; the gateway checks OAuth, then the rules, then routes — or denies before the tool ever runs:</p>
+<div class="widget" data-widget="sequence"><script type="application/json">{"type": "sequence", "title": "An authorized tool call", "actors": [{"id": "ag", "label": "AI agent"}, {"id": "gw", "label": "MCP gateway"}, {"id": "as", "label": "Auth server"}, {"id": "ts", "label": "Tool server"}], "steps": [{"from": "ag", "to": "gw", "label": "tools/call (no/invalid token)", "note": "First call carries no token; the gateway's securityPolicy.oauth rejects it and points to the auth server via protectedResourceMetadata."}, {"from": "ag", "to": "as", "label": "obtain token", "note": "The MCP client discovers the issuer, authenticates, and is granted a JWT whose scopes (e.g. tools:read) reflect what this agent may do."}, {"from": "ag", "to": "gw", "label": "tools/call github__issue_read + Bearer token", "note": "Now the call carries the JWT. The gateway validates it against issuer + audiences."}, {"from": "gw", "to": "gw", "label": "evaluate authorization.rules (scopes/claims + CEL)", "note": "Rules combine the token's scopes/claims, the target tool name, and CEL. A read tool with a tools:read token matches an allow rule."}, {"from": "gw", "to": "ts", "label": "route to tool server", "note": "Allowed: the gateway strips the server prefix and invokes the upstream tool. A denied call stops here with 403 \u2014 the tool never runs."}, {"from": "ts", "to": "ag", "kind": "return", "label": "result", "note": "Authorized, invoked, audited. A tools:read token calling github__issue_create would have been denied by CEL before reaching this step."}]}</script></div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is <strong>OAuthV2 plus operation-scoping, aimed at tools.</strong> <code>securityPolicy.oauth</code> is the OAuthV2 policy that verifies the bearer token (<code>issuer</code> = the token endpoint you'd configure, <code>audiences</code> = the resource); <code>authorization.rules</code> is the scope/operation check you'd express with <code>oauth.scope</code> conditions and Flow Conditions, except the "operation" is an MCP tool name and the conditions are <strong>CEL</strong> instead of message templates. If you've gated <code>POST /orders</code> behind a <code>orders.write</code> scope while leaving <code>GET /orders</code> on <code>orders.read</code>, you've built exactly this — for a tool instead of a verb+path.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Picture <code>@PreAuthorize("hasAuthority('SCOPE_tools:write')")</code> on each tool method, with a Spring Security resource server validating the JWT. The MCPRoute hoists that to the <strong>edge</strong>: the same scope check, the same JWT validation, but enforced once at the gateway for every tool server — so a new tool server inherits authorization without re-implementing method security, and the policy lives in YAML your platform team owns, not annotations scattered across services.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A REST endpoint is authorized <strong>once per request</strong>; an MCP session is long-lived and carries <strong>many</strong> <code>tools/call</code> messages over one connection. Authorizing at <em>connect</em> time (or only at <code>tools/list</code>) is not enough — a token validated at the handshake could otherwise call tools its scopes never permitted for the rest of the session. The gateway must evaluate <code>authorization.rules</code> on <strong>every invocation</strong>, per JSON-RPC message, not per TCP connection. There's no stateless-request boundary to lean on the way there is in Apigee or a Spring filter chain.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-require-a-scope-to-call-a-write-tool-refuse-a-read-only-token">Lab — require a scope to call a write tool, refuse a read-only token</h4>
+<p><strong>Prereqs:</strong> the aggregated MCPRoute <code>tools</code> from 5.3 (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), <code>kubectl</code>, an OAuth authorization server that can issue JWTs with a <code>scope</code> claim, and a way to mint two tokens: one with <code>tools:read</code>, one with <code>tools:read tools:write</code>. For this lab the GitHub backend also exposes a write tool, <code>issue_create</code>.</p>
+<p><strong>1. Expose the write tool</strong> (add it to the GitHub backend's selector so it's in the catalog — authorization, not visibility, will gate it):</p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-mcp</span>
+<span class="w">      </span><span class="nt">toolSelector</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">include</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issue_read</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issue_search</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issue_create</span><span class="w">        </span><span class="c1"># now visible; rules below decide who may call it</span>
+</code></pre></div>
+
+<p><strong>2. Add <code>securityPolicy</code> to the MCPRoute</strong> — OAuth for authentication, <code>authorization.rules</code> for fine-grained tool access with CEL:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1beta1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MCPRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tools</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span>
+<span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mcp</span>
+<span class="w">  </span><span class="nt">securityPolicy</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">oauth</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://auth.example.com/realms/agents</span>
+<span class="w">      </span><span class="nt">audiences</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mcp-tools</span>
+<span class="w">      </span><span class="nt">protectedResourceMetadata</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">     </span><span class="c1"># advertise discovery per MCP Authz spec</span>
+<span class="w">    </span><span class="nt">authorization</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># read tools: any authenticated token with tools:read</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow</span>
+<span class="w">          </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">            </span><span class="no">&quot;tools:read&quot; in request.auth.claims.scope.split(&quot; &quot;)</span>
+<span class="w">            </span><span class="no">&amp;&amp; (request.mcp.tool.startsWith(&quot;github__issue_read&quot;)</span>
+<span class="w">                </span><span class="no">|| request.mcp.tool.startsWith(&quot;github__issue_search&quot;)</span>
+<span class="w">                </span><span class="no">|| request.mcp.tool.startsWith(&quot;context7__get_&quot;))</span>
+<span class="w">        </span><span class="c1"># write tools: require tools:write explicitly</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow</span>
+<span class="w">          </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">            </span><span class="no">&quot;tools:write&quot; in request.auth.claims.scope.split(&quot; &quot;)</span>
+<span class="w">            </span><span class="no">&amp;&amp; request.mcp.tool == &quot;github__issue_create&quot;</span>
+<span class="w">        </span><span class="c1"># anything not matched above is denied</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deny</span>
+<span class="w">          </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;true&quot;</span>
+<span class="w">  </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">github-mcp</span>
+<span class="w">      </span><span class="nt">toolSelector</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">include</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">issue_read</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">issue_search</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">issue_create</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">context7-mcp</span>
+<span class="w">      </span><span class="nt">toolSelector</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">includeRegex</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;get_.*&quot;</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+
+<p><strong>3. Apply and confirm acceptance:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>mcproute.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>mcproute<span class="w"> </span>tools<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Call a read tool with the read-only token — expect success:</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$READ_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;tools/call&quot;,</span>
+<span class="s1">       &quot;params&quot;:{&quot;name&quot;:&quot;github__issue_read&quot;,&quot;arguments&quot;:{&quot;number&quot;:42}}}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.result&#39;</span>
+</code></pre></div>
+
+<p><strong>5. Call the write tool with that same read-only token — expect a deny:</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;write w/ read token -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/mcp&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$READ_TOKEN</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:2,&quot;method&quot;:&quot;tools/call&quot;,</span>
+<span class="s1">       &quot;params&quot;:{&quot;name&quot;:&quot;github__issue_create&quot;,&quot;arguments&quot;:{&quot;title&quot;:&quot;hi&quot;}}}&#39;</span>
+<span class="c1"># → HTTP 403  (no tools:write scope; the CEL write-rule didn&#39;t match, Deny did)</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Authorizing only at <strong>connect</strong> time or only on <code>tools/list</code> is the classic hole: a token passes the handshake, then calls a write tool its scopes never allowed because nothing re-checks per call. Your rules must key on <code>request.mcp.tool</code> so they evaluate on <strong>every</strong> <code>tools/call</code> — confirm step 5 denies even though the <em>same</em> token succeeded at step 4 on the same session.</p>
+</div>
+<p><strong>What success looks like:</strong> the read tool returns a result under the <code>tools:read</code> token; the identical session's <code>tools/call</code> for the write tool returns <strong>403</strong> because the CEL write-rule requires <code>tools:write</code> and the catch-all <code>Deny</code> fires. Swap in the <code>tools:write</code> token and the write call succeeds — authorization is decided per invocation, by scope and CEL, at the edge.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Connect-time-only authorization.</strong> Validating the token at the handshake but not per <code>tools/call</code> lets a token invoke tools beyond its scopes for the life of the session. Enforce on every invocation.</li>
+<li><strong>Wrong <code>audiences</code> or <code>issuer</code>.</strong> A token valid elsewhere is rejected (or, worse, a too-broad audience accepts tokens minted for another resource). Match <code>audiences</code> to <em>this</em> MCP resource exactly.</li>
+<li><strong>Scope checked, tool not.</strong> A rule that allows any <code>tools:write</code> token to call <em>any</em> tool grants the write scope blanket power. Combine the scope with <code>request.mcp.tool</code> in CEL so write means a <em>specific</em> tool.</li>
+<li><strong>No default-deny.</strong> Without a trailing <code>Deny</code> rule, an invocation matching no <code>Allow</code> may fall through permissively. End the rule list with an explicit deny.</li>
+<li><strong><code>protectedResourceMetadata</code> off.</strong> Compliant MCP clients can't discover the auth server and won't know how to obtain a token — calls fail with no actionable challenge.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Add a third rule that allows <code>github__issue_create</code> <strong>only</strong> when a custom claim matches — e.g. <code>request.auth.claims.team == "platform"</code> — so even a <code>tools:write</code> token from another team is denied. Then mint two write tokens differing only by <code>team</code> and confirm one is allowed and one is refused. You've now authorized on <strong>identity claims</strong>, not just scopes — the lever 5.5 uses to give each <em>agent</em> its own entitlements.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now protect MCP tools with <strong>OAuth</strong> (<code>securityPolicy.oauth</code> — <code>issuer</code>, <code>audiences</code>, <code>protectedResourceMetadata</code>) per the MCP Authorization spec, and gate each <code>tools/call</code> with <strong><code>authorization.rules</code></strong> combining JWT scopes, claims, the target tool, and <strong>CEL</strong>. Crucially, you enforce this <strong>per invocation</strong>, not just at connect or list — visibility and authorization are now separate, edge-enforced concerns.</p>
+<p><strong>Next — 5.5:</strong> treat the agent itself as a first-class identity. You'll carry that identity across model <strong>and</strong> tool calls and put the autonomous loop on a leash — per-agent budgets, guardrails, and a step-cap so a runaway agent can't loop or overspend.</p><div class="session-complete" data-session-code="5.4"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 5.4 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-22.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">5.3 · Tool routing, aggregation &amp; multiplexing</span></a>
+<a class="next" href="session-24.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">5.5 · Agent identity &amp; guardrails for autonomous workflows</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

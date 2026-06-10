@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1 One API, many providers: the OpenAI-compatible schema · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li class="active" data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="6">
+      <figure class="hero"><img src="assets/heroes/part-2.svg" alt="A waxing moon over a still horizon" loading="lazy"><figcaption class="hero-cap"><span class="hero-eyebrow">Part 2</span><span class="hero-headline">The unified multi-provider gateway</span></figcaption></figure><div class="crumbs"><span class="crumb-part">Part 2 — The unified multi-provider gateway</span><span class="crumb-sep">·</span><span class="crumb-code">Session 2.1</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-05.html">1.5 · Self-host it: Envoy AI Gateway&#x27;s three core resources</a></div><h1 id="21-one-api-many-providers-the-openai-compatible-schema">2.1 — One API, many providers: the OpenAI-compatible schema</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>The gateway speaks <strong>one client-facing contract — the OpenAI chat-completions API — to many providers</strong>. Each provider is an <strong>AIServiceBackend</strong> whose <code>schema.name</code> (<code>OpenAI</code>, <code>AWSBedrock</code>, <code>Anthropic</code>, …) tells the gateway that vendor's dialect, so it can translate your OpenAI-shaped request into whatever the upstream expects. By the end you can put a second provider behind the same route and reach it by changing only the <code>model</code> field — same client, same SDK, different vendor.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Every model vendor invented its own request and response shape. OpenAI has <code>messages</code> and <code>choices</code>; Anthropic has <code>system</code> separate from <code>messages</code> and returns <code>content</code> blocks; Bedrock wraps a model-specific body in its own envelope and signs requests with SigV4. If each of your services talks to each vendor natively, you've re-created the integration sprawl from session 1.1 — now multiplied by the number of providers, with a different SDK and auth scheme per vendor baked into your code.</p>
+<p>The fix is a <strong>lingua franca</strong>. Clients always send the OpenAI-compatible shape to one endpoint. The gateway holds a per-provider <strong>API schema adapter</strong> and translates: OpenAI-in to Bedrock-out, OpenAI-in to Anthropic-out, OpenAI-in to OpenAI-out (a passthrough). Your app never learns a second dialect. Switching or adding a vendor becomes an <em>operations</em> change at the edge — declare an AIServiceBackend with the right <code>schema.name</code> and a route rule — not a code change in every service.</p>
+<p>This is the foundation the rest of Part 2 stands on. Credentials (2.2), model routing and the approved catalog (2.3), and cross-provider failover (2.4) all assume this one-contract-many-backends shape. Get it right here and those become policy on top.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>An AIServiceBackend is a <strong>TargetServer plus a schema adapter</strong>. In Apigee, fronting two backends with different payload shapes behind one proxy meant a JSON-to-JSON or XSL transform on the request and response flows, normalising each backend to a single client-facing contract. The AIServiceBackend's <code>schema.name</code> <em>is</em> that transform, but pre-built and maintained by the gateway per provider — you select the adapter (<code>OpenAI</code>, <code>AWSBedrock</code>, …) instead of hand-writing the mediation. The route that picks between backends is your RouteRules; the new part is that the routing key is a <strong>model name</strong>, not a path.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>You already know this pattern as <strong>one interface, many implementations</strong>. Think of a single <code>ChatClient</code> (or a <code>ChatModel</code> interface) with an <code>OpenAiChatModel</code>, an <code>AnthropicChatModel</code>, and a <code>BedrockChatModel</code> behind it, chosen by configuration. Spring AI gives you that abstraction <em>inside the JVM</em> — but you still ship every provider's SDK, every credential, and the wiring to pick one. The gateway lifts that polymorphism to the <strong>edge</strong>: your code keeps the one OpenAI-shaped client, and the implementation is resolved by the <code>model</code> you ask for, server-side. The strategy pattern, operated as infrastructure.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A schema adapter is <strong>not a lossless cast</strong>. Providers differ in capabilities, not just field names: a parameter, a tool-calling format, a streaming nuance, or a stop-reason that one vendor supports may have no faithful equivalent in another. An Apigee transform mapped a known schema to a known schema; here the <em>semantics</em> can drift between models, so an identical OpenAI-shaped request can behave subtly differently across backends. Treat the OpenAI contract as the reliable common subset, and verify any provider-specific feature you depend on rather than assuming the adapter makes vendors interchangeable.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>One endpoint and one schema in front; many AIServiceBackends, each tagged with its provider dialect, behind. The <code>model</code> name in the request body is the routing key the gateway resolves to a backend:</p>
+<pre class="mermaid">flowchart LR
+  app[&quot;Your app / agent&lt;br/&gt;OpenAI SDK · one base-url&quot;] --&gt;|&quot;OpenAI-shaped request&lt;br/&gt;model: gpt-4o-mini OR claude-...&quot;| route
+
+  subgraph gw[&quot;AI gateway — one OpenAI-compatible contract&quot;]
+    route[&quot;AIGatewayRoute&lt;br/&gt;match on x-ai-eg-model&quot;]
+    b1[&quot;AIServiceBackend: openai&lt;br/&gt;schema.name: OpenAI&quot;]
+    b2[&quot;AIServiceBackend: bedrock&lt;br/&gt;schema.name: AWSBedrock&quot;]
+    route --&gt;|&quot;model = gpt-4o-mini&quot;| b1
+    route --&gt;|&quot;model = anthropic.claude-…&quot;| b2
+  end
+
+  b1 --&gt;|&quot;OpenAI dialect (passthrough)&quot;| p1[&quot;OpenAI&quot;]
+  b2 --&gt;|&quot;translated to Bedrock + SigV4&quot;| p2[&quot;AWS Bedrock&quot;]</pre>
+<p>Mechanically, the gateway reads the <code>model</code> field from the JSON body and surfaces it as the <code>x-ai-eg-model</code> header. The AIGatewayRoute's <code>rules[].matches[].headers</code> test that header and select a <code>backendRefs</code> target. Each target is an AIServiceBackend whose <code>schema.name</code> tells the gateway how to translate the body and sign the upstream call. So a single OpenAI-compatible POST fans out to the right vendor purely by the model you name — no path change, no second SDK, no client awareness of which provider answered.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The <code>model</code> string is doing double duty: it's both the <strong>routing key</strong> and the <strong>upstream model identifier</strong>. For OpenAI that's friendly (<code>gpt-4o-mini</code>); for Bedrock it's the provider's exact model ID, e.g. <code>anthropic.claude-3-5-sonnet-20241022-v2:0</code> — colons, dots, and version suffixes included. Your route's header <code>value:</code> must match the string clients actually send, character for character. A mismatch doesn't fall back; it 404s at the route because no rule matched. (Session 2.3 introduces <em>virtual</em> model names so clients stop carrying these raw IDs.)</p>
+</div>
+<p>The win is operational leverage. Adding Anthropic-via-Bedrock to your platform is two objects and a route rule — zero lines changed in any of the dozen services that call the gateway. The contract they depend on never moved.</p>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-add-a-second-provider-behind-one-route">Lab — add a second provider behind one route</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway from 1.5 with the OpenAI backend working (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), <code>kubectl</code>, and credentials for a second provider — this lab uses <strong>AWS Bedrock</strong> (an access key/secret with Bedrock permissions). The whole point: you'll add Bedrock <em>without touching the client</em>.</p>
+<p><strong>1. Create the Bedrock credential Secret.</strong> Bedrock authenticates with AWS credentials, not a single API key:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>bedrock-creds<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">credentials</span><span class="o">=</span><span class="s2">&quot;[default]</span>
+<span class="s2">aws_access_key_id=</span><span class="nv">$AWS_ACCESS_KEY_ID</span>
+<span class="s2">aws_secret_access_key=</span><span class="nv">$AWS_SECRET_ACCESS_KEY</span><span class="s2">&quot;</span>
+</code></pre></div>
+
+<p><strong>2. Declare the second AIServiceBackend with <code>schema.name: AWSBedrock</code></strong> plus its Backend host and an <code>AWSCredentials</code> BackendSecurityPolicy. The schema name is the only thing that tells the gateway to translate and SigV4-sign:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">endpoints</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fqdn</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock-runtime.us-east-1.amazonaws.com</span>
+<span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIServiceBackend</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWSBedrock</span><span class="w">            </span><span class="c1"># &lt;- the adapter: OpenAI-in, Bedrock-out</span>
+<span class="w">  </span><span class="nt">backendRef</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock</span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Backend</span>
+<span class="w">    </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendSecurityPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock-cred</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWSCredentials</span><span class="w">          </span><span class="c1"># region + signed creds, not a bearer key</span>
+<span class="w">  </span><span class="nt">awsCredentials</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
+<span class="w">    </span><span class="nt">credentialsFile</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secretRef</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock-creds</span><span class="w">      </span><span class="c1"># the Secret from step 1 (key: credentials)</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIServiceBackend</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Don't reuse the OpenAI <code>BackendSecurityPolicy</code> here. <code>type: APIKey</code> injects a bearer token; Bedrock needs <code>type: AWSCredentials</code> with a region so the gateway can SigV4-sign every upstream call. Same resource <em>kind</em>, completely different <code>type</code> and sub-fields. Verify the exact <code>awsCredentials</code>/<code>credentialsFile</code> field names against the API reference for your release — the credential sub-schema is the part most likely to have changed between versions.</p>
+</div>
+<p><strong>3. Add a route rule for the Bedrock model</strong> so the same AIGatewayRoute now matches a second <code>x-ai-eg-model</code>. Append to the route's <code>rules</code> — both rules live under one route, one endpoint:</p>
+<div class="codehilite"><pre><span></span><code><span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span><span class="w">                                   </span><span class="c1"># existing OpenAI rule</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exact</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span><span class="w">                                   </span><span class="c1"># NEW Bedrock rule</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exact</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anthropic.claude-3-5-sonnet-20241022-v2:0</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock</span>
+</code></pre></div>
+
+<p><strong>4. Apply and confirm both rules are programmed:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>bedrock.yaml<span class="w"> </span>-f<span class="w"> </span>aigatewayroute.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>5. Call both providers through the one endpoint — changing only <code>model</code>.</strong> Identical curl, identical headers, identical SDK; the vendor is chosen by the model name:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># OpenAI</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Which provider am I?&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+
+<span class="c1"># Bedrock — same endpoint, only the model changed</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;anthropic.claude-3-5-sonnet-20241022-v2:0&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Which provider am I?&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> both calls return OpenAI-shaped completions from the same <code>/v1/chat/completions</code> endpoint, with the <em>only</em> difference between them being the <code>model</code> string. One client, one contract, two providers — and a Spring app pointed at this gateway would reach Bedrock with zero code change, just a different model name.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're done when one client demonstrably reaches two vendors:</p>
+<ul>
+<li>Both curls return a valid <code>choices[0].message.content</code> from the same base URL. The response shape is OpenAI's for both, even though Bedrock's native API is nothing like it — proof the schema adapter translated the response back.</li>
+<li>Swapping only the <code>model</code> field flips providers. If changing <code>model</code> 404s, the route's header <code>value:</code> doesn't match the exact string you sent — fix the match, not the client.</li>
+<li>A point-in-code check: search your app for provider SDKs and confirm only the OpenAI client remains. Reaching Bedrock added zero imports.</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Wrong <code>schema.name</code> for the provider.</strong> Tag a Bedrock backend <code>OpenAI</code> and the gateway sends an un-translated, un-signed body upstream. <em>(Symptom: 400/403 from AWS, never a completion.)</em></li>
+<li><strong>Route <code>value:</code> doesn't equal the client's <code>model</code>.</strong> Especially for Bedrock IDs with colons and version suffixes. No rule matches; the request 404s at the route rather than falling through.</li>
+<li><strong>Credential type/schema mismatch.</strong> <code>APIKey</code> where the provider needs <code>AWSCredentials</code> (or vice versa). The route is <code>Accepted</code> but every upstream call is unauthorized. Match the BackendSecurityPolicy <code>type</code> to the provider.</li>
+<li><strong>Assuming feature parity across the adapter.</strong> A parameter or tool-call format that works on OpenAI may be ignored or rejected by another vendor — the contract is the common subset, not a guarantee.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Point a tiny Spring AI app (one <code>ChatClient</code>, <code>spring.ai.openai.base-url</code> set to your gateway) at this route and call it twice — once with each model name — from the <em>same</em> code path, with no provider SDK for the second vendor on the classpath. Confirm both responses come back through the single client. That's the one-interface-many-implementations pattern, resolved entirely at the edge.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now explain the <strong>OpenAI-compatible schema as the lingua franca</strong>, configure a per-provider <strong>AIServiceBackend</strong> whose <code>schema.name</code> selects the adapter, and route to multiple vendors from one endpoint by model name alone. You added a second provider with zero client changes — the contract your services depend on never moved.</p>
+<p><strong>Next — 2.2:</strong> the credential you just attached, examined properly. You'll use <strong>BackendSecurityPolicy</strong> to keep provider keys entirely out of app code, understand exactly how the gateway injects upstream auth, and rotate a key by editing only a Secret — no application redeploy.</p><div class="session-complete" data-session-code="2.1"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 2.1 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-05.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">1.5 · Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a>
+<a class="next" href="session-07.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">2.2 · Provider credentials &amp; secrets: BackendSecurityPolicy</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4 Hello, gateway: TARS as a drop-in OpenAI endpoint · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li class="active" data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="4">
+      <div class="crumbs"><span class="crumb-part">Part 1 — Why an AI gateway exists</span><span class="crumb-sep">·</span><span class="crumb-code">Session 1.4</span><span class="crumb-sep">·</span><span class="crumb-min">~40 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-03.html">1.3 · Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</a></div><h1 id="14-hello-gateway-tars-as-a-drop-in-openai-endpoint">1.4 — Hello, gateway: TARS as a drop-in OpenAI endpoint</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Your first governed LLM call is a <strong>one-line change</strong>: swap the OpenAI base URL for the Tetrate Agent Router Service endpoint, keep the same OpenAI-shaped request, and your provider key leaves your app entirely. By the end of this session the <em>same</em> client code returns completions from <strong>two different model vendors</strong> just by changing the <code>model</code> field — proof that the gateway, not your app, now owns providers and credentials.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>This is the payoff for the inventory you did in 1.1 and the mapping in 1.2: the moment you actually point a client at the gateway and watch governed completions come back. It's deliberately small. The whole promise of an OpenAI-compatible gateway is that adoption costs you a base URL, not a rewrite — and the fastest way to believe that is to do it.</p>
+<p>It also lands the single most important property for a Java/Apigee team: <strong>no provider key in your app</strong>. Today your service reads <code>OPENAI_API_KEY</code> and holds a rotation-and-leak liability. After this change your app holds a <em>gateway</em> key (<code>$ROUTER_KEY</code>), and TARS holds the provider credentials. You've moved a secret out of every service and into one governed edge — the exact move you'd make in Apigee by putting backend auth in a KVM instead of in clients.</p>
+<p>The second property you'll see is <strong>provider portability</strong>. Because the gateway speaks one OpenAI-compatible contract and routes by the <code>model</code> field, calling Anthropic vs OpenAI is a <em>string change in the request</em>, not a new SDK, a new auth scheme, or new error handling. That's the unification this whole course builds on.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is your <strong>first passthrough proxy</strong>. In Apigee you'd point a client at the proxy basepath (<code>https://org-env.apigee.net/payments</code>) instead of the backend host, and the proxy forwards it — the client never sees the target. Here you point the client at the gateway host (<code>https://router.tetrate.ai</code>) instead of <code>api.openai.com</code>, and TARS forwards to the real provider. The backend credential lives at the gateway (like target auth / a KVM secret), not in the caller. If you've ever cut a client over from a direct backend URL to an Apigee basepath and watched it just work, this is that — for model traffic.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>In Spring AI you change exactly one property: <code>spring.ai.openai.base-url</code> (and set the api-key to your gateway key). The <code>ChatClient</code>, the <code>@Bean</code> wiring, the prompt-building code — all untouched, because the wire contract is still OpenAI Chat Completions. It's the same trick as repointing a <code>RestClient</code>/<code>WebClient</code> <code>baseUrl</code> at a gateway: the calling code doesn't know or care that a governed hop now sits in the path. With the raw OpenAI Java SDK it's identical — set the client's base URL to the router and the rest of your code compiles unchanged.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>An Apigee passthrough is genuinely transparent — same payload in, same payload out, fixed cost. This one isn't <em>quite</em>: the gateway is <strong>metering tokens and attributing cost</strong> on every call (you'll govern that in Part 3), so an identical request can succeed or be throttled depending on budget state your app can't see. And the <code>model</code> field isn't a routing hint you can ignore — it selects a <em>vendor with different behaviour, pricing, and token accounting</em>. Swapping <code>model</code> looks like changing a query param, but you may be changing provider, latency profile, and cost per call all at once. "Transparent passthrough" undersells what's happening.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Frame the SVG you've already seen as "your first call through it": your app makes one OpenAI-shaped <code>POST /v1/chat/completions</code> to the gateway host; the gateway authenticates your caller key, picks the provider named by <code>model</code>, injects the <em>provider's</em> credential, calls it, meters the tokens in the response, and returns the standard OpenAI response body to you.</p>
+<figure class="svg-figure">
+<img src="assets/svg/ai-request-path.svg" alt="Your app calls one endpoint; the AI gateway authenticates, meters tokens, applies guardrails, routes to a provider, and meters the response back.">
+<figcaption>Your first call through the gateway. The app speaks OpenAI to one host; TARS authenticates the caller, routes by the <code>model</code> field to the right vendor, injects that vendor's key, and meters the response. The only thing your code changed was the base URL.</figcaption>
+</figure>
+
+<p>The conceptual unlock is that the <code>model</code> field is now a <strong>routing key into a catalog</strong>, not a hard-coded coupling to one vendor's SDK. One client, one endpoint, one auth header — and the provider on the other side is a configuration decision, not a code decision.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Get the base-URL shape right or you'll fight 404s. Spring AI appends the standard OpenAI paths (<code>/v1/chat/completions</code>) to the configured <code>base-url</code>, so you set the <strong>host root</strong> (e.g. <code>https://router.tetrate.ai</code>), <em>not</em> the full completions path — set the full path and you'll get a doubled <code>/v1/v1/...</code>. Conversely, raw <code>curl</code> needs the <strong>full</strong> path. Confirm the exact base URL and whether a <code>/v1</code> segment is expected against the current TARS / Continue.dev docs for your account before you debug anything else.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<p>Two routes to the same result: a raw <code>curl</code> to prove the wire contract, then Spring AI to prove the one-line change in real app config. You need <code>$ROUTER_KEY</code> from session 1.3.</p>
+<div class="lab">
+<h4 id="lab-your-first-governed-call-and-second-vendor">Lab — your first governed call (and second vendor)</h4>
+<p><strong>1. Call TARS with curl</strong> using the standard OpenAI Chat Completions body and your gateway key as a bearer token. Name a model from the TARS catalog in the <code>model</code> field:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>https://router.tetrate.ai/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ROUTER_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;gpt-4o-mini&quot;,</span>
+<span class="s1">    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;In one sentence: what is an AI gateway?&quot;}]</span>
+<span class="s1">  }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;{model, text: .choices[0].message.content, usage}&#39;</span>
+</code></pre></div>
+
+<p>You should get a normal OpenAI-shaped response — <code>choices[0].message.content</code> plus a <code>usage</code> block with token counts. That <code>usage</code> block is the gateway metering your call; it's the raw material for everything in Part 3.</p>
+<p><strong>2. Switch vendors by changing ONE field.</strong> Re-run the exact same request, changing only <code>model</code> to a different vendor's model in the catalog (e.g. an Anthropic Claude model). Everything else — host, auth header, body shape, your parsing — is identical:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>https://router.tetrate.ai/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$ROUTER_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;claude-4-sonnet-20250514&quot;,</span>
+<span class="s1">    &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;In one sentence: what is an AI gateway?&quot;}]</span>
+<span class="s1">  }&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;{model, text: .choices[0].message.content, usage}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The <code>model</code> string must match the <strong>TARS catalog name</strong> exactly, or you'll get a 404/400 for an unknown model — not a fallback. Catalog model IDs are versioned and provider-specific (e.g. <code>claude-4-sonnet-20250514</code>), so check the catalog (<code>https://router.tetrate.ai/models</code> or the portal) rather than guessing a vendor's marketing name. A wrong <code>model</code> is the single most common first-call failure.</p>
+</div>
+<p><strong>3. Make the same change in Spring AI</strong> — the real-world version of the swap. Use the OpenAI starter and repoint only the base URL and key; do not touch any <code>ChatClient</code> code:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># application.yml — through TARS; no provider key in your app</span>
+<span class="nt">spring</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ai</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">openai</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">base-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://router.tetrate.ai</span><span class="w">     </span><span class="c1"># the gateway host (NOT the full /v1 path)</span>
+<span class="w">      </span><span class="nt">api-key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${ROUTER_KEY}</span><span class="w">                   </span><span class="c1"># a gateway key, not a provider key</span>
+<span class="w">      </span><span class="nt">chat</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">options</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span><span class="w">                    </span><span class="c1"># routing key into the TARS catalog</span>
+</code></pre></div>
+
+<p>Your existing call site stays exactly as it was — the base-URL change is the entire diff:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// unchanged application code — it has no idea a governed hop is now in the path</span>
+<span class="n">String</span><span class="w"> </span><span class="n">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chatClient</span><span class="p">.</span><span class="na">prompt</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">user</span><span class="p">(</span><span class="s">&quot;In one sentence: what is an AI gateway?&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">call</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">content</span><span class="p">();</span>
+</code></pre></div>
+
+<p>To prove portability in-app, override the model per call (or via config) to a Claude catalog model and run again — same code, different vendor:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">viaClaude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chatClient</span><span class="p">.</span><span class="na">prompt</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">options</span><span class="p">(</span><span class="n">OpenAiChatOptions</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">model</span><span class="p">(</span><span class="s">&quot;claude-4-sonnet-20250514&quot;</span><span class="p">).</span><span class="na">build</span><span class="p">())</span>
+<span class="w">    </span><span class="p">.</span><span class="na">user</span><span class="p">(</span><span class="s">&quot;In one sentence: what is an AI gateway?&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="na">call</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="na">content</span><span class="p">();</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> identical client code — both the <code>curl</code> and the Spring AI call site — returns valid completions from <strong>two different model vendors</strong> through the <strong>one</strong> TARS endpoint, just by changing the <code>model</code> field. Your application config contains a <strong>gateway</strong> key and <strong>zero provider keys</strong>. You've made the base-URL change that the whole course is built on.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>Confirm the three properties that make this real:</p>
+<ul>
+<li><strong>It's governed, not direct.</strong> The response carries a <code>usage</code> token block and the call is attributed in your TARS dashboard. A direct OpenAI call wouldn't be metered by Tetrate.</li>
+<li><strong>No provider key in your app.</strong> Grep your config — only <code>$ROUTER_KEY</code> should be present; <code>OPENAI_API_KEY</code> and <code>ANTHROPIC_API_KEY</code> are gone.</li>
+<li><strong>One contract, two vendors.</strong> The same parsing code handled both responses.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the app should hold a gateway key and NO provider keys</span>
+grep<span class="w"> </span>-rEn<span class="w"> </span><span class="s2">&quot;OPENAI_API_KEY|ANTHROPIC_API_KEY|api\.openai\.com|api\.anthropic\.com&quot;</span><span class="w"> </span>.<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--include<span class="o">=</span>*.yml<span class="w"> </span>--include<span class="o">=</span>*.yaml<span class="w"> </span>--include<span class="o">=</span>*.properties<span class="w"> </span>--include<span class="o">=</span>*.java<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;!! provider keys/hosts still present — move them to the gateway&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;OK: no provider keys or direct provider hosts in app config&quot;</span>
+</code></pre></div>
+
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>401 / 403 from the gateway.</strong> The <code>Authorization</code> header is missing, malformed, or using a provider key instead of <code>$ROUTER_KEY</code>. It must be <code>Bearer &lt;your TARS key&gt;</code>.</li>
+<li><strong>404 on the path.</strong> Usually a base-URL shape problem: full <code>/v1/chat/completions</code> in <code>curl</code> but only the host root in Spring AI's <code>base-url</code>. A doubled <code>/v1/v1/</code> is the giveaway.</li>
+<li><strong>400/404 unknown model.</strong> The <code>model</code> string doesn't match a TARS catalog ID. Catalog names are exact and versioned — copy them from the catalog, don't guess.</li>
+<li><strong>Costs show up but no governance does.</strong> That's expected here — metering is on, but budgets/limits aren't configured yet. You add token limits in 3.1, not now.</li>
+<li><strong>Leaving the provider key "as a fallback."</strong> If <code>OPENAI_API_KEY</code> is still in config, you haven't actually removed the liability — delete it.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Take a small Spring AI app you already have (or the OpenAI Java SDK quickstart) and point it at TARS by changing only the base URL and key. Then make it call <strong>two providers from one config</strong>: bind a <code>model</code> value per environment profile so <code>dev</code> uses a cheap model and <code>staging</code> uses a premium one — without touching a line of application code. You've just proven that "which vendor" is now an operations decision, exactly as "which TargetServer" is in Apigee.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You made your first governed LLM call by changing one line — the base URL — and routed identical OpenAI-shaped requests to two different model vendors through TARS, with no provider key anywhere in your app. The <code>model</code> field is now a routing key into a catalog, and the gateway owns providers, credentials, and metering. That's the entire adoption story from the app's side, proven.</p>
+<p><strong>Next — 1.5:</strong> descend a rung. You'll self-host the gateway on Kubernetes and read the three resources that make it work — <code>AIServiceBackend</code> (the provider), <code>BackendSecurityPolicy</code> (the credential), and <code>AIGatewayRoute</code> (the route) — so you understand exactly what TARS is doing for you behind that one base URL.</p><div class="session-complete" data-session-code="1.4"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 1.4 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-03.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">1.3 · Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a>
+<a class="next" href="session-05.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">1.5 · Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

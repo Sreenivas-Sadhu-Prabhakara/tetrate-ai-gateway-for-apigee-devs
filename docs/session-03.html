@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.3 Tetrate's AI landscape: TARS, Agent Router Enterprise & Envoy AI Gateway · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li class="active" data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="3">
+      <div class="crumbs"><span class="crumb-part">Part 1 — Why an AI gateway exists</span><span class="crumb-sep">·</span><span class="crumb-code">Session 1.3</span><span class="crumb-sep">·</span><span class="crumb-min">~35 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-02.html">1.2 · The AI gateway vs the API gateway you know</a></div><h1 id="13-tetrates-ai-landscape-tars-agent-router-enterprise-envoy-ai-gateway">1.3 — Tetrate's AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Tetrate's AI products are a <strong>ladder built on one engine</strong>. At the base is the open-source <strong>Envoy AI Gateway</strong> (which Tetrate co-maintains); on top of it sit a managed pay-as-you-go endpoint (<strong>Agent Router Service / TARS</strong>), a dedicated managed offering (<strong>Agent Router Enterprise</strong>), and a governance/ROI layer (<strong>Agent Operations Director</strong>). By the end of this session you can place each on the ladder and pick the on-ramp that fits your org — and the one constraint that would push you up a rung.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>The first question every platform team asks is "managed or self-hosted?" — and they ask it because they've been burned by picking wrong. With Apigee you've lived this: SaaS gets you running today but owns your control plane; the self-managed runtime gives you control but you own the upgrades, the capacity, and the 2am page. The good news is that Tetrate's AI products are deliberately <em>the same engine at every rung</em>, so the choice is about operational ownership, not about a different product you'd have to re-learn.</p>
+<p>That matters because it removes the usual lock-in fear. The open-source <strong>Envoy AI Gateway</strong> is the runtime. <strong>TARS</strong> is that runtime, hosted for you, reachable as an OpenAI-compatible endpoint with a credit card and a scoped key. <strong>Agent Router Enterprise</strong> is a dedicated, managed deployment with the enterprise governance and MCP features. <strong>Agent Operations Director</strong> sits above all of it for cost/ROI/risk governance. You can start at the top of the ladder (zero infra) and descend to self-hosting later — or start self-hosted — without throwing away your mental model, because the CRDs and the request shape are shared.</p>
+<p>So this session is a <em>decision</em>, not a feature tour. Where do you get on, and what would make you move?</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is the <strong>Apigee SaaS vs hybrid vs runtime</strong> decision you already know how to make. TARS is Apigee-as-a-SaaS: Tetrate runs the control and data plane, you consume an endpoint and manage keys and products. Agent Router Enterprise is closer to a <strong>dedicated/managed</strong> deployment — your own governed gateways (for LLMs <em>and</em> MCP tools) with guardrails, operated for you. Self-hosting the open-source Envoy AI Gateway is running the <strong>Apigee runtime yourself</strong> on your own Kubernetes: maximum control, maximum operational ownership. The constraint that pushes you up a rung is the same one that pushed you from runtime to SaaS in Apigee — data residency, dedicated isolation, enterprise auth, or simply not wanting to operate it.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>Think of it as the <strong>Spring Boot starter vs building your own auto-configuration</strong>. TARS is the starter: add one dependency-equivalent (a base URL and a key) and you're calling models in minutes, with Tetrate owning the wiring. Self-hosting the open-source gateway is writing your own <code>@Configuration</code> — you assemble the CRDs, run them on your cluster, and own the lifecycle, in exchange for total control over routing, secrets, and where the bytes flow. Agent Router Enterprise is the managed middle: the starter's convenience with the production knobs (isolation, governance, MCP) you'd otherwise build yourself.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>The Apigee tiering analogy holds for <em>operational ownership</em> but misses what Tetrate's top rung adds. <strong>Agent Operations Director</strong> has no real Apigee equivalent: it governs <strong>GenAI cost, ROI, and risk</strong> — questions like "is this agent worth its token spend?" and "which teams are over budget on premium models?" — which only exist because the cost unit is variable tokens (1.2) and the workload is autonomous agents. That's a governance surface Apigee never needed because REST calls have fixed cost and no autonomy. Don't map it to "just more analytics" — it's a different question class.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Picture the products as a ladder, with the open-source engine at the base and managed/governance layers stacked on top. You can board at any rung; the engine underneath is the same.</p>
+<pre class="mermaid">flowchart TB
+    AOD[&quot;Agent Operations Director&lt;br/&gt;&lt;i&gt;GenAI ROI, cost &amp; risk governance&lt;/i&gt;&quot;]
+    ARE[&quot;Agent Router Enterprise&lt;br/&gt;&lt;i&gt;dedicated, managed LLM + MCP gateways + guardrails&lt;/i&gt;&quot;]
+    TARS[&quot;Agent Router Service (TARS)&lt;br/&gt;&lt;i&gt;managed, pay-as-you-go OpenAI-compatible endpoint&lt;/i&gt;&quot;]
+    OSS[&quot;Envoy AI Gateway (OSS)&lt;br/&gt;&lt;i&gt;the engine — Tetrate co-maintains; self-host on Kubernetes&lt;/i&gt;&quot;]
+
+    AOD --&gt; ARE
+    ARE --&gt; TARS
+    TARS --&gt; OSS
+
+    classDef base fill:#eef,stroke:#88a,stroke-width:1px;
+    classDef mgmt fill:#efe,stroke:#8a8,stroke-width:1px;
+    class OSS base;
+    class TARS,ARE,AOD mgmt;</pre>
+<p>Read the ladder top-down as "more managed / more governance," bottom-up as "more control / more ownership." The key insight is the single arrow of inheritance: every rung is the <strong>Envoy AI Gateway engine</strong>, so the routing model, the OpenAI-compatible API, and the CRD vocabulary you'll learn in 1.5 are constant. Choosing a rung is choosing <em>who operates it and how much governance comes pre-assembled</em>, not choosing a different technology.</p>
+<p>For most readers starting this course, the right first rung is <strong>TARS</strong>: it's an OpenAI-compatible managed endpoint at <code>https://router.tetrate.ai</code>, with scoped API keys and pay-as-you-go pricing (you pay the underlying model cost plus a small service margin). It gets you a real governed call in session 1.4 with zero infrastructure. You then descend to self-hosting the open-source gateway in 1.5 to see the resources underneath — so you understand both ends of the ladder before Part 2.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Don't confuse the <strong>open-source Envoy AI Gateway</strong> with classic <strong>Envoy Gateway</strong> (the general Kubernetes ingress). The AI gateway is built <em>on top of</em> Envoy Gateway and adds the AI-specific CRDs (<code>AIGatewayRoute</code>, <code>AIServiceBackend</code>, <code>BackendSecurityPolicy</code>) and token-aware policies. If you install plain Envoy Gateway expecting model routing and token metering, you'll find none of it — you need the AI Gateway layer. Verify product names and the exact set of CRDs against the docs for your release before you provision anything.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<p>The goal here is a decision you can defend, plus a TARS key you'll use in the next session. If you can't sign up (corporate card/approval), the steps are written so you can still produce the decision artifact and stub the key.</p>
+<div class="lab">
+<h4 id="lab-get-on-the-ladder">Lab — get on the ladder</h4>
+<p><strong>1. Provision a TARS key.</strong> Sign in at the Agent Router Service portal and create a scoped API key, then export it as <code>$ROUTER_KEY</code> — this is the credential session 1.4 uses:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># after creating a key in the portal (https://router.tetrate.ai)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROUTER_KEY</span><span class="o">=</span><span class="s2">&quot;tars_...&quot;</span><span class="w">        </span><span class="c1"># paste your scoped key</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ROUTER_KEY</span><span class="p">:</span><span class="nv">0</span><span class="p">:</span><span class="nv">5</span><span class="si">}</span><span class="s2">***&quot;</span><span class="w">          </span><span class="c1"># confirm it&#39;s set without printing it</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>A TARS key is a <strong>gateway key, not a provider key</strong> — it bills <em>your</em> TARS account (model cost plus margin), so treat it like any spend-bearing secret: scope it, don't commit it, and rotate it. Pasting it into a shared notebook or a public repo is a real financial liability, not just a security one. If you can't get a key approved yet, set <code>ROUTER_KEY=PLACEHOLDER</code> and do the decision step below; you'll wire the real key in 1.4.</p>
+</div>
+<p><strong>2. Write the tier decision for your org.</strong> In a short doc, record which rung you'd start on and, crucially, the <em>one constraint</em> that would push you up:</p>
+<div class="codehilite"><pre><span></span><code>Starting rung: TARS (managed, pay-as-you-go)
+Why: zero infra, OpenAI-compatible, want a governed call this week.
+
+Constraint that pushes me UP a rung:
+  → &quot;Prompts contain regulated data that can&#39;t transit a shared multi-tenant
+     endpoint&quot; → Agent Router Enterprise (dedicated, managed).
+  → &quot;Finance needs GenAI ROI + per-team risk governance across all agents&quot;
+     → add Agent Operations Director.
+
+Constraint that pushes me DOWN to self-host (OSS Envoy AI Gateway):
+  → &quot;All inference and secrets must stay inside our VPC / on our clusters&quot;
+     → self-host on Kubernetes (you build this in 1.5).
+</code></pre></div>
+
+<p><strong>3. Sanity-check the engine is shared.</strong> Note one fact that proves the ladder isn't four products to learn: the request you'll send to TARS in 1.4 (<code>POST /v1/chat/completions</code>, OpenAI body) is the <em>same</em> request shape you'll route through the self-hosted gateway in 1.5. Write that line in your doc — it's the reason picking a rung is low-risk.</p>
+<p><strong>What success looks like:</strong> <code>$ROUTER_KEY</code> is exported (or explicitly stubbed with a plan to get one), and you have a one-paragraph decision naming your starting rung <strong>and</strong> the single constraint that would move you up or down. You've made the managed-vs-self-hosted call deliberately, knowing the engine underneath is constant.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're ready to move on when you can answer, without looking back:</p>
+<ul>
+<li>What sits at the base of the ladder, and who maintains it? <em>(The open-source Envoy AI Gateway; Tetrate co-maintains it.)</em></li>
+<li>What is TARS in one sentence? <em>(A managed, pay-as-you-go, OpenAI-compatible endpoint at <code>https://router.tetrate.ai</code> with scoped keys — the same engine, hosted.)</em></li>
+<li>What does Agent Operations Director add that has no Apigee analogue? <em>(GenAI ROI, cost, and risk governance over agent workloads — a question class that only exists with variable token cost and autonomy.)</em></li>
+</ul>
+<p>Confirm your key is set without printing it:</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">test</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ROUTER_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ROUTER_KEY is set (</span><span class="si">${#</span><span class="nv">ROUTER_KEY</span><span class="si">}</span><span class="s2"> chars)&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ROUTER_KEY missing&quot;</span>
+</code></pre></div>
+
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Treating the rungs as four separate products.</strong> They're one engine with increasing management/governance. If your plan assumes a re-platform to move between them, you've mis-modelled the ladder.</li>
+<li><strong>Picking a tier on price alone.</strong> The decision is driven by a <em>constraint</em> (data residency, isolation, governance, ops capacity), not by the sticker. A tier with no triggering constraint is the wrong tier.</li>
+<li><strong>Confusing Envoy AI Gateway with Envoy Gateway.</strong> The AI layer and its CRDs are what give you model routing and token metering; plain Envoy Gateway has none of it.</li>
+<li><strong>Leaking the TARS key.</strong> It's spend-bearing. A committed <code>$ROUTER_KEY</code> is a billable incident, not just a security one.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Map your own org onto the ladder with evidence. Write down the <em>actual</em> policy or regulation (e.g. a data-residency clause, a procurement rule, an existing Apigee Org's compliance scope) that decides your rung — not a hypothetical. Then write the one future event that would force a move (a new regulated workload, a finance mandate for GenAI ROI). If you already run Apigee SaaS vs hybrid for a real reason, that same reason almost always selects your AI-gateway rung — name it explicitly.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now place Tetrate's AI products on a single ladder built on the open-source Envoy AI Gateway: TARS (managed, pay-as-you-go), Agent Router Enterprise (dedicated, managed, with MCP and guardrails), and Agent Operations Director (GenAI ROI/cost/risk governance). You've picked a starting rung, named the constraint that would move you, and exported a <code>$ROUTER_KEY</code> for the next step.</p>
+<p><strong>Next — 1.4:</strong> make your first governed LLM call. You'll point a client at TARS by changing one line — the base URL — and watch identical code return completions from two different model vendors, with no provider key anywhere in your app.</p><div class="session-complete" data-session-code="1.3"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 1.3 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-02.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">1.2 · The AI gateway vs the API gateway you know</span></a>
+<a class="next" href="session-04.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">1.4 · Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

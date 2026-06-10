@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5.5 Agent identity & guardrails for autonomous workflows · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li class="active" data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="24">
+      <div class="crumbs"><span class="crumb-part">Part 5 — The agentic turn: MCP &amp; tools</span><span class="crumb-sep">·</span><span class="crumb-code">Session 5.5</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-23.html">5.4 · Securing tools: OAuth &amp; fine-grained authorization</a></div><h1 id="55-agent-identity-guardrails-for-autonomous-workflows">5.5 — Agent identity &amp; guardrails for autonomous workflows</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>An autonomous agent is a <strong>consumer</strong>, and a consumer needs a leash: a stable <strong>identity</strong> that follows it through every model and tool call, plus the governance that identity unlocks — <strong>entitlement</strong> (5.4), <strong>token budgets</strong> (3.1–3.2), <strong>guardrails</strong> (4.x), and a <strong>step-cap</strong>. By the end you can attach a per-agent token budget and prove a runaway agent loop is cut off with <strong>429</strong> when it exhausts that budget — the safety rail that makes autonomy operable.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Everything in Parts 3–5 governs a <em>call</em>. An autonomous agent is not one call — it's a <strong>loop</strong>: think, call a model, call a tool, observe, repeat, possibly for dozens of steps with no human between iterations. The danger isn't a single bad request; it's the loop that calls a model 400 times, or recurses on a tool forever, racking up cost and side effects no per-call check would catch.</p>
+<p>That risk only becomes governable once the agent has a <strong>first-class identity</strong> — not the end-user it's acting for, but the <em>agent itself</em> — that the gateway can attribute spend to, scope tools for, and rate-limit as a unit. With that identity in place, the controls you already built compose into a leash: the 5.4 OAuth/CEL rules say <em>which tools</em> this agent may touch, the 3.x token budget caps <em>how much</em> it may spend per session, the 4.x guardrails filter <em>what</em> flows in and out, and a max-steps guard bounds <em>how long</em> it may run. This session ties those threads into one: identity in, budget + guardrails + step-cap around the loop.</p>
+<h2 id="the-concept">The concept</h2>
+<p>The agent's identity threads through the whole governance stack — every model and tool call in its loop is attributed, entitled, metered, and guarded under that one identity:</p>
+<figure class="svg-figure">
+<img src="assets/svg/governance-stack.svg" alt="An autonomous agent's identity descends through tool entitlement, a per-agent token budget, guardrails, and a step-cap; its loop is metered and bounded at the gateway.">
+<figcaption>The agent's identity keys every layer: 5.4 entitlement scopes its tools, the 3.x token counter caps its session spend, 4.x guardrails filter its I/O, and a step-cap bounds the loop. The budget layer is the focus of this lab — the rail that stops a runaway loop.</figcaption>
+</figure>
+
+<p>The mechanism reuses pieces you already have. The agent presents a token whose subject (or a custom <code>agent_id</code> claim) is the agent's identity — the same JWT machinery as 5.4, just keyed on the agent rather than a human. That identity becomes the <strong>rate-limit key</strong> for a per-agent token budget (the 3.1 <code>BackendTrafficPolicy</code> pattern), so the agent's <em>cumulative</em> token use across all the model and tool calls in a session decrements one shared counter. Exhaust it and the gateway returns <strong>429</strong> — the loop stalls instead of running up unbounded cost. Guardrails and the 5.4 tool authz attach to the same identity, so the leash is coherent: who, what, how much, how long.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>An agent with <strong>no per-session budget and no step-cap</strong> can loop indefinitely — re-querying a model, re-calling a tool, recursing on its own output — and run up unbounded cost and side effects before anyone notices. Identity <em>plus</em> a token budget <em>plus</em> a max-steps guard is the leash; any one alone leaves a gap. A budget without a step-cap still allows thousands of tiny cheap calls; a step-cap without a budget still allows a few huge expensive ones.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>Treat the agent as a <strong>developer app</strong>, exactly like a registered client in Apigee. It gets a <code>client_id</code>-equivalent identity, an <strong>API Product</strong>-style entitlement (the 5.4 tool scopes), a <strong>Quota</strong> (its token budget), and <strong>Analytics</strong> attribution — the agent shows up in your reports as a first-class consumer, and you can revoke, throttle, or audit it like any app. The new twist is that this "app" acts autonomously in a loop, so the Quota isn't protecting a backend from <em>external</em> callers — it's protecting <em>you</em> from your own agent.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>You already propagate a security and trace context across a call chain — a JWT and a trace ID flowing from service to service so identity and causality survive the hops. An agent loop is that chain, except the "caller" is autonomous: it decides the next hop itself, with no human or upstream service gating it. So you propagate the agent's identity the same way, but the gateway also has to <em>bound</em> the chain — a budget and step-cap acting like a circuit breaker on a call graph the agent is free to grow on its own.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A developer app and a service chain are both ultimately <strong>driven by something deterministic</strong> — a request arrives, work happens, it ends. An autonomous agent generates its <em>own</em> next step from a model's output, so the loop has no externally fixed bound; left alone it doesn't naturally terminate. Neither Apigee's per-request Quota nor a Spring circuit breaker was designed for a caller that invents its own traffic. The budget and step-cap aren't optimizations here — they're the <em>only</em> thing guaranteeing the loop halts.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-leash-a-runaway-agent-with-a-per-agent-token-budget">Lab — leash a runaway agent with a per-agent token budget</h4>
+<p><strong>Prereqs:</strong> the gateway from 1.5 with an <code>AIGatewayRoute</code> and the secured MCPRoute from 5.4 (export <code>$NAMESPACE</code> and <code>$GATEWAY_HOST</code>), <code>kubectl</code>, and an agent that authenticates with a JWT carrying an <code>agent_id</code> claim (or use a header <code>x-agent-id</code> for the lab). Reuse the token-metering setup from 3.1.</p>
+<p><strong>1. Attach a per-agent token budget</strong> with a <code>BackendTrafficPolicy</code> keyed on the agent identity, charging the model-reported tokens (the 3.1 pattern, keyed on the agent rather than a user):</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTrafficPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agent-budget</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">          </span><span class="c1"># the model route from 1.5</span>
+<span class="w">  </span><span class="nt">rateLimit</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Global</span>
+<span class="w">    </span><span class="nt">global</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">clientSelectors</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">                </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-agent-id</span><span class="w">        </span><span class="c1"># the agent&#39;s identity, not the end user</span>
+<span class="w">                  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Distinct</span>
+<span class="w">          </span><span class="nt">limit</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">requests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50000</span><span class="w">             </span><span class="c1"># 50k tokens per agent...</span>
+<span class="w">            </span><span class="nt">unit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hour</span><span class="w">                  </span><span class="c1"># ...per hour — the whole loop&#39;s budget</span>
+<span class="w">          </span><span class="nt">cost</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">request</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">            </span><span class="nt">response</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Metadata</span>
+<span class="w">              </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">io.envoy.ai_gateway</span>
+<span class="w">                </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">llm_total_token</span>
+</code></pre></div>
+
+<p><strong>2. Apply it and confirm acceptance:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>agent-budget.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>agent-budget<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[0].type}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Simulate a runaway loop</strong> — fire the agent's model calls repeatedly under one <code>x-agent-id</code>, as an unsupervised loop would, and watch the budget deplete:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">60</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;step </span><span class="nv">$i</span><span class="s2"> -&gt; HTTP %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;x-agent-id: research-agent-7&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;max_tokens&quot;:1024,</span>
+<span class="s1">         &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Keep reasoning and call more tools.&quot;}]}&#39;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>The budget governs the <strong>next</strong> step, not the in-flight one (the 3.1 overshoot — a token limit only knows true cost <em>after</em> the response). For an autonomous loop that's fine <em>if</em> you also set a per-call <code>max_tokens</code> ceiling, so one runaway step can't blow the entire session budget before the 429 lands. Budget plus <code>max_tokens</code> plus a step-cap together — not any one alone.</p>
+</div>
+<p><strong>4. Confirm the leash holds:</strong> once <code>research-agent-7</code> crosses 50k tokens for the hour, the loop's calls flip to <strong>429</strong>. A <em>different</em> <code>x-agent-id</code> is unaffected — each agent is budgeted as its own consumer.</p>
+<p><strong>What success looks like:</strong> the first steps return <code>200</code>; once the agent's cumulative tokens cross 50k, every further step returns <strong><code>429 Too Many Requests</code></strong>, halting the loop instead of letting it spend without bound. The budget is attributed to the <em>agent's</em> identity (not the end user), so one misbehaving agent is throttled while others run — autonomy with a working safety rail.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>No per-agent identity.</strong> If the budget keys on the end-user instead of the agent, two agents acting for one user share a counter, and you can't throttle or attribute a single runaway agent. Key on the agent identity.</li>
+<li><strong>Budget without a step-cap.</strong> Token limits stop <em>expensive</em> loops; a loop of many tiny cheap calls can still spin near-free. Pair the budget with a max-steps guard in the agent runtime (or a request-count limit) so an infinite cheap loop also halts.</li>
+<li><strong>No <code>max_tokens</code> ceiling.</strong> Without a per-call cap, one step can overshoot the whole session budget before the counter catches up — the 3.1 overshoot, amplified by autonomy.</li>
+<li><strong>Identity not propagated across hops.</strong> If the agent's identity is dropped between the model call and the tool call, the 5.4 tool rules and the budget see different (or anonymous) callers, and the leash has gaps. Propagate the same identity end to end.</li>
+<li><strong>Guardrails skipped on agent I/O.</strong> An autonomous agent reading tool output back into prompts is a prime injection path; the 4.x guardrails must apply to the loop's traffic, not just human-initiated calls.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Layer all three rails on one agent: the 5.4 OAuth/CEL tool entitlement, this per-agent token budget, and a max-steps guard, then deliberately make the agent loop. Confirm it's stopped by <strong>whichever rail trips first</strong> — denied a tool it lacks scope for, cut off at the token budget, or halted at the step-cap — and that each event is attributable to the agent's identity in your telemetry. That layered, identity-keyed containment is what makes shipping an autonomous agent defensible.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now treat an autonomous agent as a <strong>first-class consumer</strong>: give it a stable identity, propagate that identity across its model and tool calls, and wrap its loop in the governance that identity unlocks — 5.4 tool entitlement, a per-agent token budget that returns <strong>429</strong> on exhaustion, 4.x guardrails, and a step-cap. Identity plus budget plus a max-steps guard is the leash that makes autonomy operable rather than reckless.</p>
+<p><strong>Next — 6.1:</strong> see all of this. You'll add <strong>observability for AI traffic</strong> — tokens, latency, and tracing across the model-and-tool loop — so the agents, budgets, and tool calls you've governed become measurable, and you can finally answer "what did this agent actually do, and what did it cost?"</p><div class="session-complete" data-session-code="5.5"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 5.5 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-23.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">5.4 · Securing tools: OAuth &amp; fine-grained authorization</span></a>
+<a class="next" href="session-25.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">6.1 · Observability for AI traffic: tokens, latency &amp; tracing</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

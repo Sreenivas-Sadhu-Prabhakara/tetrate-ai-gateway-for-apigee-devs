@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6.1 Observability for AI traffic: tokens, latency & tracing · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li class="active" data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="25">
+      <figure class="hero"><img src="assets/heroes/part-6.svg" alt="A moon over a calm, level horizon" loading="lazy"><figcaption class="hero-cap"><span class="hero-eyebrow">Part 6</span><span class="hero-headline">Observability &amp; operations</span></figcaption></figure><div class="crumbs"><span class="crumb-part">Part 6 — Observability &amp; operations</span><span class="crumb-sep">·</span><span class="crumb-code">Session 6.1</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-24.html">5.5 · Agent identity &amp; guardrails for autonomous workflows</a></div><h1 id="61-observability-for-ai-traffic-tokens-latency-tracing">6.1 — Observability for AI traffic: tokens, latency &amp; tracing</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Everything you governed in Parts 3–5 — tokens, budgets, models, guardrails, tools — is only as good as your ability to <strong>see it happening</strong>. By the end of this session you can enable token-usage and latency metrics on the gateway and read an <strong>OpenInference</strong> trace of a multi-step agent run, with per-step token and latency breakdowns, so "what is our AI traffic actually doing, and what is it costing" becomes a dashboard query instead of a guess.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>You spent five parts moving cross-cutting concerns to the edge. The payoff is that the edge is now the <strong>one place every LLM and tool call passes through</strong> — which makes it the one place you can measure them. A direct-from-each-service estate can't answer "tokens per team last month" (you proved that in session 1.1's stretch goal); a governed edge answers it because every call is metered there.</p>
+<p>But AI observability is not just "the same dashboards with new labels." The interesting dimensions are <strong>model, tokens, and tool calls</strong>, and the interesting unit of work is no longer a request — it's an <strong>agent run</strong> that fans a single user prompt into many model and tool spans. If you only chart per-request metrics, you will systematically under-count what your agents cost. This session wires the metrics and traces; 6.2 uses them to debug.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>This is <strong>Apigee Analytics for AI traffic.</strong> The built-in dashboards and the trace timeline are the same instinct — observe traffic at the proxy, slice it by dimensions — but the dimensions change. Where Apigee gave you traffic, latency, error rate, and cache hit sliced by proxy, target, and developer app, the AI gateway gives you the same skeleton sliced by <strong>model, token count (prompt vs. completion), tool call, and cost</strong>. Tetrate Agent Operations Director is the cost/usage dashboard layer on top, the way Apigee's Analytics dashboards sat on top of the raw metrics.</p>
+<table>
+<thead>
+<tr>
+<th>Apigee Analytics</th>
+<th>AI gateway observability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Traffic (request count)</td>
+<td>Request count <strong>+ token count</strong> (prompt / completion)</td>
+</tr>
+<tr>
+<td>Target latency</td>
+<td>Model latency, <strong>time-to-first-token</strong> for streaming</td>
+</tr>
+<tr>
+<td>Dimensions: proxy, target, app</td>
+<td>Dimensions: model, user/team, tool, <strong>cost</strong></td>
+</tr>
+<tr>
+<td>Trace/Debug session</td>
+<td>OpenInference trace of LLM + agent spans</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>You already know the shape: <strong>Micrometer</strong> counters and timers exposed through Actuator, scraped to Prometheus, plus <strong>distributed traces</strong> (OpenTelemetry, Sleuth-era spans) so one request's path across services is one connected trace. The difference is <em>where the instrumentation lives</em>. You won't add a <code>@Timed</code> to every LLM call in every service — the gateway emits the token and latency metrics for all of them, and stamps spans following <strong>OpenInference</strong> semantic conventions (the LLM-aware vocabulary: prompt, model, token counts, tool calls) so an agent run reads as one trace instead of disconnected client calls.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>In a REST estate, one inbound request is roughly one span and one unit of cost — so per-request dashboards tell the truth. For agents that assumption collapses. A <strong>single</strong> user prompt fans out into a planning model call, several tool calls, and a synthesis call — many spans, variable token cost each, all belonging to <strong>one logical interaction</strong>. Per-request metrics will show you a flat-looking graph while spend climbs, because the expensive thing (the agent run) isn't your unit of measurement. You have to trace and aggregate at the <strong>session/run</strong> level, not the request level — there is no Apigee proxy or Spring controller whose "one call" maps cleanly onto it.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Observability isn't a new box bolted on — it reads the same governance stack every request already descends through, emitting a metric and a span at each layer:</p>
+<figure class="svg-figure">
+<img src="assets/svg/governance-stack.svg" alt="A request descends through identity, model entitlement, token rate limit, budget attribution, and guardrails; each layer emits token-usage and latency metrics and an OpenInference span, metered to cost.">
+<figcaption>The same governance stack from Part 3, read as a telemetry source. Each layer the request passes through emits token-usage and latency metrics and contributes an OpenInference span; an agent run is the sum of these across many model and tool calls.</figcaption>
+</figure>
+
+<p>Concretely the gateway gives you two streams. <strong>Metrics</strong>: token-usage counters (prompt, completion, total) and latency histograms, labelled by model and caller — the time series you alert and dashboard on. <strong>Traces</strong>: per-call spans following OpenInference conventions, so a model call carries its prompt reference, model name, and token counts, and a tool call carries its tool name and arguments — stitched into one trace per agent run. Tetrate Agent Operations Director consumes the usage stream to surface cost/usage dashboards; your existing OpenTelemetry backend (Tempo, Jaeger, Honeycomb) consumes the spans.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Per-request metrics hide agentic cost. One user prompt fans into many spans, so a "requests/min" or "p95 latency per request" panel can look healthy while a runaway agent loops through dozens of tool calls per interaction. Build at least one panel keyed on the <strong>session/run</strong>, not the HTTP request, or you will be blind to exactly the traffic Part 5 introduced.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-enable-telemetry-and-read-a-per-step-agent-run">Lab — enable telemetry and read a per-step agent run</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway from 1.5 with at least one <code>AIGatewayRoute</code>, an agent flow from Part 5 (an <code>MCPRoute</code> and a tool server), <code>kubectl</code>, and an OpenTelemetry collector reachable in-cluster. Export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, and <code>$GATEWAY_KEY</code>.</p>
+<p><strong>1. Point the gateway's telemetry at your collector.</strong> Token-usage and latency metrics are emitted in Prometheus format; traces are exported over OTLP. Configure the OTLP endpoint so spans carry OpenInference attributes:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayTelemetry</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-telemetry</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">metrics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">prometheus</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">          </span><span class="c1"># token + latency time series, scraped by Prometheus</span>
+<span class="w">  </span><span class="nt">tracing</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">otlp</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">otel-collector.${NAMESPACE}.svc.cluster.local:4317</span>
+<span class="w">      </span><span class="nt">semantics</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OpenInference</span><span class="w">   </span><span class="c1"># prompt, model, tokens, tool-call span attributes</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Prompts and PII can leak into traces. OpenInference spans <em>can</em> carry the prompt text and tool arguments — useful for debugging, dangerous in a shared tracing backend. Capture references or redact span content (tie this back to the PII redaction from 4.3); never ship raw prompts to a trace store your whole org can read.</p>
+</div>
+<p><strong>2. Apply it and confirm metrics are flowing.</strong> Hit the gateway once, then read the token counters straight off the metrics endpoint:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>ai-telemetry.yaml
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hello&quot;}]}&#39;</span><span class="w"> </span>&gt;/dev/null
+<span class="c1"># token-usage time series the gateway just incremented:</span>
+kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>deploy/ai-gateway<span class="w"> </span>--<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>curl<span class="w"> </span>-s<span class="w"> </span>localhost:19001/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;gen_ai_.*token|ai_gateway.*token&quot;</span>
+</code></pre></div>
+
+<p><strong>3. Run an agent interaction and read it as ONE trace.</strong> Trigger a Part 5 agent run (one prompt that uses tools), then pull the trace and break it down per step:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># kick off an agent run that plans, calls tools, then synthesises</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-session-id: demo-run-1&quot;</span><span class="w"> </span>-d<span class="w"> </span>@agent-run.json<span class="w"> </span>&gt;/dev/null
+
+<span class="c1"># fetch the trace for that session from your OTLP backend (Tempo shown)</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://tempo.</span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span><span class="s2">.svc.cluster.local:3100/api/search?tags=session.id=demo-run-1&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.traces[0].spanSet.spans[] | {name, tokens: .attributes[&quot;llm.token_count.total&quot;], ms: .durationMs}&#39;</span>
+</code></pre></div>
+
+<p>You should see several spans under one trace: a model span (planning), one span per tool call, and a final model span (synthesis) — each with its own token count and latency. Sum the token columns and you have the <strong>true cost of that single user prompt</strong>, not just the cost of the last HTTP request.</p>
+<p><strong>What success looks like:</strong> the metrics endpoint shows token-usage and latency series labelled by model; and one agent interaction renders as a <strong>single OpenInference trace</strong> whose per-step breakdown lets you point at exactly which model call or tool call dominated the tokens and the latency.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Dashboarding requests, not tokens or runs.</strong> A request-count panel looks flat while token spend climbs; if your primary cost view isn't token- and session-keyed, you're measuring the wrong thing.</li>
+<li><strong>Spans that don't join up.</strong> Without a stable session/run correlator (e.g. <code>x-session-id</code>), each model and tool call is an orphan span and the agent run is unreadable — you lose the per-step breakdown entirely.</li>
+<li><strong>Raw prompts/PII in traces.</strong> Capturing full prompt text into a shared trace backend turns observability into a data leak; redact or reference instead (4.3).</li>
+<li><strong>No collector, silent drop.</strong> If the OTLP endpoint is wrong or down, the gateway emits spans into the void and you debug 6.2 blind. Confirm spans land <em>before</em> you need them.</li>
+<li><strong>Reading p95 per request as agent latency.</strong> An agent run's wall-clock is the trace duration, not any single span — per-request latency understates what the user actually waited.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Take one real agent run and compute two numbers from its trace: total tokens across all spans, and the share contributed by tool-call round-trips versus model calls. Then compare that to the single per-request token metric you'd have seen without tracing. The gap between the two is precisely the agentic cost that per-request observability was hiding — and the business case for session-level dashboards in Agent Operations Director.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now enable token-usage and latency <strong>metrics</strong> and OpenInference <strong>traces</strong> on the gateway, read a multi-step agent run as one trace with per-step token and latency breakdowns, and explain why agentic cost must be observed at the <strong>session level</strong> rather than per request — while keeping prompts and PII out of your trace store. You have the signals; now you use them under pressure.</p>
+<p><strong>Next — 6.2:</strong> when a request misbehaves, you'll turn these same signals into a debugger — stepping a failing call through routing, guardrails, and the provider to find exactly <strong>which policy fired and why</strong>.</p><div class="session-complete" data-session-code="6.1"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 6.1 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-24.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">5.5 · Agent identity &amp; guardrails for autonomous workflows</span></a>
+<a class="next" href="session-26.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">6.2 · Debugging AI requests at the gateway</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

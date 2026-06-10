@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>6.3 Deploying & operating: Kubernetes, Gateway API & the aigw CLI · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li class="active" data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="27">
+      <div class="crumbs"><span class="crumb-part">Part 6 — Observability &amp; operations</span><span class="crumb-sep">·</span><span class="crumb-code">Session 6.3</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-26.html">6.2 · Debugging AI requests at the gateway</a></div><h1 id="63-deploying-operating-kubernetes-gateway-api-the-aigw-cli">6.3 — Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>The gateway is not a console you click — it's <strong>config-as-code</strong>: Gateway API resources and the AI CRDs live in git, the <code>aigw</code> CLI runs them locally for fast iteration, and the <strong>same manifests</strong> promote unchanged from dev to prod through a GitOps pipeline. By the end of this session you can run the gateway standalone against your manifests with <code>aigw run</code>, then apply those identical manifests to a cluster with no edits — the operational model for everything you built in Parts 1–6.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Across this course you've authored <code>AIGatewayRoute</code>s, <code>BackendTrafficPolicy</code>s, guardrails, <code>MCPRoute</code>s, and telemetry — all as YAML. That's not incidental: it's the whole operating model. There is no "save in the UI" step that lives only in one environment. The artifacts <em>are</em> Kubernetes resources, so they get versioned, reviewed, validated in CI, and rolled out the same way the rest of your platform is.</p>
+<p>Two things make this practical. First, the <strong>Gateway API</strong> is the standard, portable contract — the same <code>Gateway</code>/<code>HTTPRoute</code> shapes work across conformant implementations, and the AI CRDs extend them. Second, the <strong><code>aigw</code> CLI</strong> lets you run the gateway <em>locally or standalone</em> against the very manifests you'll ship, so you get a tight inner loop without a cluster — then promote the proven config outward.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>You've done <strong>config-as-code and environment promotion</strong> before — <code>apigeectl</code>/Maven deploy, proxy bundles in git, the same bundle pushed from <code>test</code> to <code>prod</code> with environment-scoped config keyed out. This is that discipline, with the artifacts changed: instead of a proxy bundle you promote <strong>Kubernetes CRDs</strong> (<code>Gateway</code>, <code>HTTPRoute</code>, <code>AIGatewayRoute</code>, policies) through a GitOps pipeline. The environment-specific bits you kept in Apigee KVMs and target servers become per-cluster Secrets and overlays. If you ever swore "never click-ops a proxy into prod," you already hold the principle this session operationalises.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>This is your app's <strong>CI/CD pipeline and Spring profiles</strong>, applied to gateway config. Manifests in git, validated by CI, applied to dev then promoted to prod is exactly your build → test → deploy flow; per-cluster Secrets and overlays are your <code>application-dev.yml</code> vs <code>application-prod.yml</code> profiles, with the environment-specific values externalised out of the artifact. And <code>aigw run</code> is your local boot — <code>mvn spring-boot:run</code> before you ship — letting you exercise the real config on your laptop before it ever reaches a cluster.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A Spring jar is a self-contained artifact you run anywhere; gateway CRDs are <strong>declarative state reconciled by a controller</strong>, not a process you start. "Deploy" means <em>apply the desired state and let the controller converge</em> — there's no main method, and a manifest can be accepted yet not yet programmed (you watch <code>status.conditions</code>, not a startup log). And unlike a profile that only flips values, a manifest can encode <strong>cluster-specific assumptions</strong> (a model that exists in one region, a Secret name) that silently break promotion. The artifact travels; the environment's truth must be externalised, or "same manifest everywhere" becomes a lie.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>The operating loop is GitOps: config is authored once, validated, and flows outward to clusters, with each environment pulling the same source of truth and layering only its own values on top:</p>
+<pre class="mermaid">flowchart LR
+  dev[&quot;Author manifests&lt;br/&gt;Gateway API + AI CRDs&quot;] --&gt;|git push| repo[&quot;Git repo&lt;br/&gt;(source of truth)&quot;]
+  repo --&gt; ci[&quot;CI validates&lt;br/&gt;schema · lint · aigw run smoke&quot;]
+  ci --&gt;|merge| repo
+  repo --&gt;|GitOps sync| d[&quot;Dev cluster&lt;br/&gt;+ dev overlay/Secrets&quot;]
+  d --&gt;|promote same manifests| p[&quot;Prod cluster&lt;br/&gt;+ prod overlay/Secrets&quot;]
+  local[&quot;aigw run&lt;br/&gt;(local / standalone)&quot;] -.-&gt;|same manifests, no cluster| dev</pre>
+<p>The promise is that the box you ran with <code>aigw run</code> on your laptop, the resources CI smoke-tested, and the workload reconciled into prod are <strong>the same manifests</strong> — only the per-cluster overlay differs. Nothing is hand-edited on the way to production; promotion is "point the next environment at the merged config," not "re-apply changes by hand."</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Cluster-specific values baked into manifests break promotion. A hostname, a Secret's literal value, or a model name that only exists in one region, hard-coded into a CRD, means the "same" manifest fails in the next cluster — and you start hand-patching, which destroys the whole guarantee. Externalise those: per-cluster overlays (Kustomize) and Secrets, so the CRDs themselves travel unchanged and only the environment layer differs.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-run-locally-with-aigw-then-promote-the-same-manifests">Lab — run locally with <code>aigw</code>, then promote the same manifests</h4>
+<p><strong>Prereqs:</strong> the <code>aigw</code> CLI installed, <code>kubectl</code> with access to a cluster running Envoy AI Gateway (the install from 1.5), and your manifests from earlier sessions in a git working tree. Export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, and <code>$GATEWAY_KEY</code>.</p>
+<p><strong>1. Keep environment-specific truth out of the CRDs.</strong> The route and policy YAML are portable; the per-cluster values live in a Secret and a thin overlay, never inline:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># base/ai-gateway-route.yaml — portable, identical across clusters</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">schema</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OpenAI</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-backend</span><span class="w">        </span><span class="c1"># provider creds resolved from a Secret, not here</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># overlays/prod/provider-secret.yaml — per-cluster, NOT promoted as-is</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-credentials</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="nt">stringData</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">apiKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${GATEWAY_KEY}</span><span class="w">              </span><span class="c1"># injected per cluster by your secret manager</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Never commit a real provider key or a cluster's hostname into the base manifests. The moment a Secret value or an environment hostname lives in the shared YAML, the manifest stops being portable and you've recreated click-ops by another name. Keep secrets in your secret manager and reference them by name.</p>
+</div>
+<p><strong>2. Run the gateway locally against those manifests</strong> — no cluster needed — to smoke-test routing and policy on your laptop:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># standalone run of the SAME base manifests you&#39;ll ship</span>
+aigw<span class="w"> </span>run<span class="w"> </span>base/ai-gateway-route.yaml<span class="w"> </span>base/token-budget.yaml
+
+<span class="c1"># in another shell, exercise the local gateway</span>
+curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://localhost:1975/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;ping&quot;}]}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Apply the identical base manifests to a cluster</strong> — same files, only the overlay differs — and confirm the controller programmed them:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># same base/, plus the per-cluster overlay (Kustomize) — no edits to base</span>
+kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>overlays/prod
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>ai-gateway-route<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> <code>aigw run</code> serves your routes and policies locally with no cluster, and the <strong>exact same base manifests</strong> — applied with only a per-cluster overlay and Secret — come up <code>Accepted</code> in the cluster. You promoted config from laptop to prod with <strong>no change to the CRDs themselves</strong>, which is the entire operating model in one motion.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Hard-coded environment values in base manifests.</strong> A literal hostname, Secret value, or region-only model name in a shared CRD breaks the next cluster — externalise to overlays and Secrets.</li>
+<li><strong>Hand-editing manifests during promotion.</strong> Any manual patch on the way to prod means "same config" is a fiction and the next sync will fight you; let GitOps reconcile from the merged source.</li>
+<li><strong>Skipping <code>aigw run</code> before applying.</strong> Validating only in-cluster makes the inner loop slow and pushes config errors all the way to a cluster; smoke-test locally first.</li>
+<li><strong>Accepted ≠ programmed.</strong> A manifest can be <code>Accepted</code> while not yet reconciled into the data plane; check <code>status.conditions</code>, not just <code>kubectl apply</code> exit code.</li>
+<li><strong>No CI validation gate.</strong> Manifests merged without schema/lint/<code>aigw run</code> checks let a broken CRD reach a cluster; gate the pipeline before sync.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Take one session's manifests and split them properly into a Kustomize <code>base/</code> plus <code>overlays/dev</code> and <code>overlays/prod</code>, with every environment-specific value (hostnames, Secrets, model availability) pushed into the overlays. Then prove portability: <code>kubectl apply -k overlays/dev</code> and <code>-k overlays/prod</code> from the <em>same base</em>, and diff the rendered output — the only differences should be the externalised values, nothing in the CRDs themselves.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now operate the gateway as <strong>config-as-code</strong>: Gateway API and AI CRDs versioned in git, validated in CI, run locally with <code>aigw run</code>, and promoted <strong>unchanged</strong> across clusters via GitOps — with cluster-specific truth externalised into overlays and Secrets so the same manifests genuinely travel. This is the deployment discipline that makes everything in Parts 1–6 reproducible and reviewable.</p>
+<p><strong>Next — 6.4:</strong> with the gateway deployed and operated, you'll make it <strong>production-ready</strong> — defining SLOs for AI traffic, designing safe rollouts of model and policy changes, and standing up the cost dashboards that keep spend and reliability honest.</p><div class="session-complete" data-session-code="6.3"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 6.3 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-26.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">6.2 · Debugging AI requests at the gateway</span></a>
+<a class="next" href="session-28.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">6.4 · Production readiness: SLOs, rollout &amp; cost dashboards</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

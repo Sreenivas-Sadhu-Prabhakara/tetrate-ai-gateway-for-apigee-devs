@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3.3 Sanctioned-model governance & access tiers · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li class="active" data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="13">
+      <div class="crumbs"><span class="crumb-part">Part 3 — Governance: tokens, cost &amp; quotas</span><span class="crumb-sep">·</span><span class="crumb-code">Session 3.3</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-12.html">3.2 · Budgets &amp; cost attribution per user, team &amp; app</a></div><h1 id="33-sanctioned-model-governance-access-tiers">3.3 — Sanctioned-model governance &amp; access tiers</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>A budget says how <em>much</em> a team may spend; a <strong>sanctioned-model tier</strong> says <em>which models it may call at all</em>. By the end of this session you can define access tiers — a cheap-only tier and a full-catalog tier — and enforce them <strong>deny-by-default</strong> at the gateway, so a cheap-tier key asking for the premium model gets a <code>403</code> instead of an expensive surprise. This is an API Product, but the entitlement is a set of models.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Budgets (3.2) cap spend but don't constrain <em>capability</em>. A team with a generous budget can still point every call at your most expensive frontier model "just to be safe," and your token meter will dutifully bill them for it. Some models also carry compliance or data-residency constraints that make them simply <strong>not allowed</strong> for certain workloads, regardless of budget. You need to govern the <em>set of models a caller is entitled to</em>, not only the quantity of tokens.</p>
+<p>That's a tiering problem, and it's exactly the one API products solved for REST: bundle a set of capabilities, attach limits and scopes, and grant it to an app. Here the bundle is a <strong>model catalog</strong> — a cheap-only tier for the long tail of services, a premium tier for the few workloads that justify it, perhaps a region-restricted tier for regulated data. The rule has to be <strong>deny-by-default</strong>: a caller may use a model only if its tier explicitly allows it. Hope is not an access policy — and crucially, the model name lives in the request body, fully under the client's control, so the <em>gateway</em> must be the thing that says no.</p>
+<h2 id="the-concept">The concept</h2>
+<p>A tier is a named bundle that maps an authenticated caller to the set of models it may invoke; the gateway gates each request on <code>(tier, requested-model)</code> and denies anything not on the list:</p>
+<pre class="mermaid">flowchart LR
+  k1[&quot;cheap-tier key&lt;br/&gt;&lt;i&gt;most services&lt;/i&gt;&quot;] --&gt; T1
+  k2[&quot;premium-tier key&lt;br/&gt;&lt;i&gt;few sanctioned apps&lt;/i&gt;&quot;] --&gt; T2
+
+  subgraph gw[&quot;AI gateway — sanctioned-model gate (deny-by-default)&quot;]
+    T1[&quot;tier: cheap-only&lt;br/&gt;allow: gpt-4o-mini, haiku&quot;]
+    T2[&quot;tier: full-catalog&lt;br/&gt;allow: gpt-4o-mini, haiku,&lt;br/&gt;gpt-4o, opus&quot;]
+  end
+
+  T1 --&gt;|&quot;gpt-4o-mini ✓&quot;| ok1[&quot;routed to provider&quot;]
+  T1 --&gt;|&quot;gpt-4o ✗&quot;| deny[&quot;403 Forbidden&lt;br/&gt;model not in tier&quot;]
+  T2 --&gt;|&quot;gpt-4o ✓&quot;| ok2[&quot;routed to provider&quot;]
+
+  classDef allow fill:#efe,stroke:#8a8,stroke-width:1px;
+  classDef block fill:#fee,stroke:#c88,stroke-width:1px;
+  class ok1,ok2 allow;
+  class deny block;</pre>
+<p>The mechanism reuses pieces you already have. The gateway knows <strong>who</strong> is calling (the API key / identity from 4.x) and <strong>what</strong> they asked for: the AI Gateway filter reads the model from the request body and exposes it as the <code>x-ai-eg-model</code> header — the same header you rate-limited on in 3.1. Tiering is then a policy that admits the request only when the caller's tier contains that model, and returns <code>403</code> otherwise. You can express the allow-list as route matching (a route per tier that only matches its sanctioned <code>x-ai-eg-model</code> values) or as an authorization policy keyed on the caller's tier claim. Either way the <em>enforcement point is the gateway</em>, not the application.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><strong>Enforce the allow-list at the gateway, never by trusting the client to send only approved model names.</strong> The model string is just a field in the JSON body — any caller can put <code>gpt-4o</code> (or a brand-new, unbudgeted model) there. A client-side "we only call cheap models" convention is a comment, not a control. If the gate isn't a server-side policy that <em>rejects</em> unsanctioned <code>x-ai-eg-model</code> values, you have no model governance — you have a gentleman's agreement. Default-allow ("block the few we ban") fails the moment a new expensive model ships; <strong>default-deny</strong> ("allow only the few we sanction") is the only safe posture.</p>
+</div>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>A tier is an <strong>API Product, where the bundled resources are models.</strong> In Apigee a product grouped a set of API proxies/paths, attached a quota and scopes, and you granted it to an app via its key — the key carried the entitlement. Same here: the caller's key/identity maps to a tier, and the tier enumerates the sanctioned models exactly as a product enumerated allowed paths. Asking for a model outside your tier is the model-traffic version of calling a path your product doesn't include — and you'd expect a <code>403</code> for that, not a best-effort route. The grant model, the deny-by-default posture, and the "entitlement travels with the credential" idea all carry straight over.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>This centralises the <strong>"is this team allowed the expensive model?" check</strong> you'd otherwise scatter across services. Today that lives as an <code>if (team.isPremium())</code> guard, a <code>@PreAuthorize</code> annotation, or a feature flag in config — duplicated per service, drifting between them, and trivially bypassed by any service that forgets it or hard-codes a different model name. Moved to the gateway, the entitlement is declared once, enforced uniformly for every caller, and impossible to skip by editing application code. It's the authorization rule pulled out of N services into one operated policy — the same reason you put auth in a filter rather than every controller.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>An Apigee product gates a <strong>fixed, named set of paths</strong> you defined up front. The model catalog is <strong>open-ended and client-asserted</strong>: callers can name models that don't exist, models you've never sanctioned, or models a provider shipped this morning — all as a free-text body field. So a tier can't only <em>enumerate what's allowed</em> and assume everything else is a known path; it must actively <strong>reject the unknown</strong>, because the space of possible model strings is unbounded and adversary-controlled. A REST product never had to defend against a caller inventing a new path mid-request; a model tier does. That's why deny-by-default isn't a preference here — it's structural.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-two-tiers-and-a-refused-premium-model">Lab — two tiers, and a refused premium model</h4>
+<p><strong>Prereqs:</strong> the gateway and <code>AIGatewayRoute</code> from 1.5 (export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>), <code>kubectl</code>, and two caller keys you can distinguish by a tier identity. We'll use an <code>x-tier</code> header to stand in for the tier claim your key carries (you bind this to a real authenticated identity in 4.1).</p>
+<p><strong>1. Define the sanctioned catalog per tier</strong> as route matching: the cheap route only matches sanctioned cheap models for cheap-tier callers; anything else has no matching route and is refused. Create one <code>AIGatewayRoute</code> per tier, matching on both the tier and the model header:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tier-cheap</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">                 </span><span class="c1"># the Gateway from 1.5</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-tier</span><span class="w">             </span><span class="c1"># the caller&#39;s tier</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cheap</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span><span class="w">      </span><span class="c1"># the model they asked for (from the body)</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span><span class="w">       </span><span class="c1"># ...only sanctioned cheap models match</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-backend</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tier-full</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-tier</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">full</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o</span><span class="w">            </span><span class="c1"># full tier may reach the premium model</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai-backend</span>
+</code></pre></div>
+
+<p><strong>2. Add the deny-by-default backstop.</strong> Matching routes <em>allow</em>; you still need an explicit <code>403</code> for anything that matches no tier route, so unsanctioned combinations are <em>refused</em>, not silently dropped or routed elsewhere. Attach a <code>SecurityPolicy</code> (or a catch-all route returning <code>direct-response 403</code>) so a cheap-tier caller asking for <code>gpt-4o</code> is rejected:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecurityPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deny-unsanctioned-model</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span>
+<span class="w">  </span><span class="nt">authorization</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">defaultAction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deny</span><span class="w">                </span><span class="c1"># deny-by-default — the whole point</span>
+<span class="w">    </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allow</span>
+<span class="w">        </span><span class="nt">principal</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-tier</span>
+<span class="w">              </span><span class="nt">values</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;cheap&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="c1"># cheap tier may only reach the sanctioned cheap model</span>
+<span class="w">        </span><span class="c1"># (one Allow rule per sanctioned (tier, model) pair)</span>
+</code></pre></div>
+
+<p><strong>3. Apply and confirm acceptance:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>tiers.yaml<span class="w"> </span>-f<span class="w"> </span>deny-unsanctioned-model.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayroute<span class="w"> </span>tier-cheap<span class="w"> </span>tier-full<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{.metadata.name}: {.status.conditions[0].type}{&quot;\n&quot;}{end}&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Prove the gate.</strong> A cheap-tier caller gets the cheap model (<code>200</code>) but is <strong>refused</strong> the premium model (<code>403</code>); a full-tier caller gets both:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># cheap tier asks for the sanctioned model -&gt; 200</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;cheap+mini  -&gt; %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-tier: cheap&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o-mini&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+
+<span class="c1"># cheap tier asks for the PREMIUM model -&gt; 403 (denied at the gateway)</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;cheap+gpt4o -&gt; %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-tier: cheap&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+
+<span class="c1"># full tier asks for the premium model -&gt; 200</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;full+gpt4o  -&gt; %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-tier: full&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;gpt-4o&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>If your gate is <em>allow-list of routes</em> without the <code>defaultAction: Deny</code> backstop, an unmatched request may fall through to a default route or a <code>404</code> instead of a clean <code>403</code> — and a fallthrough that happens to route to <em>any</em> backend is a silent entitlement leak. Confirm the deny is <strong>explicit</strong>: the cheap-tier premium request must be <em>rejected by policy</em>, not merely <em>unrouted by accident</em>. Test the negative case as carefully as the positive one.</p>
+</div>
+<p><strong>What success looks like:</strong> <code>cheap+mini</code> returns <code>200</code>, <code>cheap+gpt4o</code> returns <strong><code>403</code></strong>, and <code>full+gpt4o</code> returns <code>200</code>. The model string in the body did not decide access — the <strong>tier policy at the gateway</strong> did. A caller cannot reach an unsanctioned model by simply naming it.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># the adversarial case: a cheap-tier caller invents a brand-new model name</span>
+curl<span class="w"> </span>-s<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;cheap+unknown -&gt; %{http_code}\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;x-tier: cheap&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;some-brand-new-frontier-model&quot;,&quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;hi&quot;}]}&#39;</span>
+</code></pre></div>
+
+<ul>
+<li>A model name <strong>no tier sanctions</strong> returns <code>403</code>, not <code>200</code> and not a provider error — proof the gate is deny-by-default and not just "block the models we listed."</li>
+<li>Flipping a caller's tier from <code>cheap</code> to <code>full</code> changes the outcome for the <em>same</em> model request — proof access is decided by <strong>identity × model</strong>, not the model string alone.</li>
+<li>The decision happens at the gateway <em>before</em> any provider call — check the provider received no request for the denied case (no upstream spend on a refused call).</li>
+</ul>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Trusting the client's model name.</strong> The model is body-controlled; if the gateway doesn't validate it against the tier, there is no governance. <em>(Symptom: any caller can reach any model by editing JSON.)</em></li>
+<li><strong>Default-allow instead of default-deny.</strong> "Block the expensive ones we know about" leaks the moment a new expensive model ships. Sanction explicitly; reject everything else.</li>
+<li><strong>Enforcing in app code.</strong> A per-service <code>if (premium)</code> check drifts, gets skipped, and is bypassable. The tier must live at the edge, once.</li>
+<li><strong>Allow-list with no deny backstop.</strong> Routes that only <em>match</em> sanctioned pairs can let unmatched requests fall through to a default route. Pair matching with an explicit <code>Deny</code>.</li>
+<li><strong>Confusing tier with budget.</strong> A tier governs <em>which</em> models; a budget (3.2) governs <em>how much</em>. A caller can be in the premium tier and still need a budget — they're orthogonal controls, both required.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Add a third, region-restricted tier whose sanctioned set excludes any model that can't process EU-resident data, and grant it to a caller representing a regulated workload. Prove that caller is refused an otherwise-cheap model that fails the residency rule — demonstrating that a tier encodes <strong>compliance</strong>, not just cost. This is the model-entitlement layer of the governance stack doing policy work no budget could express.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now define <strong>sanctioned-model access tiers</strong> — an API Product whose resources are models — enforce them <strong>deny-by-default</strong> at the gateway on <code>(tier, requested-model)</code>, and prove a cheap-tier caller is refused the premium model with a <code>403</code>. The model name in the body no longer decides access; your policy does. Tier (which models) and budget (how much, from 3.2) together form the cost-and-capability half of the governance stack.</p>
+<p><strong>Next — 3.4:</strong> the cheapest token is the one you never spend. You'll cut cost <em>and</em> latency with <strong>response, prompt, and semantic caching</strong> at the gateway — and learn precisely which completions are safe to cache and which will hand one user another user's answer.</p><div class="session-complete" data-session-code="3.3"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 3.3 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-12.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">3.2 · Budgets &amp; cost attribution per user, team &amp; app</span></a>
+<a class="next" href="session-14.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">3.4 · Caching to cut cost &amp; latency</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

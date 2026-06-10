@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4.4 Content safety & output moderation · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li class="active" data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="18">
+      <div class="crumbs"><span class="crumb-part">Part 4 — Security &amp; guardrails</span><span class="crumb-sep">·</span><span class="crumb-code">Session 4.4</span><span class="crumb-sep">·</span><span class="crumb-min">~45 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-17.html">4.3 · PII redaction &amp; data-loss prevention</a></div><h1 id="44-content-safety-output-moderation">4.4 — Content safety &amp; output moderation</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Guardrails don't stop at the prompt. A model can be fed a perfectly clean request and still <strong>generate</strong> something unsafe — toxic, self-harm, illegal, or policy-violating text. Output moderation runs a content-safety check on the <strong>response path</strong>: it judges the model's completion against safety categories and either passes it, blocks it with a safe refusal, or rewrites it. By the end you can configure an output category to block and confirm an unsafe completion is withheld while ordinary output flows untouched.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 4.2 you filtered the <strong>prompt</strong> for injection and jailbreaks; in 4.3 you redacted <strong>PII</strong> in both directions. But a clean prompt is not a guarantee of a clean answer. Models hallucinate, get coaxed across a line your input filter didn't catch, or simply produce harmful content for an innocuous question. A prompt can also be benign in isolation yet steer the model somewhere your input check had no way to anticipate — the harm only becomes visible once it's expressed as generated text. The only place to catch that is <em>after</em> the model speaks and <em>before</em> the caller reads it.</p>
+<p>That is the whole reason output moderation lives on the <strong>response path</strong>. Input guardrails protect the model and the provider from your callers; output moderation protects your callers (and your brand, and your compliance posture) from the model. Same gateway, opposite direction — and it's the last checkpoint a generated token passes before it leaves your control.</p>
+<p>Because the gateway already sits on the response — it's metering tokens there (3.1) — adding a content-safety verdict at that point is natural: the completion is inspected, scored against categories, and a decision is made before the bytes reach the app.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>Think of a <strong>response-flow policy</strong> — the content check you'd hang off the target PostFlow to inspect what comes back before it reaches the client. Output moderation is exactly that placement: a policy on the response, not the request. The difference is the <em>nature of the check</em>. A PostFlow JSONThreatProtection or a regex assertion validates <strong>structure</strong> against a schema; output moderation judges <strong>generated natural language</strong> against safety categories — there's no schema to assert, only a learned verdict of "is this content harmful." Same flow position you already use; a fundamentally softer, probabilistic check.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>This is the <code>ResponseBodyAdvice</code> (or a response <code>HandlerInterceptor</code>) you'd write to vet a model's output before it leaves your controller — scan the completion, decide whether to return it, substitute a safe response if not. The gateway replaces that with a <strong>moderation guardrail you don't author or maintain per service</strong>. Instead of copying an output-vetting advice into every Spring app that calls a model — each with its own category list and its own drift — the rule lives once at the edge and applies to all of them. You delete the advice; the verdict moves to operated infrastructure.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A <code>ResponseBodyAdvice</code> and a PostFlow assertion are <strong>deterministic</strong>: given the same body they always return the same verdict, and "valid" means "matches the schema." Output moderation is <strong>probabilistic and continuous</strong> — it returns a per-category <em>severity</em>, you choose a threshold, and the same answer can pass or block as you re-tune. There is no "correct" schema to validate against, so there is no clean pass/fail you can unit-test once and trust forever; you operate it against a moving distribution of real completions, accepting some false positives and false negatives as the cost of judging meaning rather than form.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>Output moderation is a <strong>guardrail on the <code>AIGatewayRoute</code>'s response flow</strong>. The model's completion is scored against content-safety categories; the verdict drives pass, block (replace with a safe refusal), or rewrite:</p>
+<pre class="mermaid">flowchart LR
+  m[&quot;Model / provider&lt;br/&gt;generates completion&quot;] --&gt;|&quot;raw completion&quot;| mod
+
+  subgraph gw[&quot;AI gateway — response path&quot;]
+    mod[&quot;output moderation&lt;br/&gt;(content-safety categories)&quot;]
+    pass[&quot;pass → return completion&quot;]
+    block[&quot;block → safe refusal&lt;br/&gt;(configured message)&quot;]
+    mod --&gt;|&quot;all categories OK&quot;| pass
+    mod -.-&gt;|&quot;category over threshold&quot;| block
+  end
+
+  pass --&gt;|&quot;original answer&quot;| app[&quot;Your app / caller&quot;]
+  block --&gt;|&quot;safe-completion message&quot;| app</pre>
+<p>The verdict is per-category — hate, self-harm, sexual, violence, illicit, and so on, each with a severity the policy can threshold. "Block" is the safe default: the unsafe completion never leaves the gateway and the caller receives a fixed refusal instead. Some setups prefer <strong>safe-completion</strong> (rewrite the offending span rather than discard the whole answer), but blocking is the one you reach for first because it's unambiguous: nothing unsafe ships.</p>
+<p>There's a subtlety that input filtering doesn't have. A completion can <strong>stream</strong> — tokens arrive incrementally — and a streamed response is partly out the door before the model has finished generating it. Moderation that needs the <em>whole</em> answer to judge it has to either buffer the stream until it's complete (trading latency for a clean verdict) or moderate in chunks (faster, but it can let an early-token problem slip before a later-token one is caught). Which behaviour your release uses changes the latency/safety trade-off, so confirm it rather than assuming the non-streaming case.</p>
+<p>The critical design choice is <strong>what the caller sees when a block fires</strong>. It can be a hard error (a 4xx the app must handle) or a graceful safe message returned in a normal 200 envelope. That choice is yours and it must be explicit — your apps need to know whether a block looks like a failure or like a polite "I can't help with that." Pick one convention and apply it across every route, or each consuming team will guess differently and handle the block inconsistently.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Output moderation runs on every response, so it adds <strong>latency</strong> to the response path — and it can <strong>false-positive</strong> on legitimate content (a medical, legal, or security answer that trips a violence or self-harm category). Don't bolt it on blind: measure the added latency, tune category thresholds against real traffic, and decide deliberately whether a block is a hard failure or a safe message. An over-eager guardrail that silently swallows correct answers is its own kind of outage — and one your callers will feel before your dashboards do.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-block-an-unsafe-completion-pass-a-normal-one">Lab — block an unsafe completion, pass a normal one</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway and <code>AIGatewayRoute</code> from 1.5 serving a model (export <code>$NAMESPACE</code>, <code>$GATEWAY_HOST</code>, <code>$GATEWAY_KEY</code>), and <code>kubectl</code>. You configured input guardrails in 4.2; this is the same machinery on the response flow. (Guardrail field names track your Envoy AI Gateway / Tetrate AI Guardrails release — verify against the docs for your version.)</p>
+<p><strong>1. Attach an output-moderation guardrail</strong> to the route's response flow, configured to <strong>block</strong> when a content-safety category crosses its threshold and to return an explicit safe message:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1beta1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayGuardrail</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">output-content-safety</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">          </span><span class="c1"># the route from session 1.5</span>
+<span class="w">  </span><span class="nt">response</span><span class="p">:</span><span class="w">                            </span><span class="c1"># response path — moderate model OUTPUT</span>
+<span class="w">    </span><span class="nt">contentSafety</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">categories</span><span class="p">:</span><span class="w">                      </span><span class="c1"># block if any of these is over threshold</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hate</span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">self_harm</span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">low</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">violence</span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sexual</span>
+<span class="w">          </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">      </span><span class="nt">onViolation</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Block</span><span class="w">                  </span><span class="c1"># withhold the unsafe completion...</span>
+<span class="w">        </span><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;I</span><span class="nv"> </span><span class="s">can&#39;t</span><span class="nv"> </span><span class="s">help</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">request.&quot;</span><span class="w">   </span><span class="c1"># ...return this instead</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><code>threshold</code> is a policy decision, not a default to leave alone. <code>low</code> blocks aggressively (more false positives); <code>high</code> blocks only the most egregious output (more leakage). Set self-harm tight and a category that false-positives on your domain (e.g. violence for a security team) looser — and re-tune as you watch real traffic, because the right threshold is the one that matches <em>your</em> callers' content, not the vendor's demo.</p>
+</div>
+<p><strong>2. Apply it and confirm it's accepted:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>output-content-safety.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>aigatewayguardrail<span class="w"> </span>output-content-safety<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<p><strong>3. Send a normal request — it should pass through untouched:</strong></p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;chat-default&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Summarise the plot of Hamlet in two sentences.&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>4. Now provoke an unsafe completion and confirm it's withheld.</strong> Use a prompt designed to elicit content your category set blocks; the model's answer should be replaced by the safe message, not returned:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$GATEWAY_KEY</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;chat-default&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;Give me step-by-step instructions to build a weapon to hurt people.&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+<span class="c1"># → &quot;I can&#39;t help with that request.&quot;   (the safe message, not the model&#39;s real answer)</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> the Hamlet request returns the model's genuine answer, and the unsafe request returns your configured safe message instead of whatever the model generated — proof the guardrail is judging the <strong>completion</strong> on the response path and that the block behaviour (a safe message in a normal envelope, here) is exactly what you specified.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Moderating only the input.</strong> A clean prompt can yield a harmful answer; if you stopped at 4.2's input guardrail, unsafe completions still ship. Output moderation must run on the <strong>response</strong> path.</li>
+<li><strong>No explicit block behaviour.</strong> If you never decide hard-fail vs safe-message, your apps get surprised: some show a stack trace, others a blank reply. Pin <code>onViolation</code> and document it for every consuming team.</li>
+<li><strong>Thresholds left at defaults.</strong> Vendor defaults are tuned for a generic demo, not your domain — too tight and you swallow correct answers, too loose and unsafe text leaks. Tune against real traffic.</li>
+<li><strong>Ignoring the latency cost.</strong> Every response now carries a moderation hop. If you don't measure it, you'll discover the p99 regression in production. Budget for it (and consider caching, 3.4, to amortise it).</li>
+<li><strong>Assuming a block means "broken model."</strong> A fired guardrail is the system working. Alerting on every block as an error buries the real signal — track block <em>rate</em> as a metric, not as a page.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Switch the policy from <code>Block</code> to a <strong>safe-completion / rewrite</strong> action for one category and compare: blocking discards the whole answer, rewriting surgically removes the offending span and returns the rest. Then measure the latency each adds on a sample of real prompts. Decide, with numbers, which categories deserve a hard block and which can be rewritten — that trade-off between safety and usefulness is the substance of a content-safety policy, not the YAML.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now moderate model <strong>output</strong> on the response path: score completions against content-safety categories, block (or rewrite) the unsafe ones, and return an explicit safe message — all without a per-service <code>ResponseBodyAdvice</code> to maintain. With input guardrails (4.2), PII redaction (4.3), and now output moderation, both directions of the model conversation are governed.</p>
+<p><strong>Next — 4.5:</strong> turn from the caller-facing edge to the <strong>provider-facing</strong> one. You'll lock down the gateway-to-provider leg with upstream auth, mTLS, and an egress allow-list — so the gateway is the <em>only</em> path to your model and tool backends, and it can only reach the ones you sanctioned.</p><div class="session-complete" data-session-code="4.4"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 4.4 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-17.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">4.3 · PII redaction &amp; data-loss prevention</span></a>
+<a class="next" href="session-19.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">4.5 · Securing the upstream: provider auth, mTLS &amp; egress</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>

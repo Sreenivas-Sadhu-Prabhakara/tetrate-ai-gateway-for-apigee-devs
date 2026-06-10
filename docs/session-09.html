@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="mayari">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.4 Fallback, retries & failover across providers · Tetrate AI Gateway for Apigee &amp; Java Developers</title>
+  <link rel="stylesheet" href="assets/pygments.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/widgets.css">
+</head>
+<body>
+  <div id="readingBar"></div>
+  <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">&#9776; Menu</button>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Curriculum">
+<a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">Tetrate AI <em>for Apigee &amp; Java devs</em></span></a>
+<div class="nav-progress"><div class="nav-progress-bar"><span id="navProgressFill"></span></div><span id="navProgressText" class="nav-progress-text">0 / 29 complete</span></div>
+<div class="nav-part">Part 1 — Why an AI gateway exists</div>
+<ul>
+<li data-session="1"><a href="session-01.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.1</span> <span class="seqtitle">What an AI gateway is — and why &#x27;just call OpenAI&#x27; stops working</span></a></li>
+<li data-session="2"><a href="session-02.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.2</span> <span class="seqtitle">The AI gateway vs the API gateway you know</span></a></li>
+<li data-session="3"><a href="session-03.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.3</span> <span class="seqtitle">Tetrate&#x27;s AI landscape: TARS, Agent Router Enterprise &amp; Envoy AI Gateway</span></a></li>
+<li data-session="4"><a href="session-04.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.4</span> <span class="seqtitle">Hello, gateway: TARS as a drop-in OpenAI endpoint</span></a></li>
+<li data-session="5"><a href="session-05.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">1.5</span> <span class="seqtitle">Self-host it: Envoy AI Gateway&#x27;s three core resources</span></a></li>
+</ul>
+<div class="nav-part">Part 2 — The unified multi-provider gateway</div>
+<ul>
+<li data-session="6"><a href="session-06.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.1</span> <span class="seqtitle">One API, many providers: the OpenAI-compatible schema</span></a></li>
+<li data-session="7"><a href="session-07.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.2</span> <span class="seqtitle">Provider credentials &amp; secrets: BackendSecurityPolicy</span></a></li>
+<li data-session="8"><a href="session-08.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.3</span> <span class="seqtitle">Model routing &amp; the approved model catalog</span></a></li>
+<li class="active" data-session="9"><a href="session-09.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.4</span> <span class="seqtitle">Fallback, retries &amp; failover across providers</span></a></li>
+<li data-session="10"><a href="session-10.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">2.5</span> <span class="seqtitle">Beyond chat: embeddings, multimodal &amp; other endpoints</span></a></li>
+</ul>
+<div class="nav-part">Part 3 — Governance: tokens, cost &amp; quotas</div>
+<ul>
+<li data-session="11"><a href="session-11.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.1</span> <span class="seqtitle">Token-based rate limiting: count tokens, not requests</span></a></li>
+<li data-session="12"><a href="session-12.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.2</span> <span class="seqtitle">Budgets &amp; cost attribution per user, team &amp; app</span></a></li>
+<li data-session="13"><a href="session-13.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.3</span> <span class="seqtitle">Sanctioned-model governance &amp; access tiers</span></a></li>
+<li data-session="14"><a href="session-14.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">3.4</span> <span class="seqtitle">Caching to cut cost &amp; latency</span></a></li>
+</ul>
+<div class="nav-part">Part 4 — Security &amp; guardrails</div>
+<ul>
+<li data-session="15"><a href="session-15.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.1</span> <span class="seqtitle">Authenticating callers at the AI edge</span></a></li>
+<li data-session="16"><a href="session-16.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.2</span> <span class="seqtitle">AI guardrails: prompt-injection &amp; jailbreak defense</span></a></li>
+<li data-session="17"><a href="session-17.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.3</span> <span class="seqtitle">PII redaction &amp; data-loss prevention</span></a></li>
+<li data-session="18"><a href="session-18.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.4</span> <span class="seqtitle">Content safety &amp; output moderation</span></a></li>
+<li data-session="19"><a href="session-19.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">4.5</span> <span class="seqtitle">Securing the upstream: provider auth, mTLS &amp; egress</span></a></li>
+</ul>
+<div class="nav-part">Part 5 — The agentic turn: MCP &amp; tools</div>
+<ul>
+<li data-session="20"><a href="session-20.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.1</span> <span class="seqtitle">From chat to agents: what changes for the gateway</span></a></li>
+<li data-session="21"><a href="session-21.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.2</span> <span class="seqtitle">MCP gateways: the MCPRoute resource</span></a></li>
+<li data-session="22"><a href="session-22.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.3</span> <span class="seqtitle">Tool routing, aggregation &amp; multiplexing</span></a></li>
+<li data-session="23"><a href="session-23.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.4</span> <span class="seqtitle">Securing tools: OAuth &amp; fine-grained authorization</span></a></li>
+<li data-session="24"><a href="session-24.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">5.5</span> <span class="seqtitle">Agent identity &amp; guardrails for autonomous workflows</span></a></li>
+</ul>
+<div class="nav-part">Part 6 — Observability &amp; operations</div>
+<ul>
+<li data-session="25"><a href="session-25.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.1</span> <span class="seqtitle">Observability for AI traffic: tokens, latency &amp; tracing</span></a></li>
+<li data-session="26"><a href="session-26.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.2</span> <span class="seqtitle">Debugging AI requests at the gateway</span></a></li>
+<li data-session="27"><a href="session-27.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.3</span> <span class="seqtitle">Deploying &amp; operating: Kubernetes, Gateway API &amp; the aigw CLI</span></a></li>
+<li data-session="28"><a href="session-28.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">6.4</span> <span class="seqtitle">Production readiness: SLOs, rollout &amp; cost dashboards</span></a></li>
+</ul>
+<div class="nav-part">Part 7 — Capstone</div>
+<ul>
+<li data-session="29"><a href="session-29.html"><span class="done-check" aria-hidden="true">&#10003;</span><span class="seqnum">7.1</span> <span class="seqtitle">Capstone: a governed multi-provider agent platform on Tetrate</span></a></li>
+</ul>
+</nav>
+    <main class="content" data-session="9">
+      <div class="crumbs"><span class="crumb-part">Part 2 — The unified multi-provider gateway</span><span class="crumb-sep">·</span><span class="crumb-code">Session 2.4</span><span class="crumb-sep">·</span><span class="crumb-min">~50 min</span></div><div class="builds-on"><span class="builds-on-tag">Builds on</span> <a href="session-08.html">2.3 · Model routing &amp; the approved model catalog</a></div><h1 id="24-fallback-retries-failover-across-providers">2.4 — Fallback, retries &amp; failover across providers</h1>
+<div class="admonition bottomline">
+<p class="admonition-title">Bottom line</p>
+<p>Providers degrade, rate-limit you, and go down — usually one vendor at a time. A <strong><code>BackendTrafficPolicy</code></strong> lets the gateway retry transient failures, bound them with timeouts, and <strong>fail over to a <em>different</em> model vendor</strong> when the primary keeps failing. By the end you can configure retry + timeout on a route, attach a fallback backend, force the primary to fail, and prove the gateway transparently serves the request from the fallback — with the client unaware anything went wrong.</p>
+</div>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>In 2.3 you put one virtual name in front of one model. That's a single point of failure wearing a stable alias. The moment <code>chat-default</code> resolves to exactly one OpenAI backend, an OpenAI incident — a <code>503</code>, a <code>429</code> storm, a region blip — is a full outage for every app that depends on that alias, even though a perfectly good Claude or Bedrock model is sitting idle one <code>backendRef</code> away.</p>
+<p>The honest reality of model traffic is that providers fail <em>partially and transiently</em> far more often than they fail hard. You get an intermittent <code>500</code>, a connection reset, a rate-limit <code>429</code> that would clear if you waited 200ms. A naive client treats every one of those as a hard error and surfaces it to the user. A resilient edge does what you'd do by hand: retry the blips a bounded number of times, give up fast when it's clearly down, and route to a second vendor rather than fail the request.</p>
+<p>The reason this belongs at the gateway and not in each app is the same reason everything in this course belongs there. If resilience lives in code, every service reimplements retry budgets, timeout values, and "which backup model do we use" — and they drift, and half of them retry non-idempotent calls and double-charge you. Lifted to one <code>BackendTrafficPolicy</code>, the failover behaviour is declared once, applied uniformly, and tuned by an operator who can see the whole fleet's error rates — not guessed at per service.</p>
+<div class="admonition apigee">
+<p class="admonition-title">From Apigee</p>
+<p>You've wired this exact resilience before, for REST. A <code>BackendTrafficPolicy</code>'s <strong>retries</strong> are Apigee's retry on a TargetEndpoint; its <strong>timeouts</strong> are your <code>io.timeout.millis</code> / connect-timeout; and prioritized <code>backendRefs</code> are an Apigee <strong>LoadBalancer over multiple TargetServers</strong> with <code>MaxFailures</code> and a fallback <code>Server</code> — the gateway sheds load off a failing target onto a healthy one. <strong>Health checks</strong> that mark a target down map to Envoy's outlier detection / passive health checking. The single genuinely new move: in Apigee your fallback TargetServers were <em>the same backend, different hosts</em>; here the fallback is <strong>a different model vendor entirely</strong> — failing over from OpenAI to Bedrock, not from <code>host-a</code> to <code>host-b</code>.</p>
+</div>
+<div class="admonition java">
+<p class="admonition-title">From Java microservices</p>
+<p>This is the <strong>Resilience4j <code>Retry</code> + <code>CircuitBreaker</code> + fallback</strong> you've wrapped around an LLM call, hoisted out of every service into one policy. The <code>maxAttempts</code>, the <code>retryExceptions</code>, the exponential <code>waitDuration</code>, the <code>@CircuitBreaker(fallbackMethod = "callBackupModel")</code> that swaps to a cheaper provider — all of it. At the application layer that config is per-service and per-pod: each replica keeps its own circuit state, so the breaker opens inconsistently across the fleet and your real retry budget is <code>attempts × replicas</code>. The gateway runs it as shared infrastructure, in front of all callers, with one consistent view of when a provider is unhealthy.</p>
+</div>
+<div class="admonition breaks">
+<p class="admonition-title">Where the analogy breaks</p>
+<p>A REST retry is cheap and safe to be generous with — the call is usually idempotent and costs one unit. An <strong>LLM completion is neither.</strong> It is billed per token the <em>instant</em> the model starts producing output, so a call that streams 800 tokens and then drops the connection has <strong>already cost you money</strong>, and a blind retry pays for it twice. Worse, completions are non-idempotent: retrying isn't "the same request again," it's "a second, differently-worded, separately-billed generation." So unlike a Resilience4j retry where more attempts is just more latency, here every attempt is a real charge and a real side effect. Cap retries hard, prefer to retry only <em>pre-response</em> failures (connection refused, fast <code>503</code>), and never reflexively retry a call that may have partially completed.</p>
+</div>
+<h2 id="the-concept">The concept</h2>
+<p>A <code>BackendTrafficPolicy</code> (<code>gateway.envoyproxy.io/v1alpha1</code>) attaches to the route and layers three behaviours: <strong>bounded retries</strong> of transient failures, a <strong>timeout</strong> that stops waiting on a slow provider, and — by ordering <code>backendRefs</code> on the route — <strong>failover to a second backend</strong> when the primary is exhausted. Walk one request through a primary outage and out the fallback:</p>
+<div class="widget" data-widget="sequence"><script type="application/json">{"type": "sequence", "title": "A request fails over from primary to fallback provider", "actors": [{"id": "app", "label": "Your app"}, {"id": "gw", "label": "AI gateway"}, {"id": "p", "label": "Primary (OpenAI)"}, {"id": "f", "label": "Fallback (Bedrock)"}], "steps": [{"from": "app", "to": "gw", "label": "POST /v1/chat/completions (model: chat-default)", "note": "One OpenAI-shaped call to the stable alias from 2.3 \u2014 the app knows nothing about providers."}, {"from": "gw", "to": "p", "label": "try primary", "note": "The route's first backendRef is OpenAI; the gateway attempts it first."}, {"from": "p", "to": "gw", "kind": "return", "label": "503 Service Unavailable", "note": "Transient, pre-response error \u2014 safe to retry. The connection failed before any tokens were billed."}, {"from": "gw", "to": "p", "label": "retry (attempt 2, backoff)", "note": "BackendTrafficPolicy retries on 5xx/connect errors, with a per-retry timeout and capped attempts."}, {"from": "p", "to": "gw", "kind": "return", "label": "503 again", "note": "Primary still down. Retries exhausted \u2014 the gateway stops paying attention to this backend for now."}, {"from": "gw", "to": "f", "label": "fail over to next backendRef", "note": "The gateway routes to the second, lower-priority backend \u2014 a different vendor entirely."}, {"from": "f", "to": "gw", "kind": "return", "label": "200 + completion", "note": "Bedrock serves the request. modelNameOverride (2.3) maps chat-default to the vendor's real model ID."}, {"from": "gw", "to": "app", "kind": "return", "label": "200 (served from fallback)", "note": "The client sees a normal success. The failover was transparent \u2014 that's the whole point."}]}</script></div>
+<p>Mechanically: <strong>retries and timeouts</strong> are fields on the <code>BackendTrafficPolicy</code> (<code>spec.retry</code> with <code>numRetries</code> and the <code>retryOn</code> conditions; <code>spec.timeout</code> for request and per-try budgets). <strong>Failover</strong> is expressed by listing more than one backend on the route's <code>backendRefs</code> with different priorities/weights — when the gateway exhausts the primary (retries spent, or outlier detection has ejected it), it serves from the next backend in line. Because each backend carries its own <code>modelNameOverride</code> (2.3), the same virtual <code>chat-default</code> resolves to OpenAI's <code>gpt-4o-mini</code> on the primary and to a Bedrock Claude ID on the fallback — one alias, two vendors, automatic switchover.</p>
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p>Retrying a partially-billed completion can <strong>double-charge</strong> you. The danger window is a failure that arrives <em>after</em> the model began generating — a dropped stream, a timeout mid-response, a <code>499</code>/<code>504</code>. At that point you've paid for the tokens already produced, and a retry pays again for a <em>fresh</em> generation. Configure <code>retryOn</code> to cover only clearly <strong>pre-response</strong> conditions (connection refused, fast <code>503</code>, <code>429</code>), keep <code>numRetries</code> low (1–2), and treat any retry of a completion as a billable, non-idempotent event — not a free do-over. The instinct from REST ("retries are basically free, crank them up") is exactly wrong here.</p>
+</div>
+<h2 id="hands-on-lab">Hands-on lab</h2>
+<div class="lab">
+<h4 id="lab-retry-timeout-and-fail-over-to-a-second-vendor">Lab — retry, timeout, and fail over to a second vendor</h4>
+<p><strong>Prereqs:</strong> the self-hosted gateway and <code>Gateway</code> from 1.5, the virtual <code>chat-default</code> route from 2.3, two working <code>AIServiceBackend</code>s with credentials — a primary (<code>openai</code>) and a fallback on a <em>different</em> vendor (<code>bedrock</code>, configured per 2.1/2.2) — plus <code>kubectl</code> and <code>$NAMESPACE</code> / <code>$GATEWAY_HOST</code> exported. (Field names track the Envoy AI Gateway / Envoy Gateway version — verify <code>retry</code>, <code>timeout</code>, and the <code>backendRefs</code> priority shape against the BackendTrafficPolicy docs for your release.)</p>
+<p><strong>1. Put two backends behind the one virtual name, primary first.</strong> Order is priority: the gateway tries the first <code>backendRef</code>, then the next on failure.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aigateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AIGatewayRoute</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway</span><span class="w">                  </span><span class="c1"># the Gateway from 1.5</span>
+<span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">headers</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Exact</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x-ai-eg-model</span>
+<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chat-default</span><span class="w">        </span><span class="c1"># the stable alias from 2.3</span>
+<span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span><span class="w">                   </span><span class="c1"># PRIMARY — tried first</span>
+<span class="w">          </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">          </span><span class="nt">modelNameOverride</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4o-mini</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bedrock</span><span class="w">                  </span><span class="c1"># FALLBACK — different vendor</span>
+<span class="w">          </span><span class="nt">priority</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">          </span><span class="nt">modelNameOverride</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anthropic.claude-3-5-sonnet-20241022-v2:0</span>
+</code></pre></div>
+
+<p><strong>2. Attach retry + timeout with a <code>BackendTrafficPolicy</code>.</strong> Bound the blips; fail fast when it's really down.</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.envoyproxy.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BackendTrafficPolicy</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-resilience</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${NAMESPACE}</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">targetRefs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">group</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io</span>
+<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ai-gateway-route</span><span class="w">             </span><span class="c1"># the route above</span>
+<span class="w">  </span><span class="nt">timeout</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">http</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">requestTimeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span><span class="w">                </span><span class="c1"># overall budget for the request</span>
+<span class="w">  </span><span class="nt">retry</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">numRetries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w">                        </span><span class="c1"># low on purpose — see the pitfall</span>
+<span class="w">    </span><span class="nt">perRetry</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8s</span>
+<span class="w">    </span><span class="nt">retryOn</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">httpStatusCodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">503</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">429</span><span class="p p-Indicator">]</span><span class="w">        </span><span class="c1"># PRE-response, transient only</span>
+<span class="w">      </span><span class="nt">triggers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">connect-failure</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reset</span>
+</code></pre></div>
+
+<p><strong>3. Apply both and confirm they're accepted:</strong></p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>aigatewayroute.yaml<span class="w"> </span>-f<span class="w"> </span>backendtrafficpolicy.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>ai-resilience<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.conditions[?(@.type==&quot;Accepted&quot;)].status}{&quot;\n&quot;}&#39;</span>
+</code></pre></div>
+
+<div class="admonition pitfall">
+<p class="admonition-title">Watch out</p>
+<p><code>retryOn</code> here lists <code>503</code> and <code>429</code> but deliberately <strong>omits <code>504</code></strong> (gateway timeout) and connection <em>resets that occur mid-stream</em>. Those can land <em>after</em> the model started generating — retrying them risks the double-charge from the concept pitfall. If you widen <code>retryOn</code> to "all 5xx" to make a demo greener, you've quietly re-armed the billing hazard. Keep the retry set narrow and pre-response.</p>
+</div>
+<p><strong>4. Force the primary to fail.</strong> The cleanest way without a real outage: point the primary <code>AIServiceBackend</code> at an unreachable endpoint (or temporarily revoke its credential so it returns <code>401</code>/<code>503</code>), so OpenAI consistently errors while Bedrock stays healthy. Re-apply that broken primary, then send a normal request to the unchanged alias:</p>
+<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;http://</span><span class="nv">$GATEWAY_HOST</span><span class="s2">/v1/chat/completions&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;content-type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;:&quot;chat-default&quot;,</span>
+<span class="s1">       &quot;messages&quot;:[{&quot;role&quot;:&quot;user&quot;,&quot;content&quot;:&quot;In one sentence: why have a fallback provider?&quot;}]}&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.choices[0].message.content&#39;</span>
+</code></pre></div>
+
+<p><strong>5. Prove which vendor answered.</strong> The body never names a provider, so confirm failover from the gateway's telemetry / access logs (you wire full observability in 6.1) — the request should show the primary erroring, retries exhausted, then the fallback backend serving <code>200</code>:</p>
+<div class="codehilite"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>deploy/envoy-ai-gateway<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;chat-default&quot;</span>
+<span class="c1"># expect: attempts against openai -&gt; 503, then bedrock -&gt; 200</span>
+</code></pre></div>
+
+<p><strong>What success looks like:</strong> with the primary deliberately broken, the curl in step 4 still returns a real completion — served by the <strong>fallback vendor</strong> — and the client request body is byte-for-byte the same as when the primary was healthy. The logs show the primary erroring and retries exhausting <em>before</em> the fallback served. You've turned a single-vendor outage into a transparent provider switch.</p>
+</div>
+<h2 id="verify-it">Verify it</h2>
+<p>You're done when a dead primary is invisible to the caller:</p>
+<ul>
+<li>With the primary healthy, the request is served by the primary; with the primary broken, the <em>identical</em> request is served by the fallback and the client sees <code>200</code> either way. If the broken case returns <code>5xx</code>, your <code>backendRefs</code> priority or <code>BackendTrafficPolicy</code> isn't attached to the route.</li>
+<li>A transient <code>503</code> from the primary is retried (not surfaced), but a <code>400</code>/<code>404</code> is <strong>not</strong> retried — confirming <code>retryOn</code> is scoped to transient, pre-response conditions and not client errors.</li>
+<li>The request honours the <code>requestTimeout</code> ceiling — a hung primary doesn't make the caller wait forever; it times out and fails over within budget.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># confirm the policy is bound to the route and which codes it retries:</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>backendtrafficpolicy<span class="w"> </span>ai-resilience<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$NAMESPACE</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A6<span class="w"> </span><span class="s1">&#39;retry:&#39;</span>
+</code></pre></div>
+
+<div class="admonition failure">
+<p class="admonition-title">Common failure modes</p>
+<ul>
+<li><strong>Retrying non-idempotent, partially-billed completions.</strong> A wide <code>retryOn</code> (all 5xx, including <code>504</code>/mid-stream resets) double-charges you for a single user request. <em>(Symptom: token spend higher than request count predicts; duplicate-looking generations in logs.)</em></li>
+<li><strong>Fallback never engages.</strong> Only one <code>backendRef</code>, or both at the same priority, so there's nothing to fail over <em>to</em>. <em>(Symptom: primary outage returns <code>503</code> to the client instead of a fallback <code>200</code>.)</em></li>
+<li><strong>Policy targets the wrong object.</strong> <code>targetRefs</code> names a route that doesn't exist or the wrong kind, so retries/timeouts silently don't apply. <em>(Symptom: status condition not <code>Accepted</code>; behaviour identical to no policy.)</em></li>
+<li><strong>Fallback model rejects the request shape.</strong> The primary and fallback are both OpenAI-compatible at the gateway, but the fallback's <code>modelNameOverride</code> names a model the vendor doesn't recognise. <em>(Symptom: failover happens, then the fallback returns <code>400</code>/<code>404</code> from the provider.)</em></li>
+<li><strong>Retry budget multiplied by client-side retries.</strong> The app <em>also</em> retries on <code>5xx</code>, so a single user action becomes <code>client-retries × gateway-retries</code> real generations. Centralise retry at the edge and stop retrying in the app.</li>
+</ul>
+</div>
+<div class="admonition stretch">
+<p class="admonition-title">Stretch goal</p>
+<p>Add a <strong>third</strong> backend in a different region or vendor and tune the policy so a <code>429</code> (rate-limit) from the primary fails over <em>immediately</em> with <code>numRetries: 0</code>, while a <code>503</code> retries once before failing over. Then take a Resilience4j <code>Retry</code> + <code>CircuitBreaker</code> config you run today around an LLM call and write the equivalent <code>BackendTrafficPolicy</code> beside it — noting the two things the YAML expresses that the Java cannot: one shared circuit state across the whole fleet, and failover to a genuinely different <em>vendor</em>, not just another host.</p>
+</div>
+<h2 id="recap-next">Recap &amp; next</h2>
+<p>You can now configure <strong>bounded retries</strong> and <strong>timeouts</strong> with a <code>BackendTrafficPolicy</code>, order <code>backendRefs</code> so the gateway <strong>fails over to a different model vendor</strong> when a primary is exhausted, and reason about why LLM retries are billable, non-idempotent events that must be capped — not the free do-overs you're used to from REST. A single-vendor outage is now a transparent switch the client never sees.</p>
+<p><strong>Next — 2.5:</strong> chat isn't the only thing flowing through here. You'll route <strong>embeddings, multimodal, and other endpoints</strong> through the <em>same</em> governed gateway — so your vector pipelines inherit the metering, catalog, and resilience you just built — and learn why embeddings need their own metering thinking.</p><div class="session-complete" data-session-code="2.4"><button id="markComplete" type="button" class="mark-btn"><span class="mark-box">&#10003;</span> Mark 2.4 complete</button><span class="mark-hint">Progress is saved in your browser.</span></div><div class="pager">
+<a class="prev" href="session-08.html"><span class="pager-dir">&larr; Previous</span><span class="pager-label">2.3 · Model routing &amp; the approved model catalog</span></a>
+<a class="next" href="session-10.html"><span class="pager-dir">Next &rarr;</span><span class="pager-label">2.5 · Beyond chat: embeddings, multimodal &amp; other endpoints</span></a>
+</div>
+    </main>
+    <aside class="toc-rail" aria-label="On this page"><div class="toc-title">On this page</div><div class="toc">
+<ul>
+<li><a href="#why-this-exists">Why this exists</a></li>
+<li><a href="#the-concept">The concept</a></li>
+<li><a href="#hands-on-lab">Hands-on lab</a></li>
+<li><a href="#verify-it">Verify it</a></li>
+<li><a href="#recap-next">Recap &amp; next</a></li>
+</ul>
+</div>
+</aside>
+  </div>
+
+  <script>
+    window.__COURSE__ = { total: 29, key: "tetrate-ai.progress.v1" };
+  </script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'loose',
+      theme: 'base',
+      themeVariables: {
+        background: '#161A26',
+        primaryColor: '#1B2233', primaryBorderColor: '#4FE3C1', primaryTextColor: '#E8ECF4',
+        lineColor: '#6B7488', secondaryColor: '#1E1A33', tertiaryColor: '#191c2b',
+        secondaryBorderColor: '#A98BFF', tertiaryBorderColor: '#8FB3FF',
+        noteBkgColor: '#1E1A33', noteTextColor: '#E8ECF4', noteBorderColor: '#A98BFF',
+        fontFamily: '-apple-system, Segoe UI, Roboto, sans-serif', fontSize: '14px'
+      }
+    });
+    window.__mermaidReady = true;
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/widgets.js"></script>
+  <script defer src="assets/app.js"></script>
+
+</body>
+</html>
